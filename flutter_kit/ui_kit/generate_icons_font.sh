@@ -1,0 +1,1 @@
+svg_icon_font_generator --from=icons --out-font=assets/icon_font/icons.ttf --out-flutter=lib/src/widgets/icons.dart --class-name ChatUIIcons --package chat_ui_kit

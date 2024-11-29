@@ -1,0 +1,34 @@
+name: ui_kit_interface
+description: App resources.
+version: 0.0.1
+publish_to: none
+
+environment:
+  sdk: '>=2.18.0 <3.0.0'
+  flutter: '>=3.3.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+#  design_system:
+#    path: ../design_system
+  design_system:
+    git:
+      url: git@github.com:tarek360/flutter_kit.git
+      ref: 0.0.2 # or a specific branch, tag, or commit
+      path: flutter_kit/design_system
+
+  webview_flutter: ^4.2.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  global_lints:
+    git:
+      url: git@github.com:tarek360/flutter_kit.git
+      ref: 0.0.2 # or a specific branch, tag, or commit
+      path: flutter_kit/global_lints
+
+flutter:

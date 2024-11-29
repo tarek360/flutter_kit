@@ -1,0 +1,29 @@
+name: design_system
+description: App resources.
+version: 0.0.1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+  flutter: '>=3.3.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  flutter_svg: ^2.0.16
+  cached_network_image: ^3.3.0
+  responsive_framework: ^1.1.0
+  rive: ^0.13.11
+
+  flutter_cache_manager: ^3.3.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  global_lints:
+    git:
+      url: git@github.com:tarek360/flutter_kit.git
+      ref: 0.0.2 # or a specific branch, tag, or commit
+      path: flutter_kit/global_lints
+flutter:

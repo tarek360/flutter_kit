@@ -1,0 +1,47 @@
+name: user_auth
+description: user_auth.
+version: 0.0.1
+publish_to: none
+
+environment:
+  sdk: '>=2.18.0 <3.0.0'
+  flutter: '>=3.3.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  url_launcher: ^6.1.7
+  in_app_update: ^4.0.1 # Android only
+  in_app_review: ^2.0.8
+  freezed_annotation:
+  json_annotation:
+  jwt_decode: ^0.3.1
+
+  #  ui_kit_interface:
+  #    path: ../ui_kit_interface
+  ui_kit_interface:
+    git:
+      url: git@github.com:tarek360/flutter_kit.git
+      ref: 0.0.2 # or a specific branch, tag, or commit
+      path: flutter_kit/ui_kit_interface
+
+  #  core:
+  #    path: ../core
+  core:
+    git:
+      url: git@github.com:tarek360/flutter_kit.git
+      ref: 0.0.2 # or a specific branch, tag, or commit
+      path: flutter_kit/core
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  global_lints:
+    path: ../global_lints
+
+  build_runner: ^2.2.1
+  freezed: ^2.1.1
+  json_serializable: ^6.3.2
+
+flutter:

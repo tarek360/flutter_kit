@@ -1,0 +1,35 @@
+name: firebase_packages
+description: firebase_packages.
+version: 0.0.1
+publish_to: none
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+  flutter: '>=3.3.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  firebase_messaging: ^15.1.5
+
+  flutter_local_notifications: ^18.0.1
+  permission_handler: ^11.3.1
+  flutter_timezone: ^3.0.1
+  core:
+    path: ../core
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  global_lints:
+    git:
+      url: git@github.com:tarek360/flutter_kit.git
+      ref: 0.0.2 # or a specific branch, tag, or commit
+      path: flutter_kit/global_lints
+
+  build_runner: ^2.2.1
+  freezed: ^2.1.1
+  json_serializable: ^6.4.0
+
+flutter:
