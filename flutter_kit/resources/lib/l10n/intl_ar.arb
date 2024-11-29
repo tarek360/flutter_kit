@@ -1,0 +1,146 @@
+{
+  "@@locale": "ar",
+  "appName": "شات بوت",
+  "english": "الإنجليزية",
+  "spanish": "الإسبانية",
+  "french": "الفرنسية",
+  "german": "الألمانية",
+  "arabic": "اللغة العربية",
+  "bulgarian": "البلغارية",
+  "czech": "التشيكية",
+  "danish": "دنماركية",
+  "greek": "اليونانية",
+  "estonian": "الإستونية",
+  "finnish": "الفنلندية",
+  "hindi": "الهندية",
+  "hungarian": "الهنغارية",
+  "indonesian": "الإندونيسية",
+  "italian": "إيطالي",
+  "japanese": "ياباني",
+  "korean": "كوري",
+  "lithuanian": "الليتوانية",
+  "latvian": "اللاتفية",
+  "norwegianBokmal": "النرويجية",
+  "dutch": "اللغة الهولندية",
+  "polish": "البولندية",
+  "portuguese": "البرتغالية",
+  "portugueseBrazil": "البرتغالية (البرازيل)",
+  "romanian": "الرومانية",
+  "russian": "الروسية",
+  "slovak": "السلوفاكية",
+  "slovenian": "السلوفينية",
+  "swedish": "اللغة السويدية",
+  "thai": "التايلاندية",
+  "turkish": "اللغة التركية",
+  "ukrainian": "أوكراني",
+  "chinese": "صيني",
+  "customerSupportEmail": "help@tarek360.dev",
+  "genericErrorMessagePrimary": "عذراً!",
+  "genericErrorMessageSecondary": "حدث خطأ ما!",
+  "genericErrorMessageButton": "موافق",
+  "noInternetErrorMessage": "لا يوجد اتصال بالإنترنت",
+  "tryAgainButtonLabel": "حاول مجدداً",
+  "goToHomeButtonLabel": "العودة إلى الصفحة الرئيسية",
+  "appBottomHome": "الرئيسية",
+  "appBottomTabProfile": "حسابي",
+  "oneTimePinCodeScreenTitle": "ما هو بريدك الإلكتروني؟",
+  "oneTimePinCodeScreenHint": "سنرسل رمزاً سريا إلى بريدك الإلكتروني.",
+  "oneTimePinCodeScreenEmailInputLabel": "البريد الإلكتروني",
+  "oneTimePinCodeScreenEmailInputHint": "أدخل بريدك الإلكتروني",
+  "oneTimePinCodeScreenEmailInputError": "بريد إلكتروني غير صالح",
+  "oneTimePinCodeScreenTooManyAttemptsDialogTitle": "عذراً!",
+  "oneTimePinCodeScreenTooManyAttemptsDialogMessage": "عدد المحاولات كبير جداً،\nيرجى المحاولة لاحقاً.",
+  "oneTimePinCodeScreenTooManyAttemptsDialogButton": "موافق",
+  "oneTimePinCodeScreenGoToOnboardingDialogTitle": "البريد الإلكتروني غير مسجل",
+  "oneTimePinCodeScreenGoToOnboardingDialogMessage": "يبدو أنه ليس لديك ملف شخصي لدينا.\nيرجى التسجيل للمتابعة.",
+  "oneTimePinCodeScreenGoToOnboardingDialogButton": "إنشاء ملف شخصي",
+  "socialLoginOrLabel": "أو",
+  "socialLoginGoogleButton": "جوجل",
+  "socialLoginAppleButton": "أبل",
+  "confirmationPinScreenMessage": "أدخل الرمز السري للتحقق من تسجيل الدخول.",
+  "confirmationPinScreenContinueButton": "إرسال رمز التحقق",
+  "loginScreenTitle": "أدخل رمز التحقق",
+  "loginScreenHint": "أدخل رمز التحقق المرسل إلى بريدك الإلكتروني ",
+  "loginScreenCancelVerificationDialogTitle": "تعديل البريد الإلكتروني",
+  "loginScreenCancelVerificationDialogMessagePart1": "هل تريد تعديل بريدك الإلكتروني؟",
+  "loginScreenCancelVerificationDialogMessagePart2": "إذا كان البريد الإلكتروني أعلاه صحيحاً، يرجى إدخال رمز التحقق المرسل إلى بريدك.",
+  "loginScreenCancelVerificationDialogEditButton": "تعديل",
+  "loginScreenCancelVerificationDialogCloseButton": "إغلاق",
+  "loginScreenInvalidPinDialogTitle": "الرمز السري غير صالح",
+  "loginScreenInvalidPinDialogButton": "موافق",
+  "loginScreenExpiredPinDialogTitle": "الرمز السري منتهي الصلاحية",
+  "loginScreenCancelExpiredPinDialogButton": "ابدأ من جديد",
+  "loginScreenTermsAndPrivacyPolicyLabelPart1": "بتسجيل الدخول إلى لوجا، فإنك توافق على ",
+  "loginScreenTermsAndPrivacyPolicyLabelTerms": "الشروط",
+  "loginScreenTermsAndPrivacyPolicyLabelPart2": " و ",
+  "loginScreenTermsAndPrivacyPolicyLabelPrivacyPolicy": "سياسة الخصوصية",
+  "onboardingSlideTitle1": "تعلم وارتفع عالياً",
+  "onboardingSlideTitle2": "مسابقة أسبوعية تُشعل حماستك",
+  "onboardingSlideTitle3": "ارفع من مستوى التعلم البصري",
+  "onboardingSlideSubtitle1": "اكتشف كلمات جديدة كل يوم",
+  "onboardingSlideSubtitle2": "سابق وتصدر لوحة المنافسين",
+  "onboardingSlideSubtitle3": "جمال بصري في كل المفردات",
+  "onboardingHaveAccountLabel": "هل لديك حساب بالفعل؟",
+  "onboardingLoginButton": "تسجيل الدخول",
+  "onboardingStartOnboardingButton": "ابدأ التعلم",
+  "askToCreateProfileMessage1": "حان الوقت لإنشاء ملفك الشخصي!",
+  "askToCreateProfileMessage2": "أنشئ ملفك الشخصي لحفظ تقدمك وتتبع مسارك.",
+  "askToCreateProfileCreateButton": "إنشاء ملف شخصي",
+  "askToCreateProfileLaterScreenButton": "لاحقاً",
+  "userProfileScreenTitle": "الملف الشخصي",
+  "userProfileAnonymousUserMessage": "أنشئ ملفاً شخصياً واحفظ تقدمك.",
+  "userProfileAnonymousUserCreateProfileButton": "إنشاء ملف شخصي",
+  "userProfileAnonymousUserSignInButton": "تسجيل الدخول",
+  "userProfileNameLabel": "الاسم",
+  "userProfileNameHint": "اكتب اسمك",
+  "userProfileShareButton": "شارك التطبيق",
+  "userProfileFeedbackButton": "إرسال ملاحظات",
+  "userProfileFeedbackTitle": "هل لديك ملاحظات؟",
+  "userProfileFeedbackSubtitle": "نحن هنا لمساعدتك!",
+  "whatsAppNotFoundError": "واتساب غير مثبت على جهازك",
+  "userProfilePaywallButton": "انضم إلينا",
+  "userAvatarSelectorTitle": "اختر الصورة الرمزية",
+  "userAvatarSelectorButton": "تغيير",
+  "userProfileScreenNameErrorReserved": "عذراً، '{name}' محجوز. يرجى كتابة اسم مختلف.",
+  "userProfileScreenNameErrorShort": "الاسم قصير جداً",
+  "userProfileScreenNameErrorLong": "الاسم طويل جداً",
+  "accountDeletionScreenTitle": "حذف الحساب",
+  "accountDeletionScreenDescription": "اضغط على زر حذف الحساب لحذف حسابك في لوجا ومحو جميع بياناتك الشخصية المخزنة بواسطة لوجا. ستفقد تقدمك التعليمي وإنجازاتك. بمجرد الانتهاء، لا يمكن التراجع عن هذا الإجراء. قد يستغرق الحذف ما يصل إلى 30 يوماً.",
+  "accountDeletionScreenSubscriptionNote": "يرجى ملاحظة: هذا الإجراء لن يلغي اشتراك لوجا إكسترا الحالي. يرجى إلغاء اشتراكك من متجر التطبيقات أو متجر جوجل بلاي.",
+  "accountDeletionScreenButton": "حذف الحساب",
+  "accountDeletionScreenCancelButton": "إلغاء",
+  "accountDeletionScreenConfirmationMessage": "هل تريد حذف حسابك؟",
+  "settingsScreenTitle": "الإعدادات",
+  "settingsScreenThemeMode": "الوضع الليلي",
+  "settingsScreenThemeModeOn": "تشغيل",
+  "settingsScreenThemeModeOff": "إيقاف",
+  "settingsScreenThemeModeSystem": "إعدادات النظام",
+  "settingsScreenLogoutButton": "تسجيل الخروج",
+  "settingsScreenLogoutPositiveButton": "تسجيل الخروج",
+  "settingsScreenLogoutNegativeButton": "إلغاء",
+  "settingsScreenLogoutConfirmationMessage": "هل تريد تسجيل الخروج؟",
+  "settingsScreenTermsLabel": "الشروط",
+  "settingsScreenTermsAndPrivacyAndLabel": " و ",
+  "settingsScreenPrivacyPolicyLabel": "الخصوصية",
+  "settingsScreenDeleteAccountLabel": "حذف الحساب",
+  "settingsScreenMessageUsLabel": "تحدث إلينا",
+  "settingsScreenMessageUsHint": "نحن هنا لمساعدتك! 🐻",
+  "settingsScreenRestorePurchasesTitle": "هل لديك اشتراك بالفعل؟",
+  "settingsScreenRestorePurchasesSubtitle": "إستعد إشتراكك",
+  "settingsScreenCancelSubscriptionTitle": "إلغاء الاشتراك؟",
+  "settingsScreenCancelSubscriptionSubtitle": "إلغاء الاشتراك",
+  "deleteAccountTitle": "حذف الحساب",
+  "privacyPolicyTitle": "سياسة الخصوصية",
+  "timerHMS": "{h} ساعة  {m} دقيقة  {s} ثانية",
+  "timerMS": "{m} دقيقة  {s} ثانية",
+  "timerS": "{s} ثانية",
+  "rateUsPopupMessage": "هل ترغب في تقييم لوجا على متجر التطبيقات؟ هذا يساعدنا كثيراً 😊",
+  "rateUsPopupButton": "تقييم",
+  "appUpdatePopupMessage": "يتوفر إصدار جديد من لوجا. قم بالتحديث الآن للحصول على أفضل تجربة!",
+  "appUpdatePopupButton": "تحديث",
+  "days": "يوم",
+  "hours": "ساعة",
+  "minutes": "دقيقة",
+  "seconds": "ثانية",
+  "chatbotScreenTitle": "الدردشة"
+}

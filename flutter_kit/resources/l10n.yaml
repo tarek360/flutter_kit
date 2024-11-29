@@ -1,0 +1,40 @@
+# arb_translate configurations
+arb-translate-model-provider: open-ai
+arb-translate-model: gpt-4o-mini
+arb-translate-context: "Words to be translated for learning language mobile app"
+
+arb-dir: lib/l10n
+template-arb-file: intl_en.arb
+translator:
+  service: deepL
+  targets:
+    - ar
+    - bg
+    - cs
+    - da
+    - de
+    - el
+    - es
+    - et
+    - fi
+    - fr
+    - hu
+    - id
+    - it
+    - ja
+    - ko
+    - lt
+    - lv
+    - nb
+    - nl
+    - pl
+    - pt
+    - pt-BR
+    - ro
+    - ru
+    - sk
+    - sl
+    - sv
+    - tr
+    - uk
+    - zh

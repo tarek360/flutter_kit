@@ -1,0 +1,45 @@
+name: resources
+description: A new Flutter package project.
+version: 0.0.1
+publish_to: none
+
+environment:
+  sdk: '>=3.2.5 <4.0.0'
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+
+  riverpod:
+  design_system:
+    path: ../design_system
+#  design_system:
+#    git:
+#      url: git@github.com:tarek360/flutter_kit.git
+#      ref: main # or a specific branch, tag, or commit
+#      path: flutter_kit/design_system
+
+dev_dependencies:
+
+  auto_translator:
+    git:
+      url: https://github.com/tarek360/flutter_auto_translator
+      ref: patch-1
+
+  global_lints:
+    git:
+      url: git@github.com:tarek360/flutter_kit.git
+      ref: main # or a specific branch, tag, or commit
+      path: flutter_kit/global_lints
+
+flutter:
+  generate: true
+  assets:
+    - assets/svg/
+
+flutter_intl:
+  enabled: true
+
