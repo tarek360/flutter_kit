@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'package:ui_kit_interface/ui_kit_interface.dart';
 
@@ -466,12 +468,13 @@ Future<T?> showFrogFullSlidingBottomSheet<T>({
   required ScrollableWidgetBuilder builder,
   bool dragBar = true,
   AppBar? appBar,
+  double initialChildSize = 0.95,
 }) {
   return showFrogSlidingBottomSheet<T>(
     context: context,
     builder: builder,
     dragBar: dragBar,
-    initialChildSize: 0.95,
+    initialChildSize: initialChildSize,
   );
 }
 

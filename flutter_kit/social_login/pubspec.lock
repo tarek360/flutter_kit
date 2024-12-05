@@ -277,8 +277,8 @@ packages:
     dependency: "direct dev"
     description:
       path: "flutter_kit/global_lints"
-      ref: main
-      resolved-ref: "359d6de3737e7e3ebf2c783e18e3a928c1d245c8"
+      ref: "0.0.1"
+      resolved-ref: "6b12fe8afeeda5873b9ccf39239a41a3ffa77b8e"
       url: "git@github.com:tarek360/flutter_kit.git"
     source: git
     version: "0.0.1"

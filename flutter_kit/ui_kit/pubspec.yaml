@@ -45,7 +45,7 @@ dev_dependencies:
   global_lints:
     git:
       url: git@github.com:tarek360/flutter_kit.git
-      ref: 0.0.1
+      ref: 0.0.2
       path: flutter_kit/global_lints
 flutter:
 

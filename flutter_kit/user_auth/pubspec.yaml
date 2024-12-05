@@ -23,7 +23,7 @@ dependencies:
   ui_kit_interface:
     git:
       url: git@github.com:tarek360/flutter_kit.git
-      ref: 0.0.1
+      ref: 0.0.2
       path: flutter_kit/ui_kit_interface
 
   #  core:
@@ -31,7 +31,7 @@ dependencies:
   core:
     git:
       url: git@github.com:tarek360/flutter_kit.git
-      ref: 0.0.1
+      ref: 0.0.2
       path: flutter_kit/core
 
 dev_dependencies:
