@@ -24,8 +24,12 @@ mixin _$MessageOutPaginationMetadata {
   @JsonKey(name: 'TotalPages')
   int get totalPages => throw _privateConstructorUsedError;
 
+  /// Serializes this MessageOutPaginationMetadata to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of MessageOutPaginationMetadata
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $MessageOutPaginationMetadataCopyWith<MessageOutPaginationMetadata>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -52,6 +56,8 @@ class _$MessageOutPaginationMetadataCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of MessageOutPaginationMetadata
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -88,6 +94,8 @@ class __$$MessageOutPaginationMetadataImplCopyWithImpl<$Res>
       $Res Function(_$MessageOutPaginationMetadataImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of MessageOutPaginationMetadata
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -131,11 +139,13 @@ class _$MessageOutPaginationMetadataImpl
                 other.totalPages == totalPages));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, totalPages);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of MessageOutPaginationMetadata
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$MessageOutPaginationMetadataImplCopyWith<
@@ -163,8 +173,11 @@ abstract class _MessageOutPaginationMetadata
   @override
   @JsonKey(name: 'TotalPages')
   int get totalPages;
+
+  /// Create a copy of MessageOutPaginationMetadata
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$MessageOutPaginationMetadataImplCopyWith<
           _$MessageOutPaginationMetadataImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -179,7 +192,9 @@ mixin _$PaginationAndFilter {
   String? get searchBy => throw _privateConstructorUsedError;
   String? get parentId => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of PaginationAndFilter
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $PaginationAndFilterCopyWith<PaginationAndFilter> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -209,6 +224,8 @@ class _$PaginationAndFilterCopyWithImpl<$Res, $Val extends PaginationAndFilter>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of PaginationAndFilter
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -273,6 +290,8 @@ class __$$PaginationAndFilterImplCopyWithImpl<$Res>
       $Res Function(_$PaginationAndFilterImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of PaginationAndFilter
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -362,7 +381,9 @@ class _$PaginationAndFilterImpl extends _PaginationAndFilter {
   int get hashCode => Object.hash(
       runtimeType, limit, page, sort, searchByName, searchBy, parentId);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of PaginationAndFilter
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$PaginationAndFilterImplCopyWith<_$PaginationAndFilterImpl> get copyWith =>
@@ -392,8 +413,11 @@ abstract class _PaginationAndFilter extends PaginationAndFilter {
   String? get searchBy;
   @override
   String? get parentId;
+
+  /// Create a copy of PaginationAndFilter
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$PaginationAndFilterImplCopyWith<_$PaginationAndFilterImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

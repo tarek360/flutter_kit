@@ -50,16 +50,22 @@ class XState<T> with _$XState<T> {
   }
 }
 
+@Deprecated('Use "FormStatus" instead')
 @freezed
 class XFormState<T> with _$XFormState<T> {
+  @Deprecated('Use "FormStatus" instead')
   const XFormState._();
 
+  @Deprecated('Use "FormStatus.draft" instead')
   const factory XFormState.draft() = _XFormStateDraft;
 
+  @Deprecated('Use "FormStatus.loading" instead')
   const factory XFormState.loading({T? data}) = _XFormStateLoading<T>;
 
+  @Deprecated('Use "FormStatus.submitted" instead')
   const factory XFormState.submitted(T data) = _XFormStateSubmitted<T>;
 
+  @Deprecated('Use "FormStatus.error" instead')
   const factory XFormState.error(ErrorModel error) = _XFormStateError;
 
   bool get isLoading => maybeWhen(loading: (_) => true, orElse: () => false);
@@ -176,4 +182,35 @@ class StatusError<D, E> implements Status<D, E> {
   final E error;
 
   const StatusError(this.error);
+}
+
+@freezed
+class FormStatus<T> with _$FormStatus<T> {
+  const FormStatus._();
+
+  const factory FormStatus.draft() = _FormStatusDraft;
+
+  const factory FormStatus.loading({T? data}) = _FormStatusLoading<T>;
+
+  const factory FormStatus.submitted(T data) = _FormStatusSubmitted<T>;
+
+  const factory FormStatus.error(ErrorModel error) = _FormStatusError;
+
+  bool get isLoading => maybeWhen(loading: (_) => true, orElse: () => false);
+
+  void ifHasError(void Function(ErrorModel error) function) {
+    final error = maybeWhen(error: (error) => error, orElse: () => null);
+    if (error != null) function(error);
+  }
+
+  R? ifSubmitted<R>(R Function(T data) dataFunction) {
+    final data = maybeWhen(
+      submitted: (data) => data,
+      orElse: () => null,
+    );
+    if (data != null) {
+      return dataFunction(data);
+    }
+    return null;
+  }
 }

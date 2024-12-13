@@ -95,6 +95,9 @@ class _$XStateCopyWithImpl<T, $Res, $Val extends XState<T>>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of XState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -114,6 +117,8 @@ class __$$initialImplCopyWithImpl<T, $Res>
       _$initialImpl<T> _value, $Res Function(_$initialImpl<T>) _then)
       : super(_value, _then);
 
+  /// Create a copy of XState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -153,7 +158,9 @@ class _$initialImpl<T> extends _initial<T> {
   int get hashCode =>
       Object.hash(runtimeType, const DeepCollectionEquality().hash(data));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of XState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$initialImplCopyWith<T, _$initialImpl<T>> get copyWith =>
@@ -251,7 +258,10 @@ abstract class _initial<T> extends XState<T> {
   const _initial._() : super._();
 
   T get data;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of XState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$initialImplCopyWith<T, _$initialImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -270,6 +280,9 @@ class __$$loadingImplCopyWithImpl<T, $Res>
   __$$loadingImplCopyWithImpl(
       _$loadingImpl<T> _value, $Res Function(_$loadingImpl<T>) _then)
       : super(_value, _then);
+
+  /// Create a copy of XState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -397,6 +410,9 @@ class __$$submittedImplCopyWithImpl<T, $Res>
   __$$submittedImplCopyWithImpl(
       _$submittedImpl<T> _value, $Res Function(_$submittedImpl<T>) _then)
       : super(_value, _then);
+
+  /// Create a copy of XState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -527,6 +543,8 @@ class __$$successImplCopyWithImpl<T, $Res>
       _$successImpl<T> _value, $Res Function(_$successImpl<T>) _then)
       : super(_value, _then);
 
+  /// Create a copy of XState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -566,7 +584,9 @@ class _$successImpl<T> extends _success<T> {
   int get hashCode =>
       Object.hash(runtimeType, const DeepCollectionEquality().hash(data));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of XState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$successImplCopyWith<T, _$successImpl<T>> get copyWith =>
@@ -664,7 +684,10 @@ abstract class _success<T> extends XState<T> {
   const _success._() : super._();
 
   T get data;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of XState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$successImplCopyWith<T, _$successImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -688,6 +711,8 @@ class __$$errorImplCopyWithImpl<T, $Res>
       _$errorImpl<T> _value, $Res Function(_$errorImpl<T>) _then)
       : super(_value, _then);
 
+  /// Create a copy of XState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -701,6 +726,8 @@ class __$$errorImplCopyWithImpl<T, $Res>
     ));
   }
 
+  /// Create a copy of XState
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $ErrorModelCopyWith<$Res> get error {
@@ -734,7 +761,9 @@ class _$errorImpl<T> extends _error<T> {
   @override
   int get hashCode => Object.hash(runtimeType, error);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of XState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$errorImplCopyWith<T, _$errorImpl<T>> get copyWith =>
@@ -832,7 +861,10 @@ abstract class _error<T> extends XState<T> {
   const _error._() : super._();
 
   ErrorModel get error;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of XState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$errorImplCopyWith<T, _$errorImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -856,6 +888,8 @@ class __$$dataAndErrorImplCopyWithImpl<T, $Res>
       _$dataAndErrorImpl<T> _value, $Res Function(_$dataAndErrorImpl<T>) _then)
       : super(_value, _then);
 
+  /// Create a copy of XState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -874,6 +908,8 @@ class __$$dataAndErrorImplCopyWithImpl<T, $Res>
     ));
   }
 
+  /// Create a copy of XState
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $ErrorModelCopyWith<$Res> get error {
@@ -911,7 +947,9 @@ class _$dataAndErrorImpl<T> extends _dataAndError<T> {
   int get hashCode => Object.hash(
       runtimeType, const DeepCollectionEquality().hash(data), error);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of XState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$dataAndErrorImplCopyWith<T, _$dataAndErrorImpl<T>> get copyWith =>
@@ -1012,7 +1050,10 @@ abstract class _dataAndError<T> extends XState<T> {
 
   T get data;
   ErrorModel get error;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of XState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$dataAndErrorImplCopyWith<T, _$dataAndErrorImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1087,6 +1128,9 @@ class _$XFormStateCopyWithImpl<T, $Res, $Val extends XFormState<T>>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of XFormState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -1103,10 +1147,14 @@ class __$$XFormStateDraftImplCopyWithImpl<T, $Res>
   __$$XFormStateDraftImplCopyWithImpl(_$XFormStateDraftImpl<T> _value,
       $Res Function(_$XFormStateDraftImpl<T>) _then)
       : super(_value, _then);
+
+  /// Create a copy of XFormState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
+@Deprecated('Use "FormStatus.draft" instead')
 class _$XFormStateDraftImpl<T> extends _XFormStateDraft<T> {
   const _$XFormStateDraftImpl() : super._();
 
@@ -1221,6 +1269,8 @@ class __$$XFormStateLoadingImplCopyWithImpl<T, $Res>
       $Res Function(_$XFormStateLoadingImpl<T>) _then)
       : super(_value, _then);
 
+  /// Create a copy of XFormState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1237,6 +1287,7 @@ class __$$XFormStateLoadingImplCopyWithImpl<T, $Res>
 
 /// @nodoc
 
+@Deprecated('Use "FormStatus.loading" instead')
 class _$XFormStateLoadingImpl<T> extends _XFormStateLoading<T> {
   const _$XFormStateLoadingImpl({this.data}) : super._();
 
@@ -1260,7 +1311,9 @@ class _$XFormStateLoadingImpl<T> extends _XFormStateLoading<T> {
   int get hashCode =>
       Object.hash(runtimeType, const DeepCollectionEquality().hash(data));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of XFormState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$XFormStateLoadingImplCopyWith<T, _$XFormStateLoadingImpl<T>>
@@ -1349,7 +1402,10 @@ abstract class _XFormStateLoading<T> extends XFormState<T> {
   const _XFormStateLoading._() : super._();
 
   T? get data;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of XFormState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$XFormStateLoadingImplCopyWith<T, _$XFormStateLoadingImpl<T>>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -1371,6 +1427,8 @@ class __$$XFormStateSubmittedImplCopyWithImpl<T, $Res>
       $Res Function(_$XFormStateSubmittedImpl<T>) _then)
       : super(_value, _then);
 
+  /// Create a copy of XFormState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1387,6 +1445,7 @@ class __$$XFormStateSubmittedImplCopyWithImpl<T, $Res>
 
 /// @nodoc
 
+@Deprecated('Use "FormStatus.submitted" instead')
 class _$XFormStateSubmittedImpl<T> extends _XFormStateSubmitted<T> {
   const _$XFormStateSubmittedImpl(this.data) : super._();
 
@@ -1410,7 +1469,9 @@ class _$XFormStateSubmittedImpl<T> extends _XFormStateSubmitted<T> {
   int get hashCode =>
       Object.hash(runtimeType, const DeepCollectionEquality().hash(data));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of XFormState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$XFormStateSubmittedImplCopyWith<T, _$XFormStateSubmittedImpl<T>>
@@ -1498,7 +1559,10 @@ abstract class _XFormStateSubmitted<T> extends XFormState<T> {
   const _XFormStateSubmitted._() : super._();
 
   T get data;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of XFormState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$XFormStateSubmittedImplCopyWith<T, _$XFormStateSubmittedImpl<T>>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -1522,6 +1586,8 @@ class __$$XFormStateErrorImplCopyWithImpl<T, $Res>
       $Res Function(_$XFormStateErrorImpl<T>) _then)
       : super(_value, _then);
 
+  /// Create a copy of XFormState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1535,6 +1601,8 @@ class __$$XFormStateErrorImplCopyWithImpl<T, $Res>
     ));
   }
 
+  /// Create a copy of XFormState
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $ErrorModelCopyWith<$Res> get error {
@@ -1546,6 +1614,7 @@ class __$$XFormStateErrorImplCopyWithImpl<T, $Res>
 
 /// @nodoc
 
+@Deprecated('Use "FormStatus.error" instead')
 class _$XFormStateErrorImpl<T> extends _XFormStateError<T> {
   const _$XFormStateErrorImpl(this.error) : super._();
 
@@ -1568,7 +1637,9 @@ class _$XFormStateErrorImpl<T> extends _XFormStateError<T> {
   @override
   int get hashCode => Object.hash(runtimeType, error);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of XFormState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$XFormStateErrorImplCopyWith<T, _$XFormStateErrorImpl<T>> get copyWith =>
@@ -1656,7 +1727,10 @@ abstract class _XFormStateError<T> extends XFormState<T> {
   const _XFormStateError._() : super._();
 
   ErrorModel get error;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of XFormState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$XFormStateErrorImplCopyWith<T, _$XFormStateErrorImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1726,6 +1800,9 @@ class _$RemoteObjectStateCopyWithImpl<T, $Res,
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of RemoteObjectState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -1743,6 +1820,9 @@ class __$$RemoteObjectLoadingImplCopyWithImpl<T, $Res>
   __$$RemoteObjectLoadingImplCopyWithImpl(_$RemoteObjectLoadingImpl<T> _value,
       $Res Function(_$RemoteObjectLoadingImpl<T>) _then)
       : super(_value, _then);
+
+  /// Create a copy of RemoteObjectState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -1856,6 +1936,8 @@ class __$$RemoteObjectDataImplCopyWithImpl<T, $Res>
       $Res Function(_$RemoteObjectDataImpl<T>) _then)
       : super(_value, _then);
 
+  /// Create a copy of RemoteObjectState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1895,7 +1977,9 @@ class _$RemoteObjectDataImpl<T> extends _RemoteObjectData<T> {
   int get hashCode =>
       Object.hash(runtimeType, const DeepCollectionEquality().hash(data));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of RemoteObjectState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$RemoteObjectDataImplCopyWith<T, _$RemoteObjectDataImpl<T>> get copyWith =>
@@ -1976,7 +2060,10 @@ abstract class _RemoteObjectData<T> extends RemoteObjectState<T> {
   const _RemoteObjectData._() : super._();
 
   T get data;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of RemoteObjectState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$RemoteObjectDataImplCopyWith<T, _$RemoteObjectDataImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2000,6 +2087,8 @@ class __$$RemoteObjectErrorImplCopyWithImpl<T, $Res>
       $Res Function(_$RemoteObjectErrorImpl<T>) _then)
       : super(_value, _then);
 
+  /// Create a copy of RemoteObjectState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2013,6 +2102,8 @@ class __$$RemoteObjectErrorImplCopyWithImpl<T, $Res>
     ));
   }
 
+  /// Create a copy of RemoteObjectState
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $ErrorModelCopyWith<$Res> get error {
@@ -2046,7 +2137,9 @@ class _$RemoteObjectErrorImpl<T> extends _RemoteObjectError<T> {
   @override
   int get hashCode => Object.hash(runtimeType, error);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of RemoteObjectState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$RemoteObjectErrorImplCopyWith<T, _$RemoteObjectErrorImpl<T>>
@@ -2129,7 +2222,10 @@ abstract class _RemoteObjectError<T> extends RemoteObjectState<T> {
   const _RemoteObjectError._() : super._();
 
   ErrorModel get error;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of RemoteObjectState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$RemoteObjectErrorImplCopyWith<T, _$RemoteObjectErrorImpl<T>>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -2139,7 +2235,9 @@ mixin _$ErrorModel {
   String get message => throw _privateConstructorUsedError;
   ResultErrorType get resultErrorType => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ErrorModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ErrorModelCopyWith<ErrorModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2163,6 +2261,8 @@ class _$ErrorModelCopyWithImpl<$Res, $Val extends ErrorModel>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of ErrorModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2201,6 +2301,8 @@ class __$$ErrorModelImplCopyWithImpl<$Res>
       _$ErrorModelImpl _value, $Res Function(_$ErrorModelImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ErrorModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2249,7 +2351,9 @@ class _$ErrorModelImpl extends _ErrorModel {
   @override
   int get hashCode => Object.hash(runtimeType, message, resultErrorType);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ErrorModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ErrorModelImplCopyWith<_$ErrorModelImpl> get copyWith =>
@@ -2266,8 +2370,684 @@ abstract class _ErrorModel extends ErrorModel {
   String get message;
   @override
   ResultErrorType get resultErrorType;
+
+  /// Create a copy of ErrorModel
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ErrorModelImplCopyWith<_$ErrorModelImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+mixin _$FormStatus<T> {
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() draft,
+    required TResult Function(T? data) loading,
+    required TResult Function(T data) submitted,
+    required TResult Function(ErrorModel error) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? draft,
+    TResult? Function(T? data)? loading,
+    TResult? Function(T data)? submitted,
+    TResult? Function(ErrorModel error)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? draft,
+    TResult Function(T? data)? loading,
+    TResult Function(T data)? submitted,
+    TResult Function(ErrorModel error)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_FormStatusDraft<T> value) draft,
+    required TResult Function(_FormStatusLoading<T> value) loading,
+    required TResult Function(_FormStatusSubmitted<T> value) submitted,
+    required TResult Function(_FormStatusError<T> value) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_FormStatusDraft<T> value)? draft,
+    TResult? Function(_FormStatusLoading<T> value)? loading,
+    TResult? Function(_FormStatusSubmitted<T> value)? submitted,
+    TResult? Function(_FormStatusError<T> value)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_FormStatusDraft<T> value)? draft,
+    TResult Function(_FormStatusLoading<T> value)? loading,
+    TResult Function(_FormStatusSubmitted<T> value)? submitted,
+    TResult Function(_FormStatusError<T> value)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $FormStatusCopyWith<T, $Res> {
+  factory $FormStatusCopyWith(
+          FormStatus<T> value, $Res Function(FormStatus<T>) then) =
+      _$FormStatusCopyWithImpl<T, $Res, FormStatus<T>>;
+}
+
+/// @nodoc
+class _$FormStatusCopyWithImpl<T, $Res, $Val extends FormStatus<T>>
+    implements $FormStatusCopyWith<T, $Res> {
+  _$FormStatusCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of FormStatus
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+abstract class _$$FormStatusDraftImplCopyWith<T, $Res> {
+  factory _$$FormStatusDraftImplCopyWith(_$FormStatusDraftImpl<T> value,
+          $Res Function(_$FormStatusDraftImpl<T>) then) =
+      __$$FormStatusDraftImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$FormStatusDraftImplCopyWithImpl<T, $Res>
+    extends _$FormStatusCopyWithImpl<T, $Res, _$FormStatusDraftImpl<T>>
+    implements _$$FormStatusDraftImplCopyWith<T, $Res> {
+  __$$FormStatusDraftImplCopyWithImpl(_$FormStatusDraftImpl<T> _value,
+      $Res Function(_$FormStatusDraftImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of FormStatus
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$FormStatusDraftImpl<T> extends _FormStatusDraft<T> {
+  const _$FormStatusDraftImpl() : super._();
+
+  @override
+  String toString() {
+    return 'FormStatus<$T>.draft()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$FormStatusDraftImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() draft,
+    required TResult Function(T? data) loading,
+    required TResult Function(T data) submitted,
+    required TResult Function(ErrorModel error) error,
+  }) {
+    return draft();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? draft,
+    TResult? Function(T? data)? loading,
+    TResult? Function(T data)? submitted,
+    TResult? Function(ErrorModel error)? error,
+  }) {
+    return draft?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? draft,
+    TResult Function(T? data)? loading,
+    TResult Function(T data)? submitted,
+    TResult Function(ErrorModel error)? error,
+    required TResult orElse(),
+  }) {
+    if (draft != null) {
+      return draft();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_FormStatusDraft<T> value) draft,
+    required TResult Function(_FormStatusLoading<T> value) loading,
+    required TResult Function(_FormStatusSubmitted<T> value) submitted,
+    required TResult Function(_FormStatusError<T> value) error,
+  }) {
+    return draft(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_FormStatusDraft<T> value)? draft,
+    TResult? Function(_FormStatusLoading<T> value)? loading,
+    TResult? Function(_FormStatusSubmitted<T> value)? submitted,
+    TResult? Function(_FormStatusError<T> value)? error,
+  }) {
+    return draft?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_FormStatusDraft<T> value)? draft,
+    TResult Function(_FormStatusLoading<T> value)? loading,
+    TResult Function(_FormStatusSubmitted<T> value)? submitted,
+    TResult Function(_FormStatusError<T> value)? error,
+    required TResult orElse(),
+  }) {
+    if (draft != null) {
+      return draft(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _FormStatusDraft<T> extends FormStatus<T> {
+  const factory _FormStatusDraft() = _$FormStatusDraftImpl<T>;
+  const _FormStatusDraft._() : super._();
+}
+
+/// @nodoc
+abstract class _$$FormStatusLoadingImplCopyWith<T, $Res> {
+  factory _$$FormStatusLoadingImplCopyWith(_$FormStatusLoadingImpl<T> value,
+          $Res Function(_$FormStatusLoadingImpl<T>) then) =
+      __$$FormStatusLoadingImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({T? data});
+}
+
+/// @nodoc
+class __$$FormStatusLoadingImplCopyWithImpl<T, $Res>
+    extends _$FormStatusCopyWithImpl<T, $Res, _$FormStatusLoadingImpl<T>>
+    implements _$$FormStatusLoadingImplCopyWith<T, $Res> {
+  __$$FormStatusLoadingImplCopyWithImpl(_$FormStatusLoadingImpl<T> _value,
+      $Res Function(_$FormStatusLoadingImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of FormStatus
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = freezed,
+  }) {
+    return _then(_$FormStatusLoadingImpl<T>(
+      data: freezed == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as T?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$FormStatusLoadingImpl<T> extends _FormStatusLoading<T> {
+  const _$FormStatusLoadingImpl({this.data}) : super._();
+
+  @override
+  final T? data;
+
+  @override
+  String toString() {
+    return 'FormStatus<$T>.loading(data: $data)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$FormStatusLoadingImpl<T> &&
+            const DeepCollectionEquality().equals(other.data, data));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(data));
+
+  /// Create a copy of FormStatus
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$FormStatusLoadingImplCopyWith<T, _$FormStatusLoadingImpl<T>>
+      get copyWith =>
+          __$$FormStatusLoadingImplCopyWithImpl<T, _$FormStatusLoadingImpl<T>>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() draft,
+    required TResult Function(T? data) loading,
+    required TResult Function(T data) submitted,
+    required TResult Function(ErrorModel error) error,
+  }) {
+    return loading(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? draft,
+    TResult? Function(T? data)? loading,
+    TResult? Function(T data)? submitted,
+    TResult? Function(ErrorModel error)? error,
+  }) {
+    return loading?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? draft,
+    TResult Function(T? data)? loading,
+    TResult Function(T data)? submitted,
+    TResult Function(ErrorModel error)? error,
+    required TResult orElse(),
+  }) {
+    if (loading != null) {
+      return loading(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_FormStatusDraft<T> value) draft,
+    required TResult Function(_FormStatusLoading<T> value) loading,
+    required TResult Function(_FormStatusSubmitted<T> value) submitted,
+    required TResult Function(_FormStatusError<T> value) error,
+  }) {
+    return loading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_FormStatusDraft<T> value)? draft,
+    TResult? Function(_FormStatusLoading<T> value)? loading,
+    TResult? Function(_FormStatusSubmitted<T> value)? submitted,
+    TResult? Function(_FormStatusError<T> value)? error,
+  }) {
+    return loading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_FormStatusDraft<T> value)? draft,
+    TResult Function(_FormStatusLoading<T> value)? loading,
+    TResult Function(_FormStatusSubmitted<T> value)? submitted,
+    TResult Function(_FormStatusError<T> value)? error,
+    required TResult orElse(),
+  }) {
+    if (loading != null) {
+      return loading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _FormStatusLoading<T> extends FormStatus<T> {
+  const factory _FormStatusLoading({final T? data}) =
+      _$FormStatusLoadingImpl<T>;
+  const _FormStatusLoading._() : super._();
+
+  T? get data;
+
+  /// Create a copy of FormStatus
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$FormStatusLoadingImplCopyWith<T, _$FormStatusLoadingImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$FormStatusSubmittedImplCopyWith<T, $Res> {
+  factory _$$FormStatusSubmittedImplCopyWith(_$FormStatusSubmittedImpl<T> value,
+          $Res Function(_$FormStatusSubmittedImpl<T>) then) =
+      __$$FormStatusSubmittedImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({T data});
+}
+
+/// @nodoc
+class __$$FormStatusSubmittedImplCopyWithImpl<T, $Res>
+    extends _$FormStatusCopyWithImpl<T, $Res, _$FormStatusSubmittedImpl<T>>
+    implements _$$FormStatusSubmittedImplCopyWith<T, $Res> {
+  __$$FormStatusSubmittedImplCopyWithImpl(_$FormStatusSubmittedImpl<T> _value,
+      $Res Function(_$FormStatusSubmittedImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of FormStatus
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = freezed,
+  }) {
+    return _then(_$FormStatusSubmittedImpl<T>(
+      freezed == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as T,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$FormStatusSubmittedImpl<T> extends _FormStatusSubmitted<T> {
+  const _$FormStatusSubmittedImpl(this.data) : super._();
+
+  @override
+  final T data;
+
+  @override
+  String toString() {
+    return 'FormStatus<$T>.submitted(data: $data)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$FormStatusSubmittedImpl<T> &&
+            const DeepCollectionEquality().equals(other.data, data));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(data));
+
+  /// Create a copy of FormStatus
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$FormStatusSubmittedImplCopyWith<T, _$FormStatusSubmittedImpl<T>>
+      get copyWith => __$$FormStatusSubmittedImplCopyWithImpl<T,
+          _$FormStatusSubmittedImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() draft,
+    required TResult Function(T? data) loading,
+    required TResult Function(T data) submitted,
+    required TResult Function(ErrorModel error) error,
+  }) {
+    return submitted(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? draft,
+    TResult? Function(T? data)? loading,
+    TResult? Function(T data)? submitted,
+    TResult? Function(ErrorModel error)? error,
+  }) {
+    return submitted?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? draft,
+    TResult Function(T? data)? loading,
+    TResult Function(T data)? submitted,
+    TResult Function(ErrorModel error)? error,
+    required TResult orElse(),
+  }) {
+    if (submitted != null) {
+      return submitted(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_FormStatusDraft<T> value) draft,
+    required TResult Function(_FormStatusLoading<T> value) loading,
+    required TResult Function(_FormStatusSubmitted<T> value) submitted,
+    required TResult Function(_FormStatusError<T> value) error,
+  }) {
+    return submitted(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_FormStatusDraft<T> value)? draft,
+    TResult? Function(_FormStatusLoading<T> value)? loading,
+    TResult? Function(_FormStatusSubmitted<T> value)? submitted,
+    TResult? Function(_FormStatusError<T> value)? error,
+  }) {
+    return submitted?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_FormStatusDraft<T> value)? draft,
+    TResult Function(_FormStatusLoading<T> value)? loading,
+    TResult Function(_FormStatusSubmitted<T> value)? submitted,
+    TResult Function(_FormStatusError<T> value)? error,
+    required TResult orElse(),
+  }) {
+    if (submitted != null) {
+      return submitted(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _FormStatusSubmitted<T> extends FormStatus<T> {
+  const factory _FormStatusSubmitted(final T data) =
+      _$FormStatusSubmittedImpl<T>;
+  const _FormStatusSubmitted._() : super._();
+
+  T get data;
+
+  /// Create a copy of FormStatus
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$FormStatusSubmittedImplCopyWith<T, _$FormStatusSubmittedImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$FormStatusErrorImplCopyWith<T, $Res> {
+  factory _$$FormStatusErrorImplCopyWith(_$FormStatusErrorImpl<T> value,
+          $Res Function(_$FormStatusErrorImpl<T>) then) =
+      __$$FormStatusErrorImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({ErrorModel error});
+
+  $ErrorModelCopyWith<$Res> get error;
+}
+
+/// @nodoc
+class __$$FormStatusErrorImplCopyWithImpl<T, $Res>
+    extends _$FormStatusCopyWithImpl<T, $Res, _$FormStatusErrorImpl<T>>
+    implements _$$FormStatusErrorImplCopyWith<T, $Res> {
+  __$$FormStatusErrorImplCopyWithImpl(_$FormStatusErrorImpl<T> _value,
+      $Res Function(_$FormStatusErrorImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of FormStatus
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$FormStatusErrorImpl<T>(
+      null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as ErrorModel,
+    ));
+  }
+
+  /// Create a copy of FormStatus
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ErrorModelCopyWith<$Res> get error {
+    return $ErrorModelCopyWith<$Res>(_value.error, (value) {
+      return _then(_value.copyWith(error: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$FormStatusErrorImpl<T> extends _FormStatusError<T> {
+  const _$FormStatusErrorImpl(this.error) : super._();
+
+  @override
+  final ErrorModel error;
+
+  @override
+  String toString() {
+    return 'FormStatus<$T>.error(error: $error)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$FormStatusErrorImpl<T> &&
+            (identical(other.error, error) || other.error == error));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, error);
+
+  /// Create a copy of FormStatus
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$FormStatusErrorImplCopyWith<T, _$FormStatusErrorImpl<T>> get copyWith =>
+      __$$FormStatusErrorImplCopyWithImpl<T, _$FormStatusErrorImpl<T>>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() draft,
+    required TResult Function(T? data) loading,
+    required TResult Function(T data) submitted,
+    required TResult Function(ErrorModel error) error,
+  }) {
+    return error(this.error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? draft,
+    TResult? Function(T? data)? loading,
+    TResult? Function(T data)? submitted,
+    TResult? Function(ErrorModel error)? error,
+  }) {
+    return error?.call(this.error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? draft,
+    TResult Function(T? data)? loading,
+    TResult Function(T data)? submitted,
+    TResult Function(ErrorModel error)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this.error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_FormStatusDraft<T> value) draft,
+    required TResult Function(_FormStatusLoading<T> value) loading,
+    required TResult Function(_FormStatusSubmitted<T> value) submitted,
+    required TResult Function(_FormStatusError<T> value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_FormStatusDraft<T> value)? draft,
+    TResult? Function(_FormStatusLoading<T> value)? loading,
+    TResult? Function(_FormStatusSubmitted<T> value)? submitted,
+    TResult? Function(_FormStatusError<T> value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_FormStatusDraft<T> value)? draft,
+    TResult Function(_FormStatusLoading<T> value)? loading,
+    TResult Function(_FormStatusSubmitted<T> value)? submitted,
+    TResult Function(_FormStatusError<T> value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _FormStatusError<T> extends FormStatus<T> {
+  const factory _FormStatusError(final ErrorModel error) =
+      _$FormStatusErrorImpl<T>;
+  const _FormStatusError._() : super._();
+
+  ErrorModel get error;
+
+  /// Create a copy of FormStatus
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$FormStatusErrorImplCopyWith<T, _$FormStatusErrorImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
