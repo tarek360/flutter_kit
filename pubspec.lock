@@ -61,8 +61,8 @@ packages:
     dependency: "direct main"
     description:
       path: "flutter_kit/calendar_utils"
-      ref: "0.0.2"
-      resolved-ref: a9901a0705bb53b3e6cbd7d4765b5217ac1a5b2e
+      ref: "0.0.6"
+      resolved-ref: "07eec558538c0b7a39e2ad9bf08a2bc6ba6f96ca"
       url: "git@github.com:tarek360/flutter_kit.git"
     source: git
     version: "1.0.0"
@@ -94,8 +94,8 @@ packages:
     dependency: "direct main"
     description:
       path: "flutter_kit/core"
-      ref: "0.0.2"
-      resolved-ref: a9901a0705bb53b3e6cbd7d4765b5217ac1a5b2e
+      ref: "0.0.6"
+      resolved-ref: "07eec558538c0b7a39e2ad9bf08a2bc6ba6f96ca"
       url: "git@github.com:tarek360/flutter_kit.git"
     source: git
     version: "0.0.1"
@@ -119,8 +119,8 @@ packages:
     dependency: transitive
     description:
       path: "flutter_kit/design_system"
-      ref: "0.0.2"
-      resolved-ref: a9901a0705bb53b3e6cbd7d4765b5217ac1a5b2e
+      ref: "0.0.6"
+      resolved-ref: "07eec558538c0b7a39e2ad9bf08a2bc6ba6f96ca"
       url: "git@github.com:tarek360/flutter_kit.git"
     source: git
     version: "0.0.1"
@@ -765,8 +765,8 @@ packages:
     dependency: "direct main"
     description:
       path: "flutter_kit/social_login"
-      ref: "0.0.2"
-      resolved-ref: a9901a0705bb53b3e6cbd7d4765b5217ac1a5b2e
+      ref: "0.0.6"
+      resolved-ref: "07eec558538c0b7a39e2ad9bf08a2bc6ba6f96ca"
       url: "git@github.com:tarek360/flutter_kit.git"
     source: git
     version: "0.0.1"
@@ -894,8 +894,8 @@ packages:
     dependency: "direct main"
     description:
       path: "flutter_kit/ui_kit_interface"
-      ref: "0.0.2"
-      resolved-ref: a9901a0705bb53b3e6cbd7d4765b5217ac1a5b2e
+      ref: "0.0.6"
+      resolved-ref: "07eec558538c0b7a39e2ad9bf08a2bc6ba6f96ca"
       url: "git@github.com:tarek360/flutter_kit.git"
     source: git
     version: "0.0.1"
