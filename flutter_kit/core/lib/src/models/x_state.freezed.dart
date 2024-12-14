@@ -2380,69 +2380,37 @@ abstract class _ErrorModel extends ErrorModel {
 }
 
 /// @nodoc
-mixin _$FormStatus<T> {
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() draft,
-    required TResult Function(T? data) loading,
-    required TResult Function(T data) submitted,
-    required TResult Function(ErrorModel error) error,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? draft,
-    TResult? Function(T? data)? loading,
-    TResult? Function(T data)? submitted,
-    TResult? Function(ErrorModel error)? error,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? draft,
-    TResult Function(T? data)? loading,
-    TResult Function(T data)? submitted,
-    TResult Function(ErrorModel error)? error,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_FormStatusDraft<T> value) draft,
-    required TResult Function(_FormStatusLoading<T> value) loading,
-    required TResult Function(_FormStatusSubmitted<T> value) submitted,
-    required TResult Function(_FormStatusError<T> value) error,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_FormStatusDraft<T> value)? draft,
-    TResult? Function(_FormStatusLoading<T> value)? loading,
-    TResult? Function(_FormStatusSubmitted<T> value)? submitted,
-    TResult? Function(_FormStatusError<T> value)? error,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_FormStatusDraft<T> value)? draft,
-    TResult Function(_FormStatusLoading<T> value)? loading,
-    TResult Function(_FormStatusSubmitted<T> value)? submitted,
-    TResult Function(_FormStatusError<T> value)? error,
-    required TResult orElse(),
-  }) =>
+mixin _$FormStatus<T, F> {
+  T get data => throw _privateConstructorUsedError;
+  FormStatusType get status => throw _privateConstructorUsedError;
+  Map<F, String> get fieldErrors => throw _privateConstructorUsedError;
+  ErrorModel? get error => throw _privateConstructorUsedError;
+
+  /// Create a copy of FormStatus
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $FormStatusCopyWith<T, F, FormStatus<T, F>> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $FormStatusCopyWith<T, $Res> {
+abstract class $FormStatusCopyWith<T, F, $Res> {
   factory $FormStatusCopyWith(
-          FormStatus<T> value, $Res Function(FormStatus<T>) then) =
-      _$FormStatusCopyWithImpl<T, $Res, FormStatus<T>>;
+          FormStatus<T, F> value, $Res Function(FormStatus<T, F>) then) =
+      _$FormStatusCopyWithImpl<T, F, $Res, FormStatus<T, F>>;
+  @useResult
+  $Res call(
+      {T data,
+      FormStatusType status,
+      Map<F, String> fieldErrors,
+      ErrorModel? error});
+
+  $ErrorModelCopyWith<$Res>? get error;
 }
 
 /// @nodoc
-class _$FormStatusCopyWithImpl<T, $Res, $Val extends FormStatus<T>>
-    implements $FormStatusCopyWith<T, $Res> {
+class _$FormStatusCopyWithImpl<T, F, $Res, $Val extends FormStatus<T, F>>
+    implements $FormStatusCopyWith<T, F, $Res> {
   _$FormStatusCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -2452,602 +2420,189 @@ class _$FormStatusCopyWithImpl<T, $Res, $Val extends FormStatus<T>>
 
   /// Create a copy of FormStatus
   /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-abstract class _$$FormStatusDraftImplCopyWith<T, $Res> {
-  factory _$$FormStatusDraftImplCopyWith(_$FormStatusDraftImpl<T> value,
-          $Res Function(_$FormStatusDraftImpl<T>) then) =
-      __$$FormStatusDraftImplCopyWithImpl<T, $Res>;
-}
-
-/// @nodoc
-class __$$FormStatusDraftImplCopyWithImpl<T, $Res>
-    extends _$FormStatusCopyWithImpl<T, $Res, _$FormStatusDraftImpl<T>>
-    implements _$$FormStatusDraftImplCopyWith<T, $Res> {
-  __$$FormStatusDraftImplCopyWithImpl(_$FormStatusDraftImpl<T> _value,
-      $Res Function(_$FormStatusDraftImpl<T>) _then)
-      : super(_value, _then);
-
-  /// Create a copy of FormStatus
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-
-class _$FormStatusDraftImpl<T> extends _FormStatusDraft<T> {
-  const _$FormStatusDraftImpl() : super._();
-
-  @override
-  String toString() {
-    return 'FormStatus<$T>.draft()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$FormStatusDraftImpl<T>);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() draft,
-    required TResult Function(T? data) loading,
-    required TResult Function(T data) submitted,
-    required TResult Function(ErrorModel error) error,
-  }) {
-    return draft();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? draft,
-    TResult? Function(T? data)? loading,
-    TResult? Function(T data)? submitted,
-    TResult? Function(ErrorModel error)? error,
-  }) {
-    return draft?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? draft,
-    TResult Function(T? data)? loading,
-    TResult Function(T data)? submitted,
-    TResult Function(ErrorModel error)? error,
-    required TResult orElse(),
-  }) {
-    if (draft != null) {
-      return draft();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_FormStatusDraft<T> value) draft,
-    required TResult Function(_FormStatusLoading<T> value) loading,
-    required TResult Function(_FormStatusSubmitted<T> value) submitted,
-    required TResult Function(_FormStatusError<T> value) error,
-  }) {
-    return draft(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_FormStatusDraft<T> value)? draft,
-    TResult? Function(_FormStatusLoading<T> value)? loading,
-    TResult? Function(_FormStatusSubmitted<T> value)? submitted,
-    TResult? Function(_FormStatusError<T> value)? error,
-  }) {
-    return draft?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_FormStatusDraft<T> value)? draft,
-    TResult Function(_FormStatusLoading<T> value)? loading,
-    TResult Function(_FormStatusSubmitted<T> value)? submitted,
-    TResult Function(_FormStatusError<T> value)? error,
-    required TResult orElse(),
-  }) {
-    if (draft != null) {
-      return draft(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _FormStatusDraft<T> extends FormStatus<T> {
-  const factory _FormStatusDraft() = _$FormStatusDraftImpl<T>;
-  const _FormStatusDraft._() : super._();
-}
-
-/// @nodoc
-abstract class _$$FormStatusLoadingImplCopyWith<T, $Res> {
-  factory _$$FormStatusLoadingImplCopyWith(_$FormStatusLoadingImpl<T> value,
-          $Res Function(_$FormStatusLoadingImpl<T>) then) =
-      __$$FormStatusLoadingImplCopyWithImpl<T, $Res>;
-  @useResult
-  $Res call({T? data});
-}
-
-/// @nodoc
-class __$$FormStatusLoadingImplCopyWithImpl<T, $Res>
-    extends _$FormStatusCopyWithImpl<T, $Res, _$FormStatusLoadingImpl<T>>
-    implements _$$FormStatusLoadingImplCopyWith<T, $Res> {
-  __$$FormStatusLoadingImplCopyWithImpl(_$FormStatusLoadingImpl<T> _value,
-      $Res Function(_$FormStatusLoadingImpl<T>) _then)
-      : super(_value, _then);
-
-  /// Create a copy of FormStatus
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? data = freezed,
+    Object? status = null,
+    Object? fieldErrors = null,
+    Object? error = freezed,
   }) {
-    return _then(_$FormStatusLoadingImpl<T>(
+    return _then(_value.copyWith(
       data: freezed == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
-              as T?,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$FormStatusLoadingImpl<T> extends _FormStatusLoading<T> {
-  const _$FormStatusLoadingImpl({this.data}) : super._();
-
-  @override
-  final T? data;
-
-  @override
-  String toString() {
-    return 'FormStatus<$T>.loading(data: $data)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$FormStatusLoadingImpl<T> &&
-            const DeepCollectionEquality().equals(other.data, data));
-  }
-
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(data));
-
-  /// Create a copy of FormStatus
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$FormStatusLoadingImplCopyWith<T, _$FormStatusLoadingImpl<T>>
-      get copyWith =>
-          __$$FormStatusLoadingImplCopyWithImpl<T, _$FormStatusLoadingImpl<T>>(
-              this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() draft,
-    required TResult Function(T? data) loading,
-    required TResult Function(T data) submitted,
-    required TResult Function(ErrorModel error) error,
-  }) {
-    return loading(data);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? draft,
-    TResult? Function(T? data)? loading,
-    TResult? Function(T data)? submitted,
-    TResult? Function(ErrorModel error)? error,
-  }) {
-    return loading?.call(data);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? draft,
-    TResult Function(T? data)? loading,
-    TResult Function(T data)? submitted,
-    TResult Function(ErrorModel error)? error,
-    required TResult orElse(),
-  }) {
-    if (loading != null) {
-      return loading(data);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_FormStatusDraft<T> value) draft,
-    required TResult Function(_FormStatusLoading<T> value) loading,
-    required TResult Function(_FormStatusSubmitted<T> value) submitted,
-    required TResult Function(_FormStatusError<T> value) error,
-  }) {
-    return loading(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_FormStatusDraft<T> value)? draft,
-    TResult? Function(_FormStatusLoading<T> value)? loading,
-    TResult? Function(_FormStatusSubmitted<T> value)? submitted,
-    TResult? Function(_FormStatusError<T> value)? error,
-  }) {
-    return loading?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_FormStatusDraft<T> value)? draft,
-    TResult Function(_FormStatusLoading<T> value)? loading,
-    TResult Function(_FormStatusSubmitted<T> value)? submitted,
-    TResult Function(_FormStatusError<T> value)? error,
-    required TResult orElse(),
-  }) {
-    if (loading != null) {
-      return loading(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _FormStatusLoading<T> extends FormStatus<T> {
-  const factory _FormStatusLoading({final T? data}) =
-      _$FormStatusLoadingImpl<T>;
-  const _FormStatusLoading._() : super._();
-
-  T? get data;
-
-  /// Create a copy of FormStatus
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$FormStatusLoadingImplCopyWith<T, _$FormStatusLoadingImpl<T>>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$FormStatusSubmittedImplCopyWith<T, $Res> {
-  factory _$$FormStatusSubmittedImplCopyWith(_$FormStatusSubmittedImpl<T> value,
-          $Res Function(_$FormStatusSubmittedImpl<T>) then) =
-      __$$FormStatusSubmittedImplCopyWithImpl<T, $Res>;
-  @useResult
-  $Res call({T data});
-}
-
-/// @nodoc
-class __$$FormStatusSubmittedImplCopyWithImpl<T, $Res>
-    extends _$FormStatusCopyWithImpl<T, $Res, _$FormStatusSubmittedImpl<T>>
-    implements _$$FormStatusSubmittedImplCopyWith<T, $Res> {
-  __$$FormStatusSubmittedImplCopyWithImpl(_$FormStatusSubmittedImpl<T> _value,
-      $Res Function(_$FormStatusSubmittedImpl<T>) _then)
-      : super(_value, _then);
-
-  /// Create a copy of FormStatus
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? data = freezed,
-  }) {
-    return _then(_$FormStatusSubmittedImpl<T>(
-      freezed == data
-          ? _value.data
-          : data // ignore: cast_nullable_to_non_nullable
               as T,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$FormStatusSubmittedImpl<T> extends _FormStatusSubmitted<T> {
-  const _$FormStatusSubmittedImpl(this.data) : super._();
-
-  @override
-  final T data;
-
-  @override
-  String toString() {
-    return 'FormStatus<$T>.submitted(data: $data)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$FormStatusSubmittedImpl<T> &&
-            const DeepCollectionEquality().equals(other.data, data));
-  }
-
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(data));
-
-  /// Create a copy of FormStatus
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$FormStatusSubmittedImplCopyWith<T, _$FormStatusSubmittedImpl<T>>
-      get copyWith => __$$FormStatusSubmittedImplCopyWithImpl<T,
-          _$FormStatusSubmittedImpl<T>>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() draft,
-    required TResult Function(T? data) loading,
-    required TResult Function(T data) submitted,
-    required TResult Function(ErrorModel error) error,
-  }) {
-    return submitted(data);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? draft,
-    TResult? Function(T? data)? loading,
-    TResult? Function(T data)? submitted,
-    TResult? Function(ErrorModel error)? error,
-  }) {
-    return submitted?.call(data);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? draft,
-    TResult Function(T? data)? loading,
-    TResult Function(T data)? submitted,
-    TResult Function(ErrorModel error)? error,
-    required TResult orElse(),
-  }) {
-    if (submitted != null) {
-      return submitted(data);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_FormStatusDraft<T> value) draft,
-    required TResult Function(_FormStatusLoading<T> value) loading,
-    required TResult Function(_FormStatusSubmitted<T> value) submitted,
-    required TResult Function(_FormStatusError<T> value) error,
-  }) {
-    return submitted(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_FormStatusDraft<T> value)? draft,
-    TResult? Function(_FormStatusLoading<T> value)? loading,
-    TResult? Function(_FormStatusSubmitted<T> value)? submitted,
-    TResult? Function(_FormStatusError<T> value)? error,
-  }) {
-    return submitted?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_FormStatusDraft<T> value)? draft,
-    TResult Function(_FormStatusLoading<T> value)? loading,
-    TResult Function(_FormStatusSubmitted<T> value)? submitted,
-    TResult Function(_FormStatusError<T> value)? error,
-    required TResult orElse(),
-  }) {
-    if (submitted != null) {
-      return submitted(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _FormStatusSubmitted<T> extends FormStatus<T> {
-  const factory _FormStatusSubmitted(final T data) =
-      _$FormStatusSubmittedImpl<T>;
-  const _FormStatusSubmitted._() : super._();
-
-  T get data;
-
-  /// Create a copy of FormStatus
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$FormStatusSubmittedImplCopyWith<T, _$FormStatusSubmittedImpl<T>>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$FormStatusErrorImplCopyWith<T, $Res> {
-  factory _$$FormStatusErrorImplCopyWith(_$FormStatusErrorImpl<T> value,
-          $Res Function(_$FormStatusErrorImpl<T>) then) =
-      __$$FormStatusErrorImplCopyWithImpl<T, $Res>;
-  @useResult
-  $Res call({ErrorModel error});
-
-  $ErrorModelCopyWith<$Res> get error;
-}
-
-/// @nodoc
-class __$$FormStatusErrorImplCopyWithImpl<T, $Res>
-    extends _$FormStatusCopyWithImpl<T, $Res, _$FormStatusErrorImpl<T>>
-    implements _$$FormStatusErrorImplCopyWith<T, $Res> {
-  __$$FormStatusErrorImplCopyWithImpl(_$FormStatusErrorImpl<T> _value,
-      $Res Function(_$FormStatusErrorImpl<T>) _then)
-      : super(_value, _then);
-
-  /// Create a copy of FormStatus
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? error = null,
-  }) {
-    return _then(_$FormStatusErrorImpl<T>(
-      null == error
+      status: null == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as FormStatusType,
+      fieldErrors: null == fieldErrors
+          ? _value.fieldErrors
+          : fieldErrors // ignore: cast_nullable_to_non_nullable
+              as Map<F, String>,
+      error: freezed == error
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
-              as ErrorModel,
-    ));
+              as ErrorModel?,
+    ) as $Val);
   }
 
   /// Create a copy of FormStatus
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $ErrorModelCopyWith<$Res> get error {
-    return $ErrorModelCopyWith<$Res>(_value.error, (value) {
-      return _then(_value.copyWith(error: value));
+  $ErrorModelCopyWith<$Res>? get error {
+    if (_value.error == null) {
+      return null;
+    }
+
+    return $ErrorModelCopyWith<$Res>(_value.error!, (value) {
+      return _then(_value.copyWith(error: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-
-class _$FormStatusErrorImpl<T> extends _FormStatusError<T> {
-  const _$FormStatusErrorImpl(this.error) : super._();
+abstract class _$$FormStatusImplCopyWith<T, F, $Res>
+    implements $FormStatusCopyWith<T, F, $Res> {
+  factory _$$FormStatusImplCopyWith(_$FormStatusImpl<T, F> value,
+          $Res Function(_$FormStatusImpl<T, F>) then) =
+      __$$FormStatusImplCopyWithImpl<T, F, $Res>;
+  @override
+  @useResult
+  $Res call(
+      {T data,
+      FormStatusType status,
+      Map<F, String> fieldErrors,
+      ErrorModel? error});
 
   @override
-  final ErrorModel error;
+  $ErrorModelCopyWith<$Res>? get error;
+}
+
+/// @nodoc
+class __$$FormStatusImplCopyWithImpl<T, F, $Res>
+    extends _$FormStatusCopyWithImpl<T, F, $Res, _$FormStatusImpl<T, F>>
+    implements _$$FormStatusImplCopyWith<T, F, $Res> {
+  __$$FormStatusImplCopyWithImpl(_$FormStatusImpl<T, F> _value,
+      $Res Function(_$FormStatusImpl<T, F>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of FormStatus
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = freezed,
+    Object? status = null,
+    Object? fieldErrors = null,
+    Object? error = freezed,
+  }) {
+    return _then(_$FormStatusImpl<T, F>(
+      data: freezed == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as T,
+      status: null == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as FormStatusType,
+      fieldErrors: null == fieldErrors
+          ? _value._fieldErrors
+          : fieldErrors // ignore: cast_nullable_to_non_nullable
+              as Map<F, String>,
+      error: freezed == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as ErrorModel?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$FormStatusImpl<T, F> extends _FormStatus<T, F> {
+  const _$FormStatusImpl(
+      {required this.data,
+      required this.status,
+      final Map<F, String> fieldErrors = const {},
+      this.error})
+      : _fieldErrors = fieldErrors,
+        super._();
+
+  @override
+  final T data;
+  @override
+  final FormStatusType status;
+  final Map<F, String> _fieldErrors;
+  @override
+  @JsonKey()
+  Map<F, String> get fieldErrors {
+    if (_fieldErrors is EqualUnmodifiableMapView) return _fieldErrors;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(_fieldErrors);
+  }
+
+  @override
+  final ErrorModel? error;
 
   @override
   String toString() {
-    return 'FormStatus<$T>.error(error: $error)';
+    return 'FormStatus<$T, $F>(data: $data, status: $status, fieldErrors: $fieldErrors, error: $error)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$FormStatusErrorImpl<T> &&
+            other is _$FormStatusImpl<T, F> &&
+            const DeepCollectionEquality().equals(other.data, data) &&
+            (identical(other.status, status) || other.status == status) &&
+            const DeepCollectionEquality()
+                .equals(other._fieldErrors, _fieldErrors) &&
             (identical(other.error, error) || other.error == error));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, error);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(data),
+      status,
+      const DeepCollectionEquality().hash(_fieldErrors),
+      error);
 
   /// Create a copy of FormStatus
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$FormStatusErrorImplCopyWith<T, _$FormStatusErrorImpl<T>> get copyWith =>
-      __$$FormStatusErrorImplCopyWithImpl<T, _$FormStatusErrorImpl<T>>(
+  _$$FormStatusImplCopyWith<T, F, _$FormStatusImpl<T, F>> get copyWith =>
+      __$$FormStatusImplCopyWithImpl<T, F, _$FormStatusImpl<T, F>>(
           this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() draft,
-    required TResult Function(T? data) loading,
-    required TResult Function(T data) submitted,
-    required TResult Function(ErrorModel error) error,
-  }) {
-    return error(this.error);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? draft,
-    TResult? Function(T? data)? loading,
-    TResult? Function(T data)? submitted,
-    TResult? Function(ErrorModel error)? error,
-  }) {
-    return error?.call(this.error);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? draft,
-    TResult Function(T? data)? loading,
-    TResult Function(T data)? submitted,
-    TResult Function(ErrorModel error)? error,
-    required TResult orElse(),
-  }) {
-    if (error != null) {
-      return error(this.error);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_FormStatusDraft<T> value) draft,
-    required TResult Function(_FormStatusLoading<T> value) loading,
-    required TResult Function(_FormStatusSubmitted<T> value) submitted,
-    required TResult Function(_FormStatusError<T> value) error,
-  }) {
-    return error(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_FormStatusDraft<T> value)? draft,
-    TResult? Function(_FormStatusLoading<T> value)? loading,
-    TResult? Function(_FormStatusSubmitted<T> value)? submitted,
-    TResult? Function(_FormStatusError<T> value)? error,
-  }) {
-    return error?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_FormStatusDraft<T> value)? draft,
-    TResult Function(_FormStatusLoading<T> value)? loading,
-    TResult Function(_FormStatusSubmitted<T> value)? submitted,
-    TResult Function(_FormStatusError<T> value)? error,
-    required TResult orElse(),
-  }) {
-    if (error != null) {
-      return error(this);
-    }
-    return orElse();
-  }
 }
 
-abstract class _FormStatusError<T> extends FormStatus<T> {
-  const factory _FormStatusError(final ErrorModel error) =
-      _$FormStatusErrorImpl<T>;
-  const _FormStatusError._() : super._();
+abstract class _FormStatus<T, F> extends FormStatus<T, F> {
+  const factory _FormStatus(
+      {required final T data,
+      required final FormStatusType status,
+      final Map<F, String> fieldErrors,
+      final ErrorModel? error}) = _$FormStatusImpl<T, F>;
+  const _FormStatus._() : super._();
 
-  ErrorModel get error;
+  @override
+  T get data;
+  @override
+  FormStatusType get status;
+  @override
+  Map<F, String> get fieldErrors;
+  @override
+  ErrorModel? get error;
 
   /// Create a copy of FormStatus
   /// with the given fields replaced by the non-null parameter values.
+  @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$FormStatusErrorImplCopyWith<T, _$FormStatusErrorImpl<T>> get copyWith =>
+  _$$FormStatusImplCopyWith<T, F, _$FormStatusImpl<T, F>> get copyWith =>
       throw _privateConstructorUsedError;
 }

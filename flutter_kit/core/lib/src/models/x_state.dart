@@ -52,7 +52,8 @@ class XState<T> with _$XState<T> {
 
 @Deprecated('Use "FormStatus" instead')
 @freezed
-class XFormState<T> with _$XFormState<T> {
+class XFormState<T>
+    with _$XFormState<T> {
   @Deprecated('Use "FormStatus" instead')
   const XFormState._();
 
@@ -160,7 +161,8 @@ class NetworkErrorMessageMapperBase {
 
   String get noInternetErrorMessage => 'No internet connection';
 
-  ErrorModel get genericErrorModel => ErrorModel(
+  ErrorModel get genericErrorModel =>
+      ErrorModel(
         message: genericErrorMessage,
         resultErrorType: ResultErrorType.other,
       );
@@ -184,33 +186,33 @@ class StatusError<D, E> implements Status<D, E> {
   const StatusError(this.error);
 }
 
+enum FormStatusType {
+  draft,
+  loading,
+  submitted;
+
+  bool get isLoading => this == FormStatusType.loading;
+}
+
 @freezed
-class FormStatus<T> with _$FormStatus<T> {
+class FormStatus<T, F> with _$FormStatus<T, F> {
+  const factory FormStatus({
+    required T data,
+    required FormStatusType status,
+    @Default({}) Map<F, String> fieldErrors,
+    ErrorModel? error,
+  }) = _FormStatus;
+
   const FormStatus._();
 
-  const factory FormStatus.draft() = _FormStatusDraft;
+  bool get isLoading => status == FormStatusType.loading;
 
-  const factory FormStatus.loading({T? data}) = _FormStatusLoading<T>;
-
-  const factory FormStatus.submitted(T data) = _FormStatusSubmitted<T>;
-
-  const factory FormStatus.error(ErrorModel error) = _FormStatusError;
-
-  bool get isLoading => maybeWhen(loading: (_) => true, orElse: () => false);
+  bool get hasError => error != null;
 
   void ifHasError(void Function(ErrorModel error) function) {
-    final error = maybeWhen(error: (error) => error, orElse: () => null);
-    if (error != null) function(error);
+    final err = error;
+    if (err != null) function(err);
   }
 
-  R? ifSubmitted<R>(R Function(T data) dataFunction) {
-    final data = maybeWhen(
-      submitted: (data) => data,
-      orElse: () => null,
-    );
-    if (data != null) {
-      return dataFunction(data);
-    }
-    return null;
-  }
+  String? getFieldError(F f) => fieldErrors[f];
 }
