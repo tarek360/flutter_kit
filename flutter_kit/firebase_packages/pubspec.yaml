@@ -17,7 +17,10 @@ dependencies:
   permission_handler: ^11.3.1
   flutter_timezone: ^3.0.1
   core:
-    path: ../core
+    git:
+      url: git@github.com:tarek360/flutter_kit.git
+      ref: 0.0.6
+      path: flutter_kit/core
 
 dev_dependencies:
   flutter_test:
@@ -25,7 +28,7 @@ dev_dependencies:
   global_lints:
     git:
       url: git@github.com:tarek360/flutter_kit.git
-      ref: 0.0.5 # or a specific branch, tag, or commit
+      ref: 0.0.6 # or a specific branch, tag, or commit
       path: flutter_kit/global_lints
 
   build_runner: ^2.2.1
