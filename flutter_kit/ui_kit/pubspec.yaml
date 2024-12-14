@@ -1,6 +1,6 @@
 name: ui_kit
 description: App resources.
-version: 0.0.7
+version: 0.0.8
 publish_to: none
 
 environment:
@@ -14,7 +14,7 @@ dependencies:
 #  resources:
 #    git:
 #      url: git@github.com:tarek360/flutter_kit.git
-#      ref: 0.0.7 # or a specific branch, tag, or commit
+#      ref: 0.0.8 # or a specific branch, tag, or commit
 #      path: flutter_kit/resources
 
   design_system:
@@ -22,7 +22,7 @@ dependencies:
 #  design_system:
 #    git:
 #      url: git@github.com:tarek360/flutter_kit.git
-#      ref: 0.0.7 # or a specific branch, tag, or commit
+#      ref: 0.0.8 # or a specific branch, tag, or commit
 #      path: flutter_kit/design_system
 
   ui_kit_interface:
@@ -30,7 +30,7 @@ dependencies:
 #  ui_kit_interface:
 #    git:
 #      url: git@github.com:tarek360/flutter_kit.git
-#      ref: 0.0.7 # or a specific branch, tag, or commit
+#      ref: 0.0.8 # or a specific branch, tag, or commit
 #      path: flutter_kit/ui_kit_interface
 
 
@@ -45,7 +45,7 @@ dev_dependencies:
   global_lints:
     git:
       url: git@github.com:tarek360/flutter_kit.git
-      ref: 0.0.7
+      ref: 0.0.8
       path: flutter_kit/global_lints
 flutter:
 
