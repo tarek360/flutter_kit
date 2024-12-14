@@ -16,7 +16,7 @@ dependencies:
   design_system:
     git:
       url: git@github.com:tarek360/flutter_kit.git
-      ref: 0.0.4
+      ref: 0.0.5
       path: flutter_kit/design_system
 
   webview_flutter: ^4.2.1
@@ -28,7 +28,7 @@ dev_dependencies:
   global_lints:
     git:
       url: git@github.com:tarek360/flutter_kit.git
-      ref: 0.0.4
+      ref: 0.0.5
       path: flutter_kit/global_lints
 
 flutter:

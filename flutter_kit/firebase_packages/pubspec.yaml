@@ -25,7 +25,7 @@ dev_dependencies:
   global_lints:
     git:
       url: git@github.com:tarek360/flutter_kit.git
-      ref: 0.0.4 # or a specific branch, tag, or commit
+      ref: 0.0.5 # or a specific branch, tag, or commit
       path: flutter_kit/global_lints
 
   build_runner: ^2.2.1

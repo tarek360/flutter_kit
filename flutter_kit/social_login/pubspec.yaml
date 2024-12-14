@@ -18,7 +18,7 @@ dependencies:
   core:
     git:
       url: git@github.com:tarek360/flutter_kit.git
-      ref: 0.0.4
+      ref: 0.0.5
       path: flutter_kit/core
 
 dev_dependencies:
@@ -27,6 +27,6 @@ dev_dependencies:
   global_lints:
     git:
       url: git@github.com:tarek360/flutter_kit.git
-      ref: 0.0.4
+      ref: 0.0.5
       path: flutter_kit/global_lints
 flutter:
