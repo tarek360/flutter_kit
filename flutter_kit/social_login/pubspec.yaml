@@ -1,6 +1,6 @@
 name: social_login
 description: social_login
-version: 0.0.8
+version: 1.0.0
 publish_to: none
 
 environment:
@@ -16,17 +16,11 @@ dependencies:
   jwt_decode: ^0.3.1
 
   core:
-    git:
-      url: git@github.com:tarek360/flutter_kit.git
-      ref: 0.0.8
-      path: flutter_kit/core
+    path: ../core
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   global_lints:
-    git:
-      url: git@github.com:tarek360/flutter_kit.git
-      ref: 0.0.8
-      path: flutter_kit/global_lints
-flutter:
+    path: ../global_lints
+

@@ -1,6 +1,6 @@
 name: core
 description: App resources.
-version: 0.0.8
+version: 1.0.0
 publish_to: none
 
 environment:
@@ -35,13 +35,9 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   global_lints:
-    git:
-      url: git@github.com:tarek360/flutter_kit.git
-      ref: 0.0.8 # or a specific branch, tag, or commit
-      path: flutter_kit/global_lints
+    path: ../global_lints
 
   build_runner: ^2.2.1
   freezed: ^2.1.1
   json_serializable: ^6.4.0
 
-flutter:

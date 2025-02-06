@@ -1,6 +1,6 @@
 name: design_system
 description: App resources.
-version: 0.0.8
+version: 1.0.0
 
 environment:
   sdk: '>=3.0.0 <4.0.0'
@@ -22,8 +22,5 @@ dev_dependencies:
     sdk: flutter
 
   global_lints:
-    git:
-      url: git@github.com:tarek360/flutter_kit.git
-      ref: 0.0.8
-      path: flutter_kit/global_lints
-flutter:
+    path: ../global_lints
+

@@ -1,6 +1,6 @@
 name: global_lints
 description: Global lints for both apps and all local packages.
-version: 0.0.8
+version: 1.0.0
 publish_to: none
 
 environment:
@@ -8,4 +8,4 @@ environment:
 
 dependencies:
   lint: ^1.10.0
-  flutter_lints: ^3.0.2
+  flutter_lints: ^5.0.0

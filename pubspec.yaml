@@ -16,7 +16,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
 # In Windows, build-name is used as the major, minor, and patch parts
 # of the product and file versions while build-number is used as the build suffix.
-version: 1.0.0+1
+version: 1.1.0+1
 
 environment:
   sdk: ^3.5.3
@@ -36,47 +36,32 @@ dependencies:
   cupertino_icons: ^1.0.8
     
   # App-specific dependencies
-#  ui_kit:
-#    path: flutter_kit/ui_kit
+  ui_kit: 
+    path: flutter_kit/ui_kit
+
   ui_kit_interface:
-    git:
-      url: git@github.com:tarek360/flutter_kit.git
-      ref: 0.0.8
-      path: flutter_kit/ui_kit_interface
+    path: flutter_kit/ui_kit_interface
 
-  # Common dependencies
-  #  core:
-  #    path: flutter_kit/core
+  user_auth:
+    path: flutter_kit/user_auth
+
   core:
-    git:
-      url: git@github.com:tarek360/flutter_kit.git
-      ref: 0.0.8
-      path: flutter_kit/core
+    path: flutter_kit/core
 
-  #  design_system:
-  #    path: flutter_kit/design_system
-  #  design_system:
-  #    git:
-  #      url: git@github.com:tarek360/flutter_kit.git
-  #      ref: 0.0.8
-  #      path: flutter_kit/design_system
+  design_system:
+    path: flutter_kit/design_system
 
-  #  social_login:
-  #    path: flutter_kit/social_login
   social_login:
-    git:
-      url: git@github.com:tarek360/flutter_kit.git
-      ref: 0.0.8
-      path: flutter_kit/social_login
-
-  #  calendar_utils:
-  #    path: flutter_kit/calendar_utils
+    path: flutter_kit/social_login
+ 
   calendar_utils:
-    git:
-      url: git@github.com:tarek360/flutter_kit.git
-      ref: 0.0.8
-      path: flutter_kit/calendar_utils
+    path: flutter_kit/calendar_utils
 
+  firebase_packages:
+    path: flutter_kit/firebase_packages
+
+  global_lints:
+    path: flutter_kit/global_lints
 
 dev_dependencies:
   flutter_test:

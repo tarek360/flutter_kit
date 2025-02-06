@@ -1,6 +1,6 @@
 name: user_auth
 description: user_auth.
-version: 0.0.8
+version: 1.0.0
 publish_to: none
 
 environment:
@@ -18,21 +18,11 @@ dependencies:
   json_annotation:
   jwt_decode: ^0.3.1
 
-  #  ui_kit_interface:
-  #    path: ../ui_kit_interface
   ui_kit_interface:
-    git:
-      url: git@github.com:tarek360/flutter_kit.git
-      ref: 0.0.8
-      path: flutter_kit/ui_kit_interface
+    path: ../ui_kit_interface
 
-  #  core:
-  #    path: ../core
   core:
-    git:
-      url: git@github.com:tarek360/flutter_kit.git
-      ref: 0.0.8
-      path: flutter_kit/core
+    path: ../core
 
 dev_dependencies:
   flutter_test:
@@ -43,5 +33,3 @@ dev_dependencies:
   build_runner: ^2.2.1
   freezed: ^2.1.1
   json_serializable: ^6.3.2
-
-flutter:
