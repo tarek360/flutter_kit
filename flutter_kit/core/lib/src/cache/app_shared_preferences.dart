@@ -10,6 +10,12 @@ final appSharedPreferenceProvider = Provider<AppSharedPreferences>((ref) {
   return AppSharedPreferences();
 });
 
+final appSharedPreferenceInitializerProvider = FutureProvider<AppSharedPreferences>((ref) async {
+  final sharedPreferences = ref.read(appSharedPreferenceProvider);
+  await sharedPreferences.init();
+  return sharedPreferences;
+});
+
 class AppSharedPreferences {
   static const _userPinCodeSentKey = "_userPinCodeSentKey";
   static const _isAnonymousUser = "_isAnonymousUser";
