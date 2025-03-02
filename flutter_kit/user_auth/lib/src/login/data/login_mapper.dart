@@ -1,5 +1,3 @@
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-
 import '../domain/model.dart';
 import 'entity.dart';
 

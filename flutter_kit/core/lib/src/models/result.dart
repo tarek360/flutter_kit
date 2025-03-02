@@ -45,8 +45,6 @@ enum ResultErrorType {
           return ResultErrorType.cancel;
         case DioExceptionType.unknown:
           return ResultErrorType.other;
-        default:
-          return ResultErrorType.other;
       }
     } else if (obj is SocketException) {
       return ResultErrorType.badConnection;

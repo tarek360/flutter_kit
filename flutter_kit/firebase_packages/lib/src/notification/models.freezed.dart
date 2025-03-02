@@ -15,36 +15,42 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
-mixin _$LougaRemoteNotification {
+mixin _$FlutterKitRemoteNotification {
   String? get triggerID => throw _privateConstructorUsedError;
   String? get navigation => throw _privateConstructorUsedError;
   bool get isBackground => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
-  $LougaRemoteNotificationCopyWith<LougaRemoteNotification> get copyWith =>
-      throw _privateConstructorUsedError;
+  /// Create a copy of FlutterKitRemoteNotification
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $FlutterKitRemoteNotificationCopyWith<FlutterKitRemoteNotification>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $LougaRemoteNotificationCopyWith<$Res> {
-  factory $LougaRemoteNotificationCopyWith(LougaRemoteNotification value,
-          $Res Function(LougaRemoteNotification) then) =
-      _$LougaRemoteNotificationCopyWithImpl<$Res, LougaRemoteNotification>;
+abstract class $FlutterKitRemoteNotificationCopyWith<$Res> {
+  factory $FlutterKitRemoteNotificationCopyWith(
+          FlutterKitRemoteNotification value,
+          $Res Function(FlutterKitRemoteNotification) then) =
+      _$FlutterKitRemoteNotificationCopyWithImpl<$Res,
+          FlutterKitRemoteNotification>;
   @useResult
   $Res call({String? triggerID, String? navigation, bool isBackground});
 }
 
 /// @nodoc
-class _$LougaRemoteNotificationCopyWithImpl<$Res,
-        $Val extends LougaRemoteNotification>
-    implements $LougaRemoteNotificationCopyWith<$Res> {
-  _$LougaRemoteNotificationCopyWithImpl(this._value, this._then);
+class _$FlutterKitRemoteNotificationCopyWithImpl<$Res,
+        $Val extends FlutterKitRemoteNotification>
+    implements $FlutterKitRemoteNotificationCopyWith<$Res> {
+  _$FlutterKitRemoteNotificationCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of FlutterKitRemoteNotification
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -70,27 +76,29 @@ class _$LougaRemoteNotificationCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$LougaRemoteNotificationImplCopyWith<$Res>
-    implements $LougaRemoteNotificationCopyWith<$Res> {
-  factory _$$LougaRemoteNotificationImplCopyWith(
-          _$LougaRemoteNotificationImpl value,
-          $Res Function(_$LougaRemoteNotificationImpl) then) =
-      __$$LougaRemoteNotificationImplCopyWithImpl<$Res>;
+abstract class _$$FlutterKitRemoteNotificationImplCopyWith<$Res>
+    implements $FlutterKitRemoteNotificationCopyWith<$Res> {
+  factory _$$FlutterKitRemoteNotificationImplCopyWith(
+          _$FlutterKitRemoteNotificationImpl value,
+          $Res Function(_$FlutterKitRemoteNotificationImpl) then) =
+      __$$FlutterKitRemoteNotificationImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String? triggerID, String? navigation, bool isBackground});
 }
 
 /// @nodoc
-class __$$LougaRemoteNotificationImplCopyWithImpl<$Res>
-    extends _$LougaRemoteNotificationCopyWithImpl<$Res,
-        _$LougaRemoteNotificationImpl>
-    implements _$$LougaRemoteNotificationImplCopyWith<$Res> {
-  __$$LougaRemoteNotificationImplCopyWithImpl(
-      _$LougaRemoteNotificationImpl _value,
-      $Res Function(_$LougaRemoteNotificationImpl) _then)
+class __$$FlutterKitRemoteNotificationImplCopyWithImpl<$Res>
+    extends _$FlutterKitRemoteNotificationCopyWithImpl<$Res,
+        _$FlutterKitRemoteNotificationImpl>
+    implements _$$FlutterKitRemoteNotificationImplCopyWith<$Res> {
+  __$$FlutterKitRemoteNotificationImplCopyWithImpl(
+      _$FlutterKitRemoteNotificationImpl _value,
+      $Res Function(_$FlutterKitRemoteNotificationImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of FlutterKitRemoteNotification
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -98,7 +106,7 @@ class __$$LougaRemoteNotificationImplCopyWithImpl<$Res>
     Object? navigation = freezed,
     Object? isBackground = null,
   }) {
-    return _then(_$LougaRemoteNotificationImpl(
+    return _then(_$FlutterKitRemoteNotificationImpl(
       triggerID: freezed == triggerID
           ? _value.triggerID
           : triggerID // ignore: cast_nullable_to_non_nullable
@@ -117,8 +125,8 @@ class __$$LougaRemoteNotificationImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$LougaRemoteNotificationImpl extends _LougaRemoteNotification {
-  const _$LougaRemoteNotificationImpl(
+class _$FlutterKitRemoteNotificationImpl extends _FlutterKitRemoteNotification {
+  const _$FlutterKitRemoteNotificationImpl(
       {required this.triggerID,
       required this.navigation,
       required this.isBackground})
@@ -133,14 +141,14 @@ class _$LougaRemoteNotificationImpl extends _LougaRemoteNotification {
 
   @override
   String toString() {
-    return 'LougaRemoteNotification(triggerID: $triggerID, navigation: $navigation, isBackground: $isBackground)';
+    return 'FlutterKitRemoteNotification(triggerID: $triggerID, navigation: $navigation, isBackground: $isBackground)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$LougaRemoteNotificationImpl &&
+            other is _$FlutterKitRemoteNotificationImpl &&
             (identical(other.triggerID, triggerID) ||
                 other.triggerID == triggerID) &&
             (identical(other.navigation, navigation) ||
@@ -153,20 +161,24 @@ class _$LougaRemoteNotificationImpl extends _LougaRemoteNotification {
   int get hashCode =>
       Object.hash(runtimeType, triggerID, navigation, isBackground);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of FlutterKitRemoteNotification
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$LougaRemoteNotificationImplCopyWith<_$LougaRemoteNotificationImpl>
-      get copyWith => __$$LougaRemoteNotificationImplCopyWithImpl<
-          _$LougaRemoteNotificationImpl>(this, _$identity);
+  _$$FlutterKitRemoteNotificationImplCopyWith<
+          _$FlutterKitRemoteNotificationImpl>
+      get copyWith => __$$FlutterKitRemoteNotificationImplCopyWithImpl<
+          _$FlutterKitRemoteNotificationImpl>(this, _$identity);
 }
 
-abstract class _LougaRemoteNotification extends LougaRemoteNotification {
-  const factory _LougaRemoteNotification(
+abstract class _FlutterKitRemoteNotification
+    extends FlutterKitRemoteNotification {
+  const factory _FlutterKitRemoteNotification(
       {required final String? triggerID,
       required final String? navigation,
-      required final bool isBackground}) = _$LougaRemoteNotificationImpl;
-  const _LougaRemoteNotification._() : super._();
+      required final bool isBackground}) = _$FlutterKitRemoteNotificationImpl;
+  const _FlutterKitRemoteNotification._() : super._();
 
   @override
   String? get triggerID;
@@ -174,8 +186,12 @@ abstract class _LougaRemoteNotification extends LougaRemoteNotification {
   String? get navigation;
   @override
   bool get isBackground;
+
+  /// Create a copy of FlutterKitRemoteNotification
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$LougaRemoteNotificationImplCopyWith<_$LougaRemoteNotificationImpl>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$FlutterKitRemoteNotificationImplCopyWith<
+          _$FlutterKitRemoteNotificationImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

@@ -9,7 +9,8 @@ import 'package:http/http.dart' as http;
 
 import '../../firebase_packages.dart';
 
-final newNotificationOpenProvider = StateProvider<LougaRemoteNotification?>((ref) => null);
+final newNotificationOpenProvider =
+    StateProvider<FlutterKitRemoteNotification?>((ref) => null);
 
 abstract class NotificationService {
   NotificationService._();
@@ -69,12 +70,6 @@ abstract class NotificationService {
 
     FirebaseMessaging.onMessage.listen(_onForegroundMessage);
     FirebaseMessaging.onBackgroundMessage(_backgroundHandler);
-
-    await _messaging.setForegroundNotificationPresentationOptions(
-      alert: true,
-      badge: true,
-      sound: true,
-    );
   }
 
   static Future<void> _onForegroundMessage(RemoteMessage message) async {
@@ -86,7 +81,8 @@ abstract class NotificationService {
       final imageUrl = android.imageUrl;
       ByteArrayAndroidBitmap? androidBitmap;
       if (imageUrl != null) {
-        androidBitmap = ByteArrayAndroidBitmap.fromBase64String(await _base64encodedImage(imageUrl));
+        androidBitmap = ByteArrayAndroidBitmap.fromBase64String(
+            await _base64encodedImage(imageUrl));
       }
 
       final sound = android.sound;
@@ -101,10 +97,13 @@ abstract class NotificationService {
             channelId ?? _androidNotificationChannel.id,
             channelId ?? _androidNotificationChannel.name,
             icon: 'ic_notification',
-            styleInformation:
-                androidBitmap != null ? BigPictureStyleInformation(androidBitmap, hideExpandedLargeIcon: true) : null,
-            sound:
-                sound != null && sound != 'default' ? RawResourceAndroidNotificationSound(sound.split(".")[0]) : null,
+            styleInformation: androidBitmap != null
+                ? BigPictureStyleInformation(androidBitmap,
+                    hideExpandedLargeIcon: true)
+                : null,
+            sound: sound != null && sound != 'default'
+                ? RawResourceAndroidNotificationSound(sound.split(".")[0])
+                : null,
           ),
         ),
         payload: jsonEncode(message.data),
@@ -128,11 +127,13 @@ abstract class NotificationService {
   }
 
   static Future<void> listenToOnNotificationOpened(WidgetRef ref) async {
-    const platformChannel = MethodChannel('louga.notifications');
+    const platformChannel = MethodChannel('flutterkit.notifications');
     platformChannel.setMethodCallHandler((call) async {
       final arguments = call.arguments;
-      if (call.method == 'onNotificationOpened' && arguments is Map<dynamic, dynamic>) {
-        final data = arguments.map<String, dynamic>((key, value) => MapEntry(key.toString(), value));
+      if (call.method == 'onNotificationOpened' &&
+          arguments is Map<dynamic, dynamic>) {
+        final data = arguments.map<String, dynamic>(
+            (key, value) => MapEntry(key.toString(), value));
         _onMessageOpenedApp(RemoteMessage.fromMap(data), ref);
       }
     });
@@ -149,7 +150,8 @@ abstract class NotificationService {
   }
 
   static void _onMessageOpenedApp(RemoteMessage message, WidgetRef ref) {
-    ref.read(newNotificationOpenProvider.notifier).state = LougaRemoteNotification.fromMap(message.data);
+    ref.read(newNotificationOpenProvider.notifier).state =
+        FlutterKitRemoteNotification.fromMap(message.data);
   }
 
   static Future<String> _base64encodedImage(String url) async {

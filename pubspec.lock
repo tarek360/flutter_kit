@@ -94,7 +94,7 @@ packages:
       path: "flutter_kit/core"
       relative: true
     source: path
-    version: "1.0.0"
+    version: "1.0.2"
   crypto:
     dependency: transitive
     description:
@@ -268,7 +268,7 @@ packages:
       path: "flutter_kit/firebase_packages"
       relative: true
     source: path
-    version: "1.0.0"
+    version: "1.0.1"
   fixnum:
     dependency: transitive
     description:
@@ -1093,7 +1093,7 @@ packages:
       path: "flutter_kit/ui_kit_interface"
       relative: true
     source: path
-    version: "1.0.0"
+    version: "1.0.1"
   url_launcher:
     dependency: transitive
     description:
@@ -1164,7 +1164,7 @@ packages:
       path: "flutter_kit/user_auth"
       relative: true
     source: path
-    version: "1.0.0"
+    version: "1.0.1"
   uuid:
     dependency: transitive
     description:

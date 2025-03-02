@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 import 'package:ui_kit_interface/ui_kit_interface.dart';
 
@@ -182,7 +180,8 @@ class FrogConfirmationDialog extends StatelessWidget {
             style: frogTheme.textStyles.titleLarge.copyWith(
               color: frogTheme.colors.neutral130,
             ),
-            textScaler: textScaler.clamp(minScaleFactor: 1.0, maxScaleFactor: 1.4),
+            textScaler:
+                textScaler.clamp(minScaleFactor: 1.0, maxScaleFactor: 1.4),
           ),
           if (message != null || body != null) ...[
             const SizedBox(height: 16),
@@ -190,8 +189,10 @@ class FrogConfirmationDialog extends StatelessWidget {
               Text(
                 message!,
                 textAlign: TextAlign.center,
-                style: frogTheme.textStyles.bodyLarge.copyWith(color: frogTheme.colors.neutral70),
-                textScaler: textScaler.clamp(minScaleFactor: 1.0, maxScaleFactor: 1.6),
+                style: frogTheme.textStyles.bodyLarge
+                    .copyWith(color: frogTheme.colors.neutral70),
+                textScaler:
+                    textScaler.clamp(minScaleFactor: 1.0, maxScaleFactor: 1.6),
               ),
             if (body != null) body!,
           ],
@@ -246,7 +247,8 @@ class FrogInputDialog extends StatelessWidget {
       ),
       positiveButtonLabel: positiveButtonLabel,
       negativeButtonLabel: negativeButtonLabel,
-      onPositiveButtonPressed: () => onPositiveButtonPressed(textEditingController.text),
+      onPositiveButtonPressed: () =>
+          onPositiveButtonPressed(textEditingController.text),
       onNegativeButtonPressed: onNegativeButtonPressed,
       buttonsVerticalAlign: buttonsVerticalAlign,
     );
@@ -282,7 +284,8 @@ class FrogInfoDialog extends StatelessWidget {
           Text(
             title,
             textAlign: TextAlign.center,
-            style: frogTheme.textStyles.titleLarge.copyWith(color: frogTheme.colors.neutral130),
+            style: frogTheme.textStyles.titleLarge
+                .copyWith(color: frogTheme.colors.neutral130),
           ),
           if (message != null || body != null) ...[
             const SizedBox(height: 16),
@@ -290,7 +293,8 @@ class FrogInfoDialog extends StatelessWidget {
               Text(
                 message!,
                 textAlign: TextAlign.center,
-                style: frogTheme.textStyles.bodyLarge.copyWith(color: frogTheme.colors.neutral70),
+                style: frogTheme.textStyles.bodyLarge
+                    .copyWith(color: frogTheme.colors.neutral70),
               ),
             if (body != null) body!,
           ],
@@ -350,7 +354,8 @@ class FrogDialog extends StatelessWidget {
                   color: primaryButtonColor,
                 ),
               ),
-            if (primaryButtonLabel != null && secondaryButtonLabel != null) const SizedBox(height: 8),
+            if (primaryButtonLabel != null && secondaryButtonLabel != null)
+              const SizedBox(height: 8),
             if (secondaryButtonLabel != null)
               SizedBox(
                 width: double.infinity,
@@ -373,7 +378,8 @@ class FrogDialog extends StatelessWidget {
                       borderColor: secondaryButtonColor,
                     ),
                   ),
-                if (primaryButtonLabel != null && secondaryButtonLabel != null) const SizedBox(width: 8),
+                if (primaryButtonLabel != null && secondaryButtonLabel != null)
+                  const SizedBox(width: 8),
                 if (primaryButtonLabel != null)
                   Expanded(
                     child: Button(
@@ -409,7 +415,8 @@ class FrogDialogScaffold extends StatelessWidget {
     return Dialog(
       backgroundColor: backgroundColor,
       child: Padding(
-        padding: padding ?? const EdgeInsets.only(right: 16.0, left: 16.0, top: 24, bottom: 16),
+        padding: padding ??
+            const EdgeInsets.only(right: 16.0, left: 16.0, top: 24, bottom: 16),
         child: SizedBox(
           width: width,
           child: child,
@@ -580,7 +587,8 @@ Future<T?> showFrogBottomSheetListOptions<T>({
           height: childSize,
           child: SingleChildScrollView(
             padding: const EdgeInsets.only(top: 8, bottom: 16),
-            controller: ScrollController(initialScrollOffset: initialScrollOffset ?? 0),
+            controller:
+                ScrollController(initialScrollOffset: initialScrollOffset ?? 0),
             child: Column(
               children: ListTile.divideTiles(
                 context: context,
