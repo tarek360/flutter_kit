@@ -7,12 +7,14 @@ class SvgImageFile extends StatelessWidget {
     this.width,
     this.height,
     this.semanticsLabel,
+    this.fit = BoxFit.contain,
   });
 
   final String filePath;
   final double? width;
   final double? height;
   final String? semanticsLabel;
+  final BoxFit fit;
 
   @override
   Widget build(BuildContext context) {

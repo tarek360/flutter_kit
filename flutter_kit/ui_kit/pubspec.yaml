@@ -37,7 +37,10 @@ dependencies:
   dots_indicator: ^3.0.0
   flutter_animate: ^4.5.2
   top_snackbar_flutter: ^3.0.0+1
-  figma_squircle: ^0.5.3
+  figma_squircle: # It was on 0.5.3 before being broken by Flutter 3.27.0. This is a fork that fixes it.
+    git:
+      url: https://github.com/Ax0elz/figma_squircle
+      ref: 5f1ad5aaccdf31fc398fc141979ea845a0f45383 # The ref that fixes the issue
 
 dev_dependencies:
   flutter_test:
