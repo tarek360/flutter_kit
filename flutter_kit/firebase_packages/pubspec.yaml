@@ -1,6 +1,6 @@
 name: firebase_packages
 description: firebase_packages.
-version: 0.0.8
+version: 0.0.9
 publish_to: none
 
 environment:
@@ -19,7 +19,7 @@ dependencies:
   core:
     git:
       url: git@github.com:tarek360/flutter_kit.git
-      ref: 0.0.8
+      ref: 0.0.9
       path: flutter_kit/core
 
 dev_dependencies:
@@ -28,7 +28,7 @@ dev_dependencies:
   global_lints:
     git:
       url: git@github.com:tarek360/flutter_kit.git
-      ref: 0.0.8 # or a specific branch, tag, or commit
+      ref: 0.0.9 # or a specific branch, tag, or commit
       path: flutter_kit/global_lints
 
   build_runner: ^2.2.1
