@@ -15,6 +15,14 @@ class PackageInfoService {
   late final PackageInfo _packageInfo;
   late final BaseDeviceInfo _deviceInfo;
 
+  static final PackageInfoService _instance = PackageInfoService._();
+
+  PackageInfoService._();
+
+  factory PackageInfoService() {
+    return _instance;
+  }
+
   Future<void> init() async {
     _packageInfo = await PackageInfo.fromPlatform();
 
@@ -26,6 +34,8 @@ class PackageInfoService {
       _deviceInfo = await deviceInfo.iosInfo;
     } else if (Platform.isMacOS) {
       _deviceInfo = await deviceInfo.macOsInfo;
+    } else if (kIsWeb) {
+      _deviceInfo = await deviceInfo.webBrowserInfo;
     }
   }
 
