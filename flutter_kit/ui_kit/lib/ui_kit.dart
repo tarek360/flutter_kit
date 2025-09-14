@@ -59,7 +59,7 @@ class ChatUIKit extends UIKitComponents {
   static ThemeData getThemeData(Brightness brightness, FrogColorScheme colors, FrogTypography typography) => ThemeData(
         useMaterial3: true,
         brightness: brightness,
-        dialogTheme: DialogTheme(
+        dialogTheme: DialogThemeData(
           elevation: 0,
           surfaceTintColor: colors.neutral00,
           shape: const RoundedRectangleBorder(

@@ -44,6 +44,12 @@ dependencies:
       ref: 0.0.9
       path: flutter_kit/ui_kit_interface
 
+  ui_kit:
+    git:
+      url: git@github.com:tarek360/flutter_kit.git
+      ref: 0.0.8
+      path: flutter_kit/ui_kit
+
   # Common dependencies
   #  core:
   #    path: flutter_kit/core
@@ -77,6 +83,15 @@ dependencies:
       ref: 0.0.9
       path: flutter_kit/calendar_utils
 
+dependency_overrides:
+  ui_kit_interface:
+    path: flutter_kit/ui_kit_interface
+
+  ui_kit:
+    path: flutter_kit/ui_kit
+
+  design_system:
+    path: flutter_kit/design_system
 
 dev_dependencies:
   flutter_test:
