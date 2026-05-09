@@ -1,11 +1,17 @@
 import 'dart:convert';
+import 'dart:io';
 
 import 'package:core/core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_riverpod/legacy.dart';
+import 'package:flutter_timezone/flutter_timezone.dart';
 import 'package:http/http.dart' as http;
+import 'package:timezone/data/latest_all.dart' as tz;
+import 'package:timezone/timezone.dart' as tz;
 
 import '../../firebase_packages.dart';
 
@@ -154,6 +160,53 @@ abstract class NotificationService {
 
   static Future<String> _base64encodedImage(String url) async {
     return base64Encode((await http.get(Uri.parse(url))).bodyBytes);
+  }
+
+  static const _dailyNotificationID = 7341;
+
+  static Future<void> cancelDailyNotification() {
+    return _localNotifications.cancel(_dailyNotificationID);
+  }
+
+  static Future<void> scheduleDailyNotification({
+    required String title,
+    required String body,
+    required int hour,
+  }) async {
+    const androidNotificationDetails = AndroidNotificationDetails(
+      'PRACTICE REMINDER',
+      'PRACTICE REMINDER',
+      channelDescription: 'notifications to remind you to practice',
+    );
+    const notificationDetails = NotificationDetails(android: androidNotificationDetails);
+
+    await _localNotifications.zonedSchedule(
+      _dailyNotificationID,
+      title,
+      body,
+      _nextTimeInstanceOf(hour),
+      notificationDetails,
+      androidScheduleMode: AndroidScheduleMode.inexact,
+      matchDateTimeComponents: DateTimeComponents.time,
+    );
+  }
+
+  static tz.TZDateTime _nextTimeInstanceOf(int hour) {
+    final tz.TZDateTime now = tz.TZDateTime.now(tz.local);
+    tz.TZDateTime scheduledDate = tz.TZDateTime(tz.local, now.year, now.month, now.day, hour);
+    if (scheduledDate.isBefore(now)) {
+      scheduledDate = scheduledDate.add(const Duration(days: 1));
+    }
+    return scheduledDate;
+  }
+
+  static Future<void> configureLocalTimeZone() async {
+    if (kIsWeb || Platform.isLinux) {
+      return;
+    }
+    tz.initializeTimeZones();
+    final timeZoneName = await FlutterTimezone.getLocalTimezone();
+    tz.setLocalLocation(tz.getLocation(timeZoneName));
   }
 }
 
