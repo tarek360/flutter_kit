@@ -18,7 +18,7 @@ dependencies:
   flutter_timezone: ^5.0.1
   core:
     git:
-      url: git@github.com:tarek360/flutter_kit.git
+      url: https://github.com/tarek360/flutter_kit.git
       ref: 0.0.10
       path: flutter_kit/core
 
@@ -27,7 +27,7 @@ dev_dependencies:
     sdk: flutter
   global_lints:
     git:
-      url: git@github.com:tarek360/flutter_kit.git
+      url: https://github.com/tarek360/flutter_kit.git
       ref: 0.0.10
       path: flutter_kit/global_lints
 

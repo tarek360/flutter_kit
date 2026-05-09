@@ -13,7 +13,7 @@ dependencies:
 
   design_system:
     git:
-      url: git@github.com:tarek360/flutter_kit.git
+      url: https://github.com/tarek360/flutter_kit.git
       ref: 0.0.10
       path: flutter_kit/design_system
 
@@ -25,7 +25,7 @@ dev_dependencies:
 
   global_lints:
     git:
-      url: git@github.com:tarek360/flutter_kit.git
+      url: https://github.com/tarek360/flutter_kit.git
       ref: 0.0.10
       path: flutter_kit/global_lints
 
