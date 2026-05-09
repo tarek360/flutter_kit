@@ -34,64 +34,61 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
-    
+
   # App-specific dependencies
-#  ui_kit:
-#    path: flutter_kit/ui_kit
   ui_kit_interface:
     git:
       url: git@github.com:tarek360/flutter_kit.git
-      ref: 0.0.9
+      ref: 0.0.10
       path: flutter_kit/ui_kit_interface
 
   ui_kit:
     git:
       url: git@github.com:tarek360/flutter_kit.git
-      ref: 0.0.8
+      ref: 0.0.10
       path: flutter_kit/ui_kit
 
   # Common dependencies
-  #  core:
-  #    path: flutter_kit/core
   core:
     git:
       url: git@github.com:tarek360/flutter_kit.git
-      ref: 0.0.9
+      ref: 0.0.10
       path: flutter_kit/core
 
-  #  design_system:
-  #    path: flutter_kit/design_system
-  #  design_system:
-  #    git:
-  #      url: git@github.com:tarek360/flutter_kit.git
-  #      ref: 0.0.9
-  #      path: flutter_kit/design_system
-
-  #  social_login:
-  #    path: flutter_kit/social_login
   social_login:
     git:
       url: git@github.com:tarek360/flutter_kit.git
-      ref: 0.0.9
+      ref: 0.0.10
       path: flutter_kit/social_login
 
-  #  calendar_utils:
-  #    path: flutter_kit/calendar_utils
   calendar_utils:
     git:
       url: git@github.com:tarek360/flutter_kit.git
-      ref: 0.0.9
+      ref: 0.0.10
       path: flutter_kit/calendar_utils
 
+# For local development, uncomment the dependency_overrides section below.
+# This allows you to work with local path dependencies instead of git refs.
+# Comment out this section before releasing/pushing to use git dependencies.
 dependency_overrides:
-  ui_kit_interface:
-    path: flutter_kit/ui_kit_interface
-
-  ui_kit:
-    path: flutter_kit/ui_kit
-
+  core:
+    path: flutter_kit/core
   design_system:
     path: flutter_kit/design_system
+  ui_kit:
+    path: flutter_kit/ui_kit
+  ui_kit_interface:
+    path: flutter_kit/ui_kit_interface
+  social_login:
+    path: flutter_kit/social_login
+  calendar_utils:
+    path: flutter_kit/calendar_utils
+  firebase_packages:
+    path: flutter_kit/firebase_packages
+  user_auth:
+    path: flutter_kit/user_auth
+  global_lints:
+    path: flutter_kit/global_lints
 
 dev_dependencies:
   flutter_test:
@@ -102,7 +99,7 @@ dev_dependencies:
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
-  flutter_lints: ^5.0.0
+  flutter_lints: ^6.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

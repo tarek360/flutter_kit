@@ -1,6 +1,6 @@
 name: calendar_utils
 description: A starting point for Dart libraries or applications.
-version: 1.0.0
+version: 1.0.1
 # repository: https://github.com/my_org/my_repo
 
 environment:
@@ -10,5 +10,5 @@ dependencies:
   intl: ^0.20.2
 
 dev_dependencies:
-  lints: ^2.0.0
-  test: ^1.21.0
+  lints: ^6.0.0
+  test: ^1.29.0

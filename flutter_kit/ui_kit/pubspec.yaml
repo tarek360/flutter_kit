@@ -1,6 +1,6 @@
 name: ui_kit
 description: App resources.
-version: 0.0.9
+version: 0.0.10
 publish_to: none
 
 environment:
@@ -11,32 +11,21 @@ dependencies:
   flutter:
     sdk: flutter
 
-#  resources:
-#    git:
-#      url: git@github.com:tarek360/flutter_kit.git
-#      ref: 0.0.9 # or a specific branch, tag, or commit
-#      path: flutter_kit/resources
-
   design_system:
-    path: ../design_system
-#  design_system:
-#    git:
-#      url: git@github.com:tarek360/flutter_kit.git
-#      ref: 0.0.9 # or a specific branch, tag, or commit
-#      path: flutter_kit/design_system
+    git:
+      url: git@github.com:tarek360/flutter_kit.git
+      ref: 0.0.10
+      path: flutter_kit/design_system
 
   ui_kit_interface:
-    path: ../ui_kit_interface
-#  ui_kit_interface:
-#    git:
-#      url: git@github.com:tarek360/flutter_kit.git
-#      ref: 0.0.9 # or a specific branch, tag, or commit
-#      path: flutter_kit/ui_kit_interface
+    git:
+      url: git@github.com:tarek360/flutter_kit.git
+      ref: 0.0.10
+      path: flutter_kit/ui_kit_interface
 
-
-  dots_indicator: ^3.0.0
+  dots_indicator: ^4.0.1
   flutter_animate: ^4.5.2
-  top_snackbar_flutter: ^3.0.0+1
+  top_snackbar_flutter: ^3.3.0
   figma_squircle: ^0.6.3
 
 dev_dependencies:
@@ -45,7 +34,7 @@ dev_dependencies:
   global_lints:
     git:
       url: git@github.com:tarek360/flutter_kit.git
-      ref: 0.0.9
+      ref: 0.0.10
       path: flutter_kit/global_lints
 flutter:
 
