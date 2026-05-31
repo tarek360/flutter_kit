@@ -10,11 +10,7 @@ class AnimationData {
   final bool lightAndDark;
 }
 
-enum SimpleAnimationViewType {
-  asset,
-  network,
-  file,
-}
+enum SimpleAnimationViewType { asset, network, file }
 
 class SimpleAnimationView extends StatefulWidget {
   final SimpleAnimationViewType type;
@@ -35,9 +31,9 @@ class SimpleAnimationView extends StatefulWidget {
     this.animation,
     this.artboard,
     this.fit,
-  })  : type = SimpleAnimationViewType.asset,
-        path = 'assets/animations/${asset.value}.riv',
-        supportDarkMode = asset.lightAndDark;
+  }) : type = SimpleAnimationViewType.asset,
+       path = 'assets/animations/${asset.value}.riv',
+       supportDarkMode = asset.lightAndDark;
 
   SimpleAnimationView.network(
     String url, {
@@ -47,9 +43,9 @@ class SimpleAnimationView extends StatefulWidget {
     this.animation,
     this.artboard,
     this.fit,
-  })  : type = SimpleAnimationViewType.network,
-        path = url,
-        supportDarkMode = _hasDark(url);
+  }) : type = SimpleAnimationViewType.network,
+       path = url,
+       supportDarkMode = _hasDark(url);
 
   const SimpleAnimationView.file(
     String filePath, {
@@ -60,8 +56,8 @@ class SimpleAnimationView extends StatefulWidget {
     this.fit,
     this.artboard,
     this.supportDarkMode = false,
-  })  : type = SimpleAnimationViewType.file,
-        path = filePath;
+  }) : type = SimpleAnimationViewType.file,
+       path = filePath;
 
   static bool _hasDark(String url) {
     return Uri.parse(url).queryParameters['has_dark']?.toLowerCase() == 'true';
@@ -131,21 +127,26 @@ class _SimpleAnimationViewState extends State<SimpleAnimationView> {
     final riveFile = this.riveFile;
 
     final artboardName = getArtboardName(FrogTheme.of(context).brightness);
-    final artboard = riveFile?.defaultArtboard() ??
+    final artboard =
+        riveFile?.defaultArtboard() ??
         (artboardName != null ? riveFile?.artboard(artboardName) : null);
 
     return SizedBox(
       width: widget.width,
       height: widget.height,
-      child: riveFile != null
-          ? RiveFileWidget(
-              file: riveFile,
-              painter: artboard?.stateMachineCount() == 1
-                  ? StateMachinePainter()
-                  : SingleAnimationPainter(widget.animation ?? 'animation'),
-              artboardName: artboardName,
-            )
-          : const SizedBox.shrink(),
+      child:
+          riveFile != null
+              ? RiveFileWidget(
+                file: riveFile,
+                painter:
+                    artboard?.stateMachineCount() == 1
+                        ? StateMachinePainter()
+                        : SingleAnimationPainter(
+                          widget.animation ?? 'animation',
+                        ),
+                artboardName: artboardName,
+              )
+              : const SizedBox.shrink(),
     );
   }
 }

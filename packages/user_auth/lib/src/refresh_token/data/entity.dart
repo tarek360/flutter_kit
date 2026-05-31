@@ -4,9 +4,7 @@ part 'entity.g.dart';
 
 @JsonSerializable(createToJson: false)
 class RefreshTokenResponseEntity {
-  RefreshTokenResponseEntity({
-    this.token,
-  });
+  RefreshTokenResponseEntity({this.token});
 
   @JsonKey(name: 'Token')
   final String? token;

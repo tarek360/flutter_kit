@@ -2,30 +2,23 @@ import 'package:flutter/material.dart';
 import 'package:ui_kit_interface/src/exception/ui_kit.dart';
 import 'package:ui_kit_interface/ui_kit_interface.dart';
 
-typedef ButtonBuilder = Widget Function({
-  required VoidCallback? onPressed,
-  required String label,
-  required Widget? icon,
-  required bool loading,
-  required bool iconBefore,
-  required ButtonSize size,
-  required Color? color,
-  required Color? labelColor,
-  required Color? borderColor,
-  required bool hapticFeedback,
-});
+typedef ButtonBuilder =
+    Widget Function({
+      required VoidCallback? onPressed,
+      required String label,
+      required Widget? icon,
+      required bool loading,
+      required bool iconBefore,
+      required ButtonSize size,
+      required Color? color,
+      required Color? labelColor,
+      required Color? borderColor,
+      required bool hapticFeedback,
+    });
 
-enum _ButtonType {
-  primary,
-  secondary,
-  text,
-}
+enum _ButtonType { primary, secondary, text }
 
-enum ButtonSize {
-  large,
-  medium,
-  small,
-}
+enum ButtonSize { large, medium, small }
 
 class Button extends StatelessWidget {
   final VoidCallback? onPressed;
@@ -50,8 +43,8 @@ class Button extends StatelessWidget {
     this.size = ButtonSize.medium,
     this.color,
     this.hapticFeedback = true,
-  })  : _buttonType = _ButtonType.primary,
-        borderColor = null;
+  }) : _buttonType = _ButtonType.primary,
+       borderColor = null;
 
   const Button.text({
     required this.onPressed,
@@ -62,9 +55,9 @@ class Button extends StatelessWidget {
     this.size = ButtonSize.medium,
     this.labelColor,
     this.hapticFeedback = false,
-  })  : color = null,
-        borderColor = null,
-        _buttonType = _ButtonType.text;
+  }) : color = null,
+       borderColor = null,
+       _buttonType = _ButtonType.text;
 
   const Button.secondary({
     required this.onPressed,
@@ -76,8 +69,8 @@ class Button extends StatelessWidget {
     this.iconBefore = false,
     this.size = ButtonSize.medium,
     this.hapticFeedback = true,
-  })  : color = null,
-        _buttonType = _ButtonType.secondary;
+  }) : color = null,
+       _buttonType = _ButtonType.secondary;
 
   @override
   Widget build(BuildContext context) {

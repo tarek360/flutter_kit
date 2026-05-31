@@ -31,18 +31,21 @@ class FrogListTile extends StatelessWidget {
       onTap: onTap,
       title: FrogText.bodyLarge(
         title,
-        color: onTap != null
-            ? frogTheme.colors.neutral120
-            : frogTheme.colors.neutral50,
+        color:
+            onTap != null
+                ? frogTheme.colors.neutral120
+                : frogTheme.colors.neutral50,
       ),
-      subtitle: subtitle != null
-          ? FrogText.labelLarge(
-              subtitle!,
-              color: onTap != null
-                  ? frogTheme.colors.neutral70
-                  : frogTheme.colors.neutral50,
-            )
-          : null,
+      subtitle:
+          subtitle != null
+              ? FrogText.labelLarge(
+                subtitle!,
+                color:
+                    onTap != null
+                        ? frogTheme.colors.neutral70
+                        : frogTheme.colors.neutral50,
+              )
+              : null,
       trailing: trailing,
     );
   }
@@ -66,12 +69,13 @@ class ListOption extends StatelessWidget {
       dense: true,
       onTap: onTap,
       title: title,
-      trailing: isSelected
-          ? Icon(
-              Icons.check_rounded,
-              color: FrogTheme.of(context).colors.brand,
-            )
-          : null,
+      trailing:
+          isSelected
+              ? Icon(
+                Icons.check_rounded,
+                color: FrogTheme.of(context).colors.brand,
+              )
+              : null,
     );
   }
 }

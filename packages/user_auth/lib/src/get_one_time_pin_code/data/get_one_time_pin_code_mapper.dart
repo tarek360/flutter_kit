@@ -9,10 +9,9 @@ final getOneTimePinCodeMapperProvider = Provider(
 
 class GetOneTimePinCodeMapper {
   GetOneTimePinCodeRequestEntity transformToGetOneTimePinCodeRequestEntity(
-      GetOneTimePinCodeRequest input) {
-    return GetOneTimePinCodeRequestEntity(
-      email: input.email,
-    );
+    GetOneTimePinCodeRequest input,
+  ) {
+    return GetOneTimePinCodeRequestEntity(email: input.email);
   }
 
   GetOneTimePinCodeResponse? transformToGetOneTimePinCodeResponseModel(
@@ -27,9 +26,7 @@ class GetOneTimePinCodeMapper {
     final error = input.error;
 
     if (error != null) {
-      return GetOneTimePinCodeResponse.blocked(
-        userEmail: requestInfo.email,
-      );
+      return GetOneTimePinCodeResponse.blocked(userEmail: requestInfo.email);
     }
 
     if (id == null) {

@@ -113,18 +113,18 @@ class PackageInfoService {
   }
 
   /// (Not reliable) Might be unavailable on the latest Android and iOS versions.
-// Future<String?> getDeviceId() async {
-//   final targetPlatform = defaultTargetPlatform;
-//   if (targetPlatform == TargetPlatform.iOS) {
-//     final iosDeviceInfo = await deviceInfo.iosInfo;
-//     return iosDeviceInfo.identifierForVendor;
-//   } else if (targetPlatform == TargetPlatform.android) {
-//     final androidDeviceInfo = await deviceInfo.androidInfo;
-//     return androidDeviceInfo.id;
-//   } else if (targetPlatform == TargetPlatform.macOS) {
-//     final macOsInfo = await deviceInfo.macOsInfo;
-//     return macOsInfo.systemGUID;
-//   }
-//   return null;
-// }
+  // Future<String?> getDeviceId() async {
+  //   final targetPlatform = defaultTargetPlatform;
+  //   if (targetPlatform == TargetPlatform.iOS) {
+  //     final iosDeviceInfo = await deviceInfo.iosInfo;
+  //     return iosDeviceInfo.identifierForVendor;
+  //   } else if (targetPlatform == TargetPlatform.android) {
+  //     final androidDeviceInfo = await deviceInfo.androidInfo;
+  //     return androidDeviceInfo.id;
+  //   } else if (targetPlatform == TargetPlatform.macOS) {
+  //     final macOsInfo = await deviceInfo.macOsInfo;
+  //     return macOsInfo.systemGUID;
+  //   }
+  //   return null;
+  // }
 }

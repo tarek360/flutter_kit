@@ -12,7 +12,8 @@ part of 'model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods',
+);
 
 /// @nodoc
 mixin _$GetOneTimePinCodeRequest {
@@ -25,16 +26,19 @@ mixin _$GetOneTimePinCodeRequest {
 
 /// @nodoc
 abstract class $GetOneTimePinCodeRequestCopyWith<$Res> {
-  factory $GetOneTimePinCodeRequestCopyWith(GetOneTimePinCodeRequest value,
-          $Res Function(GetOneTimePinCodeRequest) then) =
-      _$GetOneTimePinCodeRequestCopyWithImpl<$Res, GetOneTimePinCodeRequest>;
+  factory $GetOneTimePinCodeRequestCopyWith(
+    GetOneTimePinCodeRequest value,
+    $Res Function(GetOneTimePinCodeRequest) then,
+  ) = _$GetOneTimePinCodeRequestCopyWithImpl<$Res, GetOneTimePinCodeRequest>;
   @useResult
   $Res call({String email});
 }
 
 /// @nodoc
-class _$GetOneTimePinCodeRequestCopyWithImpl<$Res,
-        $Val extends GetOneTimePinCodeRequest>
+class _$GetOneTimePinCodeRequestCopyWithImpl<
+  $Res,
+  $Val extends GetOneTimePinCodeRequest
+>
     implements $GetOneTimePinCodeRequestCopyWith<$Res> {
   _$GetOneTimePinCodeRequestCopyWithImpl(this._value, this._then);
 
@@ -45,15 +49,17 @@ class _$GetOneTimePinCodeRequestCopyWithImpl<$Res,
 
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? email = null,
-  }) {
-    return _then(_value.copyWith(
-      email: null == email
-          ? _value.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
+  $Res call({Object? email = null}) {
+    return _then(
+      _value.copyWith(
+            email:
+                null == email
+                    ? _value.email
+                    : email // ignore: cast_nullable_to_non_nullable
+                        as String,
+          )
+          as $Val,
+    );
   }
 }
 
@@ -61,9 +67,9 @@ class _$GetOneTimePinCodeRequestCopyWithImpl<$Res,
 abstract class _$$_GetOneTimePinCodeRequestCopyWith<$Res>
     implements $GetOneTimePinCodeRequestCopyWith<$Res> {
   factory _$$_GetOneTimePinCodeRequestCopyWith(
-          _$_GetOneTimePinCodeRequest value,
-          $Res Function(_$_GetOneTimePinCodeRequest) then) =
-      __$$_GetOneTimePinCodeRequestCopyWithImpl<$Res>;
+    _$_GetOneTimePinCodeRequest value,
+    $Res Function(_$_GetOneTimePinCodeRequest) then,
+  ) = __$$_GetOneTimePinCodeRequestCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String email});
@@ -71,24 +77,29 @@ abstract class _$$_GetOneTimePinCodeRequestCopyWith<$Res>
 
 /// @nodoc
 class __$$_GetOneTimePinCodeRequestCopyWithImpl<$Res>
-    extends _$GetOneTimePinCodeRequestCopyWithImpl<$Res,
-        _$_GetOneTimePinCodeRequest>
+    extends
+        _$GetOneTimePinCodeRequestCopyWithImpl<
+          $Res,
+          _$_GetOneTimePinCodeRequest
+        >
     implements _$$_GetOneTimePinCodeRequestCopyWith<$Res> {
-  __$$_GetOneTimePinCodeRequestCopyWithImpl(_$_GetOneTimePinCodeRequest _value,
-      $Res Function(_$_GetOneTimePinCodeRequest) _then)
-      : super(_value, _then);
+  __$$_GetOneTimePinCodeRequestCopyWithImpl(
+    _$_GetOneTimePinCodeRequest _value,
+    $Res Function(_$_GetOneTimePinCodeRequest) _then,
+  ) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? email = null,
-  }) {
-    return _then(_$_GetOneTimePinCodeRequest(
-      email: null == email
-          ? _value.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
+  $Res call({Object? email = null}) {
+    return _then(
+      _$_GetOneTimePinCodeRequest(
+        email:
+            null == email
+                ? _value.email
+                : email // ignore: cast_nullable_to_non_nullable
+                    as String,
+      ),
+    );
   }
 }
 
@@ -120,8 +131,11 @@ class _$_GetOneTimePinCodeRequest extends _GetOneTimePinCodeRequest {
   @override
   @pragma('vm:prefer-inline')
   _$$_GetOneTimePinCodeRequestCopyWith<_$_GetOneTimePinCodeRequest>
-      get copyWith => __$$_GetOneTimePinCodeRequestCopyWithImpl<
-          _$_GetOneTimePinCodeRequest>(this, _$identity);
+  get copyWith =>
+      __$$_GetOneTimePinCodeRequestCopyWithImpl<_$_GetOneTimePinCodeRequest>(
+        this,
+        _$identity,
+      );
 }
 
 abstract class _GetOneTimePinCodeRequest extends GetOneTimePinCodeRequest {
@@ -134,11 +148,12 @@ abstract class _GetOneTimePinCodeRequest extends GetOneTimePinCodeRequest {
   @override
   @JsonKey(ignore: true)
   _$$_GetOneTimePinCodeRequestCopyWith<_$_GetOneTimePinCodeRequest>
-      get copyWith => throw _privateConstructorUsedError;
+  get copyWith => throw _privateConstructorUsedError;
 }
 
 GetOneTimePinCodeResponse _$GetOneTimePinCodeResponseFromJson(
-    Map<String, dynamic> json) {
+  Map<String, dynamic> json,
+) {
   switch (json['runtimeType']) {
     case 'ok':
       return GetOneTimePinCodeResponseOk.fromJson(json);
@@ -149,10 +164,11 @@ GetOneTimePinCodeResponse _$GetOneTimePinCodeResponseFromJson(
 
     default:
       throw CheckedFromJsonException(
-          json,
-          'runtimeType',
-          'GetOneTimePinCodeResponse',
-          'Invalid union type "${json['runtimeType']}"!');
+        json,
+        'runtimeType',
+        'GetOneTimePinCodeResponse',
+        'Invalid union type "${json['runtimeType']}"!',
+      );
   }
 }
 
@@ -162,48 +178,42 @@ mixin _$GetOneTimePinCodeResponse {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String id, int numberOfDigits, String userEmail)
-        ok,
+    ok,
     required TResult Function(String userEmail) blocked,
     required TResult Function(String userEmail) noUser,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String id, int numberOfDigits, String userEmail)? ok,
     TResult? Function(String userEmail)? blocked,
     TResult? Function(String userEmail)? noUser,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String id, int numberOfDigits, String userEmail)? ok,
     TResult Function(String userEmail)? blocked,
     TResult Function(String userEmail)? noUser,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(GetOneTimePinCodeResponseOk value) ok,
     required TResult Function(GetOneTimePinCodeResponseBlocked value) blocked,
     required TResult Function(GetOneTimePinCodeResponseNoUser value) noUser,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(GetOneTimePinCodeResponseOk value)? ok,
     TResult? Function(GetOneTimePinCodeResponseBlocked value)? blocked,
     TResult? Function(GetOneTimePinCodeResponseNoUser value)? noUser,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GetOneTimePinCodeResponseOk value)? ok,
     TResult Function(GetOneTimePinCodeResponseBlocked value)? blocked,
     TResult Function(GetOneTimePinCodeResponseNoUser value)? noUser,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $GetOneTimePinCodeResponseCopyWith<GetOneTimePinCodeResponse> get copyWith =>
@@ -212,16 +222,19 @@ mixin _$GetOneTimePinCodeResponse {
 
 /// @nodoc
 abstract class $GetOneTimePinCodeResponseCopyWith<$Res> {
-  factory $GetOneTimePinCodeResponseCopyWith(GetOneTimePinCodeResponse value,
-          $Res Function(GetOneTimePinCodeResponse) then) =
-      _$GetOneTimePinCodeResponseCopyWithImpl<$Res, GetOneTimePinCodeResponse>;
+  factory $GetOneTimePinCodeResponseCopyWith(
+    GetOneTimePinCodeResponse value,
+    $Res Function(GetOneTimePinCodeResponse) then,
+  ) = _$GetOneTimePinCodeResponseCopyWithImpl<$Res, GetOneTimePinCodeResponse>;
   @useResult
   $Res call({String userEmail});
 }
 
 /// @nodoc
-class _$GetOneTimePinCodeResponseCopyWithImpl<$Res,
-        $Val extends GetOneTimePinCodeResponse>
+class _$GetOneTimePinCodeResponseCopyWithImpl<
+  $Res,
+  $Val extends GetOneTimePinCodeResponse
+>
     implements $GetOneTimePinCodeResponseCopyWith<$Res> {
   _$GetOneTimePinCodeResponseCopyWithImpl(this._value, this._then);
 
@@ -232,15 +245,17 @@ class _$GetOneTimePinCodeResponseCopyWithImpl<$Res,
 
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? userEmail = null,
-  }) {
-    return _then(_value.copyWith(
-      userEmail: null == userEmail
-          ? _value.userEmail
-          : userEmail // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
+  $Res call({Object? userEmail = null}) {
+    return _then(
+      _value.copyWith(
+            userEmail:
+                null == userEmail
+                    ? _value.userEmail
+                    : userEmail // ignore: cast_nullable_to_non_nullable
+                        as String,
+          )
+          as $Val,
+    );
   }
 }
 
@@ -248,9 +263,9 @@ class _$GetOneTimePinCodeResponseCopyWithImpl<$Res,
 abstract class _$$GetOneTimePinCodeResponseOkCopyWith<$Res>
     implements $GetOneTimePinCodeResponseCopyWith<$Res> {
   factory _$$GetOneTimePinCodeResponseOkCopyWith(
-          _$GetOneTimePinCodeResponseOk value,
-          $Res Function(_$GetOneTimePinCodeResponseOk) then) =
-      __$$GetOneTimePinCodeResponseOkCopyWithImpl<$Res>;
+    _$GetOneTimePinCodeResponseOk value,
+    $Res Function(_$GetOneTimePinCodeResponseOk) then,
+  ) = __$$GetOneTimePinCodeResponseOkCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String id, int numberOfDigits, String userEmail});
@@ -258,13 +273,16 @@ abstract class _$$GetOneTimePinCodeResponseOkCopyWith<$Res>
 
 /// @nodoc
 class __$$GetOneTimePinCodeResponseOkCopyWithImpl<$Res>
-    extends _$GetOneTimePinCodeResponseCopyWithImpl<$Res,
-        _$GetOneTimePinCodeResponseOk>
+    extends
+        _$GetOneTimePinCodeResponseCopyWithImpl<
+          $Res,
+          _$GetOneTimePinCodeResponseOk
+        >
     implements _$$GetOneTimePinCodeResponseOkCopyWith<$Res> {
   __$$GetOneTimePinCodeResponseOkCopyWithImpl(
-      _$GetOneTimePinCodeResponseOk _value,
-      $Res Function(_$GetOneTimePinCodeResponseOk) _then)
-      : super(_value, _then);
+    _$GetOneTimePinCodeResponseOk _value,
+    $Res Function(_$GetOneTimePinCodeResponseOk) _then,
+  ) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -273,33 +291,38 @@ class __$$GetOneTimePinCodeResponseOkCopyWithImpl<$Res>
     Object? numberOfDigits = null,
     Object? userEmail = null,
   }) {
-    return _then(_$GetOneTimePinCodeResponseOk(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      numberOfDigits: null == numberOfDigits
-          ? _value.numberOfDigits
-          : numberOfDigits // ignore: cast_nullable_to_non_nullable
-              as int,
-      userEmail: null == userEmail
-          ? _value.userEmail
-          : userEmail // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
+    return _then(
+      _$GetOneTimePinCodeResponseOk(
+        id:
+            null == id
+                ? _value.id
+                : id // ignore: cast_nullable_to_non_nullable
+                    as String,
+        numberOfDigits:
+            null == numberOfDigits
+                ? _value.numberOfDigits
+                : numberOfDigits // ignore: cast_nullable_to_non_nullable
+                    as int,
+        userEmail:
+            null == userEmail
+                ? _value.userEmail
+                : userEmail // ignore: cast_nullable_to_non_nullable
+                    as String,
+      ),
+    );
   }
 }
 
 /// @nodoc
 @JsonSerializable()
 class _$GetOneTimePinCodeResponseOk extends GetOneTimePinCodeResponseOk {
-  const _$GetOneTimePinCodeResponseOk(
-      {required this.id,
-      required this.numberOfDigits,
-      required this.userEmail,
-      final String? $type})
-      : $type = $type ?? 'ok',
-        super._();
+  const _$GetOneTimePinCodeResponseOk({
+    required this.id,
+    required this.numberOfDigits,
+    required this.userEmail,
+    final String? $type,
+  }) : $type = $type ?? 'ok',
+       super._();
 
   factory _$GetOneTimePinCodeResponseOk.fromJson(Map<String, dynamic> json) =>
       _$$GetOneTimePinCodeResponseOkFromJson(json);
@@ -339,14 +362,15 @@ class _$GetOneTimePinCodeResponseOk extends GetOneTimePinCodeResponseOk {
   @override
   @pragma('vm:prefer-inline')
   _$$GetOneTimePinCodeResponseOkCopyWith<_$GetOneTimePinCodeResponseOk>
-      get copyWith => __$$GetOneTimePinCodeResponseOkCopyWithImpl<
-          _$GetOneTimePinCodeResponseOk>(this, _$identity);
+  get copyWith => __$$GetOneTimePinCodeResponseOkCopyWithImpl<
+    _$GetOneTimePinCodeResponseOk
+  >(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String id, int numberOfDigits, String userEmail)
-        ok,
+    ok,
     required TResult Function(String userEmail) blocked,
     required TResult Function(String userEmail) noUser,
   }) {
@@ -413,17 +437,16 @@ class _$GetOneTimePinCodeResponseOk extends GetOneTimePinCodeResponseOk {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$GetOneTimePinCodeResponseOkToJson(
-      this,
-    );
+    return _$$GetOneTimePinCodeResponseOkToJson(this);
   }
 }
 
 abstract class GetOneTimePinCodeResponseOk extends GetOneTimePinCodeResponse {
-  const factory GetOneTimePinCodeResponseOk(
-      {required final String id,
-      required final int numberOfDigits,
-      required final String userEmail}) = _$GetOneTimePinCodeResponseOk;
+  const factory GetOneTimePinCodeResponseOk({
+    required final String id,
+    required final int numberOfDigits,
+    required final String userEmail,
+  }) = _$GetOneTimePinCodeResponseOk;
   const GetOneTimePinCodeResponseOk._() : super._();
 
   factory GetOneTimePinCodeResponseOk.fromJson(Map<String, dynamic> json) =
@@ -436,16 +459,16 @@ abstract class GetOneTimePinCodeResponseOk extends GetOneTimePinCodeResponse {
   @override
   @JsonKey(ignore: true)
   _$$GetOneTimePinCodeResponseOkCopyWith<_$GetOneTimePinCodeResponseOk>
-      get copyWith => throw _privateConstructorUsedError;
+  get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$GetOneTimePinCodeResponseBlockedCopyWith<$Res>
     implements $GetOneTimePinCodeResponseCopyWith<$Res> {
   factory _$$GetOneTimePinCodeResponseBlockedCopyWith(
-          _$GetOneTimePinCodeResponseBlocked value,
-          $Res Function(_$GetOneTimePinCodeResponseBlocked) then) =
-      __$$GetOneTimePinCodeResponseBlockedCopyWithImpl<$Res>;
+    _$GetOneTimePinCodeResponseBlocked value,
+    $Res Function(_$GetOneTimePinCodeResponseBlocked) then,
+  ) = __$$GetOneTimePinCodeResponseBlockedCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String userEmail});
@@ -453,25 +476,29 @@ abstract class _$$GetOneTimePinCodeResponseBlockedCopyWith<$Res>
 
 /// @nodoc
 class __$$GetOneTimePinCodeResponseBlockedCopyWithImpl<$Res>
-    extends _$GetOneTimePinCodeResponseCopyWithImpl<$Res,
-        _$GetOneTimePinCodeResponseBlocked>
+    extends
+        _$GetOneTimePinCodeResponseCopyWithImpl<
+          $Res,
+          _$GetOneTimePinCodeResponseBlocked
+        >
     implements _$$GetOneTimePinCodeResponseBlockedCopyWith<$Res> {
   __$$GetOneTimePinCodeResponseBlockedCopyWithImpl(
-      _$GetOneTimePinCodeResponseBlocked _value,
-      $Res Function(_$GetOneTimePinCodeResponseBlocked) _then)
-      : super(_value, _then);
+    _$GetOneTimePinCodeResponseBlocked _value,
+    $Res Function(_$GetOneTimePinCodeResponseBlocked) _then,
+  ) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? userEmail = null,
-  }) {
-    return _then(_$GetOneTimePinCodeResponseBlocked(
-      userEmail: null == userEmail
-          ? _value.userEmail
-          : userEmail // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
+  $Res call({Object? userEmail = null}) {
+    return _then(
+      _$GetOneTimePinCodeResponseBlocked(
+        userEmail:
+            null == userEmail
+                ? _value.userEmail
+                : userEmail // ignore: cast_nullable_to_non_nullable
+                    as String,
+      ),
+    );
   }
 }
 
@@ -479,14 +506,15 @@ class __$$GetOneTimePinCodeResponseBlockedCopyWithImpl<$Res>
 @JsonSerializable()
 class _$GetOneTimePinCodeResponseBlocked
     extends GetOneTimePinCodeResponseBlocked {
-  const _$GetOneTimePinCodeResponseBlocked(
-      {required this.userEmail, final String? $type})
-      : $type = $type ?? 'blocked',
-        super._();
+  const _$GetOneTimePinCodeResponseBlocked({
+    required this.userEmail,
+    final String? $type,
+  }) : $type = $type ?? 'blocked',
+       super._();
 
   factory _$GetOneTimePinCodeResponseBlocked.fromJson(
-          Map<String, dynamic> json) =>
-      _$$GetOneTimePinCodeResponseBlockedFromJson(json);
+    Map<String, dynamic> json,
+  ) => _$$GetOneTimePinCodeResponseBlockedFromJson(json);
 
   @override
   final String userEmail;
@@ -516,15 +544,17 @@ class _$GetOneTimePinCodeResponseBlocked
   @override
   @pragma('vm:prefer-inline')
   _$$GetOneTimePinCodeResponseBlockedCopyWith<
-          _$GetOneTimePinCodeResponseBlocked>
-      get copyWith => __$$GetOneTimePinCodeResponseBlockedCopyWithImpl<
-          _$GetOneTimePinCodeResponseBlocked>(this, _$identity);
+    _$GetOneTimePinCodeResponseBlocked
+  >
+  get copyWith => __$$GetOneTimePinCodeResponseBlockedCopyWithImpl<
+    _$GetOneTimePinCodeResponseBlocked
+  >(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String id, int numberOfDigits, String userEmail)
-        ok,
+    ok,
     required TResult Function(String userEmail) blocked,
     required TResult Function(String userEmail) noUser,
   }) {
@@ -591,16 +621,15 @@ class _$GetOneTimePinCodeResponseBlocked
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$GetOneTimePinCodeResponseBlockedToJson(
-      this,
-    );
+    return _$$GetOneTimePinCodeResponseBlockedToJson(this);
   }
 }
 
 abstract class GetOneTimePinCodeResponseBlocked
     extends GetOneTimePinCodeResponse {
-  const factory GetOneTimePinCodeResponseBlocked(
-      {required final String userEmail}) = _$GetOneTimePinCodeResponseBlocked;
+  const factory GetOneTimePinCodeResponseBlocked({
+    required final String userEmail,
+  }) = _$GetOneTimePinCodeResponseBlocked;
   const GetOneTimePinCodeResponseBlocked._() : super._();
 
   factory GetOneTimePinCodeResponseBlocked.fromJson(Map<String, dynamic> json) =
@@ -611,17 +640,18 @@ abstract class GetOneTimePinCodeResponseBlocked
   @override
   @JsonKey(ignore: true)
   _$$GetOneTimePinCodeResponseBlockedCopyWith<
-          _$GetOneTimePinCodeResponseBlocked>
-      get copyWith => throw _privateConstructorUsedError;
+    _$GetOneTimePinCodeResponseBlocked
+  >
+  get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$GetOneTimePinCodeResponseNoUserCopyWith<$Res>
     implements $GetOneTimePinCodeResponseCopyWith<$Res> {
   factory _$$GetOneTimePinCodeResponseNoUserCopyWith(
-          _$GetOneTimePinCodeResponseNoUser value,
-          $Res Function(_$GetOneTimePinCodeResponseNoUser) then) =
-      __$$GetOneTimePinCodeResponseNoUserCopyWithImpl<$Res>;
+    _$GetOneTimePinCodeResponseNoUser value,
+    $Res Function(_$GetOneTimePinCodeResponseNoUser) then,
+  ) = __$$GetOneTimePinCodeResponseNoUserCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String userEmail});
@@ -629,25 +659,29 @@ abstract class _$$GetOneTimePinCodeResponseNoUserCopyWith<$Res>
 
 /// @nodoc
 class __$$GetOneTimePinCodeResponseNoUserCopyWithImpl<$Res>
-    extends _$GetOneTimePinCodeResponseCopyWithImpl<$Res,
-        _$GetOneTimePinCodeResponseNoUser>
+    extends
+        _$GetOneTimePinCodeResponseCopyWithImpl<
+          $Res,
+          _$GetOneTimePinCodeResponseNoUser
+        >
     implements _$$GetOneTimePinCodeResponseNoUserCopyWith<$Res> {
   __$$GetOneTimePinCodeResponseNoUserCopyWithImpl(
-      _$GetOneTimePinCodeResponseNoUser _value,
-      $Res Function(_$GetOneTimePinCodeResponseNoUser) _then)
-      : super(_value, _then);
+    _$GetOneTimePinCodeResponseNoUser _value,
+    $Res Function(_$GetOneTimePinCodeResponseNoUser) _then,
+  ) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? userEmail = null,
-  }) {
-    return _then(_$GetOneTimePinCodeResponseNoUser(
-      userEmail: null == userEmail
-          ? _value.userEmail
-          : userEmail // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
+  $Res call({Object? userEmail = null}) {
+    return _then(
+      _$GetOneTimePinCodeResponseNoUser(
+        userEmail:
+            null == userEmail
+                ? _value.userEmail
+                : userEmail // ignore: cast_nullable_to_non_nullable
+                    as String,
+      ),
+    );
   }
 }
 
@@ -655,14 +689,15 @@ class __$$GetOneTimePinCodeResponseNoUserCopyWithImpl<$Res>
 @JsonSerializable()
 class _$GetOneTimePinCodeResponseNoUser
     extends GetOneTimePinCodeResponseNoUser {
-  const _$GetOneTimePinCodeResponseNoUser(
-      {required this.userEmail, final String? $type})
-      : $type = $type ?? 'noUser',
-        super._();
+  const _$GetOneTimePinCodeResponseNoUser({
+    required this.userEmail,
+    final String? $type,
+  }) : $type = $type ?? 'noUser',
+       super._();
 
   factory _$GetOneTimePinCodeResponseNoUser.fromJson(
-          Map<String, dynamic> json) =>
-      _$$GetOneTimePinCodeResponseNoUserFromJson(json);
+    Map<String, dynamic> json,
+  ) => _$$GetOneTimePinCodeResponseNoUserFromJson(json);
 
   @override
   final String userEmail;
@@ -692,14 +727,15 @@ class _$GetOneTimePinCodeResponseNoUser
   @override
   @pragma('vm:prefer-inline')
   _$$GetOneTimePinCodeResponseNoUserCopyWith<_$GetOneTimePinCodeResponseNoUser>
-      get copyWith => __$$GetOneTimePinCodeResponseNoUserCopyWithImpl<
-          _$GetOneTimePinCodeResponseNoUser>(this, _$identity);
+  get copyWith => __$$GetOneTimePinCodeResponseNoUserCopyWithImpl<
+    _$GetOneTimePinCodeResponseNoUser
+  >(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String id, int numberOfDigits, String userEmail)
-        ok,
+    ok,
     required TResult Function(String userEmail) blocked,
     required TResult Function(String userEmail) noUser,
   }) {
@@ -766,16 +802,15 @@ class _$GetOneTimePinCodeResponseNoUser
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$GetOneTimePinCodeResponseNoUserToJson(
-      this,
-    );
+    return _$$GetOneTimePinCodeResponseNoUserToJson(this);
   }
 }
 
 abstract class GetOneTimePinCodeResponseNoUser
     extends GetOneTimePinCodeResponse {
-  const factory GetOneTimePinCodeResponseNoUser(
-      {required final String userEmail}) = _$GetOneTimePinCodeResponseNoUser;
+  const factory GetOneTimePinCodeResponseNoUser({
+    required final String userEmail,
+  }) = _$GetOneTimePinCodeResponseNoUser;
   const GetOneTimePinCodeResponseNoUser._() : super._();
 
   factory GetOneTimePinCodeResponseNoUser.fromJson(Map<String, dynamic> json) =
@@ -786,5 +821,5 @@ abstract class GetOneTimePinCodeResponseNoUser
   @override
   @JsonKey(ignore: true)
   _$$GetOneTimePinCodeResponseNoUserCopyWith<_$GetOneTimePinCodeResponseNoUser>
-      get copyWith => throw _privateConstructorUsedError;
+  get copyWith => throw _privateConstructorUsedError;
 }

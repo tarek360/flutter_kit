@@ -19,18 +19,19 @@ class _WebViewState extends State<WebView> {
   void initState() {
     super.initState();
     if (_isWebViewWidgetSupported) {
-      controller = WebViewController()
-        ..setJavaScriptMode(JavaScriptMode.disabled)
-        ..setBackgroundColor(const Color(0xfff7f9fc))
-        ..setNavigationDelegate(
-          NavigationDelegate(
-            onProgress: (int progress) {
-              // Update loading bar.
-              debugPrint('WebView progress: $progress');
-            },
-          ),
-        )
-        ..loadRequest(Uri.parse(widget.url));
+      controller =
+          WebViewController()
+            ..setJavaScriptMode(JavaScriptMode.disabled)
+            ..setBackgroundColor(const Color(0xfff7f9fc))
+            ..setNavigationDelegate(
+              NavigationDelegate(
+                onProgress: (int progress) {
+                  // Update loading bar.
+                  debugPrint('WebView progress: $progress');
+                },
+              ),
+            )
+            ..loadRequest(Uri.parse(widget.url));
     }
   }
 
@@ -40,8 +41,10 @@ class _WebViewState extends State<WebView> {
       return WebViewWidget(controller: controller);
     } else {
       return const Center(
-          child: FrogText.labelMedium(
-              'WebView is not supported on this platform.'));
+        child: FrogText.labelMedium(
+          'WebView is not supported on this platform.',
+        ),
+      );
     }
   }
 

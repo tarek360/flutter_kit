@@ -16,14 +16,16 @@ Locale getLocaleFallback(List<Locale> supportedLocales) {
   final noCountriesLocales =
       supportedLocales.where((element) => element.countryCode == null).toList();
   final baseLanguageMatch = noCountriesLocales.firstWhereOrNull(
-      (element) => element.languageCode == locale.languageCode);
+    (element) => element.languageCode == locale.languageCode,
+  );
   if (baseLanguageMatch != null) {
     return baseLanguageMatch;
   }
 
   /// If same language matched with a base locale e.g "ar_SA"
   final anyCountryMatch = supportedLocales.firstWhereOrNull(
-      (element) => element.languageCode == locale.languageCode);
+    (element) => element.languageCode == locale.languageCode,
+  );
   if (anyCountryMatch != null) {
     return anyCountryMatch;
   }

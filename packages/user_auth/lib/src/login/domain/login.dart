@@ -27,10 +27,7 @@ class Login {
     }
 
     final result = await _repository.login(
-      LoginRequest(
-        pinCode: pinCode,
-        pinID: pinCodeId,
-      ),
+      LoginRequest(pinCode: pinCode, pinID: pinCodeId),
     );
     return result.when(
       success: (token) async {

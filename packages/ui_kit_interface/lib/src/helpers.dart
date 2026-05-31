@@ -51,11 +51,7 @@ class ResponsiveValue {
 
   const ResponsiveValue(this.context);
 
-  T when<T>({
-    required T mobile,
-    required T tablet,
-    required T desktop,
-  }) {
+  T when<T>({required T mobile, required T tablet, required T desktop}) {
     if (isDesktop(context)) {
       return desktop;
     }
@@ -65,12 +61,7 @@ class ResponsiveValue {
     return mobile;
   }
 
-  T maybeWhen<T>({
-    T? mobile,
-    T? tablet,
-    T? desktop,
-    required T other,
-  }) {
+  T maybeWhen<T>({T? mobile, T? tablet, T? desktop, required T other}) {
     if (isDesktop(context)) {
       return desktop ?? other;
     }

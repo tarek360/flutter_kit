@@ -4,9 +4,7 @@ part 'entity.g.dart';
 
 @JsonSerializable()
 class LogoutResponseEntity {
-  LogoutResponseEntity({
-    this.success,
-  });
+  LogoutResponseEntity({this.success});
 
   @JsonKey(name: 'success')
   final bool? success;

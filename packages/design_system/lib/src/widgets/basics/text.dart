@@ -299,36 +299,66 @@ class FrogText extends StatelessWidget {
 
   TextScaler _clampTextScaler(TextScaler baseTextScaler) {
     return switch (textStyle) {
-      FrogTextStyle.displayLarge =>
-        baseTextScaler.clamp(minScaleFactor: 0.8, maxScaleFactor: 1.0),
-      FrogTextStyle.displayMedium =>
-        baseTextScaler.clamp(minScaleFactor: 0.8, maxScaleFactor: 1.0),
-      FrogTextStyle.displaySmall =>
-        baseTextScaler.clamp(minScaleFactor: 0.8, maxScaleFactor: 1.0),
-      FrogTextStyle.headlineLarge =>
-        baseTextScaler.clamp(minScaleFactor: 0.8, maxScaleFactor: 1.0),
-      FrogTextStyle.headlineMedium =>
-        baseTextScaler.clamp(minScaleFactor: 0.8, maxScaleFactor: 1.0),
-      FrogTextStyle.headlineSmall =>
-        baseTextScaler.clamp(minScaleFactor: 0.8, maxScaleFactor: 1.0),
-      FrogTextStyle.titleLarge =>
-        baseTextScaler.clamp(minScaleFactor: 0.8, maxScaleFactor: 1.4),
-      FrogTextStyle.titleMedium =>
-        baseTextScaler.clamp(minScaleFactor: 0.8, maxScaleFactor: 1.5),
-      FrogTextStyle.titleSmall =>
-        baseTextScaler.clamp(minScaleFactor: 0.8, maxScaleFactor: 1.7),
-      FrogTextStyle.bodyLarge =>
-        baseTextScaler.clamp(minScaleFactor: 0.8, maxScaleFactor: 1.8),
-      FrogTextStyle.bodyMedium =>
-        baseTextScaler.clamp(minScaleFactor: 0.8, maxScaleFactor: 2.0),
-      FrogTextStyle.bodySmall =>
-        baseTextScaler.clamp(minScaleFactor: 0.8, maxScaleFactor: 2.0),
-      FrogTextStyle.labelLarge =>
-        baseTextScaler.clamp(minScaleFactor: 0.8, maxScaleFactor: 2.0),
-      FrogTextStyle.labelMedium =>
-        baseTextScaler.clamp(minScaleFactor: 0.8, maxScaleFactor: 2.0),
-      FrogTextStyle.labelSmall =>
-        baseTextScaler.clamp(minScaleFactor: 0.8, maxScaleFactor: 2.0),
+      FrogTextStyle.displayLarge => baseTextScaler.clamp(
+        minScaleFactor: 0.8,
+        maxScaleFactor: 1.0,
+      ),
+      FrogTextStyle.displayMedium => baseTextScaler.clamp(
+        minScaleFactor: 0.8,
+        maxScaleFactor: 1.0,
+      ),
+      FrogTextStyle.displaySmall => baseTextScaler.clamp(
+        minScaleFactor: 0.8,
+        maxScaleFactor: 1.0,
+      ),
+      FrogTextStyle.headlineLarge => baseTextScaler.clamp(
+        minScaleFactor: 0.8,
+        maxScaleFactor: 1.0,
+      ),
+      FrogTextStyle.headlineMedium => baseTextScaler.clamp(
+        minScaleFactor: 0.8,
+        maxScaleFactor: 1.0,
+      ),
+      FrogTextStyle.headlineSmall => baseTextScaler.clamp(
+        minScaleFactor: 0.8,
+        maxScaleFactor: 1.0,
+      ),
+      FrogTextStyle.titleLarge => baseTextScaler.clamp(
+        minScaleFactor: 0.8,
+        maxScaleFactor: 1.4,
+      ),
+      FrogTextStyle.titleMedium => baseTextScaler.clamp(
+        minScaleFactor: 0.8,
+        maxScaleFactor: 1.5,
+      ),
+      FrogTextStyle.titleSmall => baseTextScaler.clamp(
+        minScaleFactor: 0.8,
+        maxScaleFactor: 1.7,
+      ),
+      FrogTextStyle.bodyLarge => baseTextScaler.clamp(
+        minScaleFactor: 0.8,
+        maxScaleFactor: 1.8,
+      ),
+      FrogTextStyle.bodyMedium => baseTextScaler.clamp(
+        minScaleFactor: 0.8,
+        maxScaleFactor: 2.0,
+      ),
+      FrogTextStyle.bodySmall => baseTextScaler.clamp(
+        minScaleFactor: 0.8,
+        maxScaleFactor: 2.0,
+      ),
+      FrogTextStyle.labelLarge => baseTextScaler.clamp(
+        minScaleFactor: 0.8,
+        maxScaleFactor: 2.0,
+      ),
+      FrogTextStyle.labelMedium => baseTextScaler.clamp(
+        minScaleFactor: 0.8,
+        maxScaleFactor: 2.0,
+      ),
+      FrogTextStyle.labelSmall => baseTextScaler.clamp(
+        minScaleFactor: 0.8,
+        maxScaleFactor: 2.0,
+      ),
     };
   }
 }

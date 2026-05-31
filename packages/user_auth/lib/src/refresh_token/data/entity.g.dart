@@ -7,7 +7,5 @@ part of 'entity.dart';
 // **************************************************************************
 
 RefreshTokenResponseEntity _$RefreshTokenResponseEntityFromJson(
-        Map<String, dynamic> json) =>
-    RefreshTokenResponseEntity(
-      token: json['Token'] as String?,
-    );
+  Map<String, dynamic> json,
+) => RefreshTokenResponseEntity(token: json['Token'] as String?);

@@ -5,10 +5,7 @@ import 'package:flutter/widgets.dart';
 @immutable
 class _ChatUIIconsData extends IconData {
   const _ChatUIIconsData(super.codePoint, this.name)
-      : super(
-          fontFamily: 'icons',
-          fontPackage: 'ui_kit',
-        );
+    : super(fontFamily: 'icons', fontPackage: 'ui_kit');
 
   final String name;
 }
@@ -19,11 +16,15 @@ class ChatUIIcons {
 
   static const arrow_line_left = _ChatUIIconsData(0xf101, 'arrow_line_left');
   static const arrow_line_right = _ChatUIIconsData(0xf102, 'arrow_line_right');
-  static const backspace_regular =
-      _ChatUIIconsData(0xf103, 'backspace_regular');
+  static const backspace_regular = _ChatUIIconsData(
+    0xf103,
+    'backspace_regular',
+  );
   static const briefcase_bold = _ChatUIIconsData(0xf104, 'briefcase_bold');
-  static const briefcase_outline =
-      _ChatUIIconsData(0xf105, 'briefcase_outline');
+  static const briefcase_outline = _ChatUIIconsData(
+    0xf105,
+    'briefcase_outline',
+  );
   static const check_regular = _ChatUIIconsData(0xf106, 'check_regular');
   static const close_default = _ChatUIIconsData(0xf107, 'close_default');
   static const gear_regular = _ChatUIIconsData(0xf108, 'gear_regular');
@@ -31,8 +32,10 @@ class ChatUIIcons {
   static const heart_outline = _ChatUIIconsData(0xf10a, 'heart_outline');
   static const home_bold = _ChatUIIconsData(0xf10b, 'home_bold');
   static const home_outline = _ChatUIIconsData(0xf10c, 'home_outline');
-  static const paper_plane_tilt_regular =
-      _ChatUIIconsData(0xf10d, 'paper_plane_tilt_regular');
+  static const paper_plane_tilt_regular = _ChatUIIconsData(
+    0xf10d,
+    'paper_plane_tilt_regular',
+  );
   static const profile_bold = _ChatUIIconsData(0xf10e, 'profile_bold');
   static const profile_outline = _ChatUIIconsData(0xf10f, 'profile_outline');
 

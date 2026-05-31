@@ -62,12 +62,18 @@ class MonthsLinkedList extends DatesLinkedList {
       _Node(_getMonthDates(DateTime(initialDate.year, initialDate.month, 1)));
 
   @override
-  _Node _buildNext() => _Node(_getMonthDates(
-      DateTime(_current.dates.last.year, _current.dates.last.month + 1, 1)));
+  _Node _buildNext() => _Node(
+    _getMonthDates(
+      DateTime(_current.dates.last.year, _current.dates.last.month + 1, 1),
+    ),
+  );
 
   @override
-  _Node _buildPrev() => _Node(_getMonthDates(
-      DateTime(_current.dates.first.year, _current.dates.first.month - 1, 1)));
+  _Node _buildPrev() => _Node(
+    _getMonthDates(
+      DateTime(_current.dates.first.year, _current.dates.first.month - 1, 1),
+    ),
+  );
 
   List<DateTime> _getMonthDates(DateTime firstDayOfMonth) {
     final int monthDays =
@@ -93,9 +99,11 @@ class WeeksLinkedList extends DatesLinkedList {
 
   List<DateTime> _getCurrentWeekDates() {
     final dayOfWeek = initialDate.weekday;
-    final firstDayOfWeek =
-        DateTime(initialDate.year, initialDate.month, initialDate.day)
-            .subtract(Duration(days: dayOfWeek - 1));
+    final firstDayOfWeek = DateTime(
+      initialDate.year,
+      initialDate.month,
+      initialDate.day,
+    ).subtract(Duration(days: dayOfWeek - 1));
     return _getWeekDates(firstDayOfWeek);
   }
 
@@ -145,14 +153,16 @@ class FourDaysLinkedList extends DatesLinkedList {
   }
 
   List<DateTime> _getNextFourDayDates(DateTime lastDayOfTheFourDay) {
-    final firstDayOfNextFourDay =
-        lastDayOfTheFourDay.add(const Duration(days: 1));
+    final firstDayOfNextFourDay = lastDayOfTheFourDay.add(
+      const Duration(days: 1),
+    );
     return _getFourDayDates(firstDayOfNextFourDay);
   }
 
   List<DateTime> _getPrevFourDayDates(DateTime firstDayOfFourDay) {
-    final lastDayOfPrevFourDay =
-        firstDayOfFourDay.subtract(const Duration(days: 4));
+    final lastDayOfPrevFourDay = firstDayOfFourDay.subtract(
+      const Duration(days: 4),
+    );
     return _getFourDayDates(lastDayOfPrevFourDay);
   }
 }

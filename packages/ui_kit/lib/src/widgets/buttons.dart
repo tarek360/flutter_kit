@@ -2,11 +2,7 @@ import 'package:ui_kit/ui_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-enum ButtonType {
-  primary,
-  outline,
-  text,
-}
+enum ButtonType { primary, outline, text }
 
 class ChatUIButton extends StatelessWidget {
   final VoidCallback? onPressed;
@@ -105,11 +101,13 @@ class ChatUIButton extends StatelessWidget {
 
     switch (_buttonType) {
       case ButtonType.primary:
-        foregroundColor = labelColor ??
+        foregroundColor =
+            labelColor ??
             (onPressed != null ? colors.neutral00 : colors.neutral50);
         break;
       case ButtonType.outline:
-        foregroundColor = labelColor ??
+        foregroundColor =
+            labelColor ??
             (onPressed != null ? colors.neutral100 : colors.neutral60);
         break;
       case ButtonType.text:
@@ -170,9 +168,7 @@ class ChatUIButton extends StatelessWidget {
       content = Row(
         mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Flexible(child: child),
-        ],
+        children: [Flexible(child: child)],
       );
     }
 
@@ -263,7 +259,8 @@ class ChatUIButton extends StatelessWidget {
                   height: height,
                   cornerRadius: cornerRadius,
                   isOutline: false,
-                  color: labelColor?.withOpacity(0.05) ??
+                  color:
+                      labelColor?.withOpacity(0.05) ??
                       colors.brand.withOpacity(0.05),
                   child: content,
                 );
@@ -304,10 +301,9 @@ class _LabelWithIconChild extends StatelessWidget {
     const gap = 8.0;
 
     final iconWidget = IconTheme(
-      data: Theme.of(context).iconTheme.copyWith(
-            size: iconSize,
-            color: iconColor,
-          ),
+      data: Theme.of(
+        context,
+      ).iconTheme.copyWith(size: iconSize, color: iconColor),
       child: icon,
     );
 
@@ -369,9 +365,7 @@ class AppCircularButton extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           circularButton,
-          const SizedBox(
-            height: 8,
-          ),
+          const SizedBox(height: 8),
           Text(title!, style: frogTheme.textStyles.labelSmall),
         ],
       );
@@ -379,11 +373,7 @@ class AppCircularButton extends StatelessWidget {
   }
 }
 
-enum PressingState {
-  idle,
-  pressed,
-  disabled,
-}
+enum PressingState { idle, pressed, disabled }
 
 typedef PressingWidgetBuilder = Widget Function(PressingState);
 
@@ -524,9 +514,10 @@ class _PressableBackground extends StatelessWidget {
           decoration: ShapeDecoration(
             color: color,
             shape: SmoothRectangleBorder(
-              side: isOutline == true
-                  ? BorderSide(color: color, width: 2.0)
-                  : BorderSide.none,
+              side:
+                  isOutline == true
+                      ? BorderSide(color: color, width: 2.0)
+                      : BorderSide.none,
               borderRadius: SmoothBorderRadius(
                 cornerRadius: cornerRadius,
                 cornerSmoothing: 0.6,
@@ -541,10 +532,7 @@ class _PressableBackground extends StatelessWidget {
 }
 
 class ActionButtonArea extends StatelessWidget {
-  const ActionButtonArea({
-    required this.child,
-    super.key,
-  });
+  const ActionButtonArea({required this.child, super.key});
 
   final Widget child;
 
@@ -555,10 +543,7 @@ class ActionButtonArea extends StatelessWidget {
         gradient: LinearGradient(
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
-          colors: [
-            Color(0x00ffffff),
-            Color(0xffffffff),
-          ],
+          colors: [Color(0x00ffffff), Color(0xffffffff)],
           stops: [0, 1],
         ),
       ),
@@ -647,8 +632,8 @@ class SquareButton extends StatelessWidget {
     this.padding,
     this.size,
     this.hapticFeedback = true,
-  })  : _buttonType = ButtonType.primary,
-        borderColor = null;
+  }) : _buttonType = ButtonType.primary,
+       borderColor = null;
 
   const SquareButton.secondary({
     super.key,
@@ -659,8 +644,8 @@ class SquareButton extends StatelessWidget {
     this.padding,
     this.size,
     this.hapticFeedback = true,
-  })  : _buttonType = ButtonType.outline,
-        color = null;
+  }) : _buttonType = ButtonType.outline,
+       color = null;
 
   final Widget child;
   final VoidCallback onPressed;
@@ -728,10 +713,6 @@ class SquareButton extends StatelessWidget {
       );
     }
 
-    return SizedBox(
-      width: size,
-      height: size,
-      child: button,
-    );
+    return SizedBox(width: size, height: size, child: button);
   }
 }

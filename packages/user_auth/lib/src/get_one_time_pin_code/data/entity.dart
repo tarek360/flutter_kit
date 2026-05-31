@@ -4,9 +4,7 @@ part 'entity.g.dart';
 
 @JsonSerializable()
 class GetOneTimePinCodeRequestEntity {
-  GetOneTimePinCodeRequestEntity({
-    this.email,
-  });
+  GetOneTimePinCodeRequestEntity({this.email});
 
   @JsonKey(name: 'Data')
   final String? email;

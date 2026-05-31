@@ -15,12 +15,14 @@ abstract class LougaRemoteNotification with _$LougaRemoteNotification {
   const LougaRemoteNotification._();
 
   factory LougaRemoteNotification.fromMap(Map<String, dynamic> message) {
-    final isBackground =
-        bool.parse((message['is_background'] as String?) ?? 'true');
+    final isBackground = bool.parse(
+      (message['is_background'] as String?) ?? 'true',
+    );
     final configJSONString = message['config'];
-    final config = configJSONString != null
-        ? jsonDecode(configJSONString as String) as Map<String, dynamic>
-        : <String, dynamic>{};
+    final config =
+        configJSONString != null
+            ? jsonDecode(configJSONString as String) as Map<String, dynamic>
+            : <String, dynamic>{};
 
     return LougaRemoteNotification(
       triggerID: config['trigger_id'] as String?,

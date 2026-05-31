@@ -17,11 +17,7 @@ class ButtonIcon extends StatelessWidget {
     return GestureDetector(
       onTap: onPressed,
       behavior: HitTestBehavior.translucent,
-      child: SizedBox(
-        width: size,
-        height: size,
-        child: icon,
-      ),
+      child: SizedBox(width: size, height: size, child: icon),
     );
   }
 }

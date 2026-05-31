@@ -2,10 +2,7 @@ import 'package:design_system/design_system.dart';
 import 'package:flutter/cupertino.dart';
 
 class ChatUISwitch extends StatelessWidget {
-  const ChatUISwitch({
-    required this.onChanged,
-    required this.value,
-  });
+  const ChatUISwitch({required this.onChanged, required this.value});
 
   final ValueChanged<bool>? onChanged;
   final bool value;

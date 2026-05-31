@@ -26,10 +26,7 @@ class AnimatedAppearance extends StatelessWidget {
         offset: appear ? Offset.zero : offset ?? const Offset(0, 0.5),
         curve: appear ? Curves.ease : _NoAnimation(),
         duration: duration ?? _duration,
-        child: IgnorePointer(
-          ignoring: !appear,
-          child: child,
-        ),
+        child: IgnorePointer(ignoring: !appear, child: child),
       ),
     );
   }

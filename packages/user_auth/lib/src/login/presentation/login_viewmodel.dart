@@ -28,11 +28,7 @@ import 'package:user_auth/user_auth.dart';
 // );
 //
 
-enum LoginSubmissionState {
-  success,
-  invalidCode,
-  expiredCode,
-}
+enum LoginSubmissionState { success, invalidCode, expiredCode }
 
 class LoginViewmodel extends StateNotifier<XFormState<LoginSubmissionState>> {
   final pinCodeProvider = StateProvider<List<String>>((ref) {
@@ -88,14 +84,15 @@ class LoginViewmodel extends StateNotifier<XFormState<LoginSubmissionState>> {
     final result = await _login(pinCode);
 
     state = result.when(
-      success: (token) =>
-          const XFormState.submitted(LoginSubmissionState.success),
-      invalidCode: () =>
-          const XFormState.submitted(LoginSubmissionState.invalidCode),
-      expiredCode: () =>
-          const XFormState.submitted(LoginSubmissionState.expiredCode),
-      otherError: (error) =>
-          XFormState.error(_networkErrorMessageMapper.transform(error)),
+      success:
+          (token) => const XFormState.submitted(LoginSubmissionState.success),
+      invalidCode:
+          () => const XFormState.submitted(LoginSubmissionState.invalidCode),
+      expiredCode:
+          () => const XFormState.submitted(LoginSubmissionState.expiredCode),
+      otherError:
+          (error) =>
+              XFormState.error(_networkErrorMessageMapper.transform(error)),
     );
   }
 

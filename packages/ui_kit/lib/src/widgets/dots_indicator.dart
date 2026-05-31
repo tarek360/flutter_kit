@@ -13,16 +13,17 @@ class ChatUIDotsIndicator extends StatelessWidget {
   final double position;
 
   @override
-  Widget build(BuildContext context) => dotsCount > 0
-      ? dots_indicator.DotsIndicator(
-          dotsCount: dotsCount,
-          position: position,
-          decorator: dots_indicator.DotsDecorator(
-            size: const Size.square(6),
-            activeSize: const Size.square(6),
-            color: FrogTheme.of(context).colors.neutral20,
-            activeColor: FrogTheme.of(context).colors.brand,
-          ),
-        )
-      : const SizedBox.shrink();
+  Widget build(BuildContext context) =>
+      dotsCount > 0
+          ? dots_indicator.DotsIndicator(
+            dotsCount: dotsCount,
+            position: position,
+            decorator: dots_indicator.DotsDecorator(
+              size: const Size.square(6),
+              activeSize: const Size.square(6),
+              color: FrogTheme.of(context).colors.neutral20,
+              activeColor: FrogTheme.of(context).colors.brand,
+            ),
+          )
+          : const SizedBox.shrink();
 }

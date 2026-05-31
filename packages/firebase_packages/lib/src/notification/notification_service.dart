@@ -11,8 +11,9 @@ import 'package:timezone/timezone.dart' as tz;
 
 import '../../firebase_packages.dart';
 
-final newNotificationOpenProvider =
-    StateProvider<LougaRemoteNotification?>((ref) => null);
+final newNotificationOpenProvider = StateProvider<LougaRemoteNotification?>(
+  (ref) => null,
+);
 
 abstract class NotificationService {
   NotificationService._();
@@ -90,7 +91,8 @@ abstract class NotificationService {
       ByteArrayAndroidBitmap? androidBitmap;
       if (imageUrl != null) {
         androidBitmap = ByteArrayAndroidBitmap.fromBase64String(
-            await _base64encodedImage(imageUrl));
+          await _base64encodedImage(imageUrl),
+        );
       }
 
       final sound = android.sound;
@@ -105,13 +107,17 @@ abstract class NotificationService {
             channelId ?? _androidNotificationChannel.id,
             channelId ?? _androidNotificationChannel.name,
             icon: 'ic_notification',
-            styleInformation: androidBitmap != null
-                ? BigPictureStyleInformation(androidBitmap,
-                    hideExpandedLargeIcon: true)
-                : null,
-            sound: sound != null && sound != 'default'
-                ? RawResourceAndroidNotificationSound(sound.split(".")[0])
-                : null,
+            styleInformation:
+                androidBitmap != null
+                    ? BigPictureStyleInformation(
+                      androidBitmap,
+                      hideExpandedLargeIcon: true,
+                    )
+                    : null,
+            sound:
+                sound != null && sound != 'default'
+                    ? RawResourceAndroidNotificationSound(sound.split(".")[0])
+                    : null,
           ),
         ),
         payload: jsonEncode(message.data),
@@ -141,7 +147,8 @@ abstract class NotificationService {
       if (call.method == 'onNotificationOpened' &&
           arguments is Map<dynamic, dynamic>) {
         final data = arguments.map<String, dynamic>(
-            (key, value) => MapEntry(key.toString(), value));
+          (key, value) => MapEntry(key.toString(), value),
+        );
         _onMessageOpenedApp(RemoteMessage.fromMap(data), ref);
       }
     });
@@ -158,8 +165,9 @@ abstract class NotificationService {
   }
 
   static void _onMessageOpenedApp(RemoteMessage message, WidgetRef ref) {
-    ref.read(newNotificationOpenProvider.notifier).state =
-        LougaRemoteNotification.fromMap(message.data);
+    ref
+        .read(newNotificationOpenProvider.notifier)
+        .state = LougaRemoteNotification.fromMap(message.data);
   }
 
   static Future<String> _base64encodedImage(String url) async {
@@ -182,8 +190,9 @@ abstract class NotificationService {
       'PRACTICE REMINDER',
       channelDescription: 'notifications to remind you to practice',
     );
-    const notificationDetails =
-        NotificationDetails(android: androidNotificationDetails);
+    const notificationDetails = NotificationDetails(
+      android: androidNotificationDetails,
+    );
 
     await _localNotifications.zonedSchedule(
       _dailyNotificationID,
@@ -198,8 +207,13 @@ abstract class NotificationService {
 
   static tz.TZDateTime _nextTimeInstanceOf(int hour) {
     final tz.TZDateTime now = tz.TZDateTime.now(tz.local);
-    tz.TZDateTime scheduledDate =
-        tz.TZDateTime(tz.local, now.year, now.month, now.day, hour);
+    tz.TZDateTime scheduledDate = tz.TZDateTime(
+      tz.local,
+      now.year,
+      now.month,
+      now.day,
+      hour,
+    );
     if (scheduledDate.isBefore(now)) {
       scheduledDate = scheduledDate.add(const Duration(days: 1));
     }

@@ -86,7 +86,9 @@ class AppSharedPreferences {
 
   void markFcmTokenAsSent() {
     _sharedPreferences.setInt(
-        _fcmTokenSentKey, DateTime.now().millisecondsSinceEpoch);
+      _fcmTokenSentKey,
+      DateTime.now().millisecondsSinceEpoch,
+    );
   }
 
   DateTime? getLastFcmTokenSentDate() {
@@ -151,8 +153,9 @@ class AppSharedPreferences {
       final data = await _secureStorage.read(key: _appFirstInstallationDateKey);
       if (data == null) {
         await _secureStorage.write(
-            key: _appFirstInstallationDateKey,
-            value: DateTime.now().toIso8601String());
+          key: _appFirstInstallationDateKey,
+          value: DateTime.now().toIso8601String(),
+        );
       }
     } on PlatformException catch (e, s) {
       Logger.er('Failed to set first installation date: $e', stackTrace: s);
@@ -183,15 +186,19 @@ class AppSharedPreferences {
   }
 
   /// Returns true if the key is expired and marks it as renewed if [markAsRenewed] is true.
-  bool isExpired(String key,
-      {required Duration duration, bool markAsRenewed = false}) {
+  bool isExpired(
+    String key, {
+    required Duration duration,
+    bool markAsRenewed = false,
+  }) {
     final now = DateTime.now();
 
     final bool isExpired;
     final lastDisplayDate = getInt(key);
     if (lastDisplayDate != null) {
-      final expiryDate =
-          DateTime.fromMillisecondsSinceEpoch(lastDisplayDate).add(duration);
+      final expiryDate = DateTime.fromMillisecondsSinceEpoch(
+        lastDisplayDate,
+      ).add(duration);
       isExpired = expiryDate.isBefore(now);
     } else {
       isExpired = true;

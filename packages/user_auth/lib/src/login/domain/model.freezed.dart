@@ -12,7 +12,8 @@ part of 'model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods',
+);
 
 /// @nodoc
 mixin _$LoginRequest {
@@ -27,8 +28,9 @@ mixin _$LoginRequest {
 /// @nodoc
 abstract class $LoginRequestCopyWith<$Res> {
   factory $LoginRequestCopyWith(
-          LoginRequest value, $Res Function(LoginRequest) then) =
-      _$LoginRequestCopyWithImpl<$Res, LoginRequest>;
+    LoginRequest value,
+    $Res Function(LoginRequest) then,
+  ) = _$LoginRequestCopyWithImpl<$Res, LoginRequest>;
   @useResult
   $Res call({String pinID, int pinCode});
 }
@@ -45,20 +47,22 @@ class _$LoginRequestCopyWithImpl<$Res, $Val extends LoginRequest>
 
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? pinID = null,
-    Object? pinCode = null,
-  }) {
-    return _then(_value.copyWith(
-      pinID: null == pinID
-          ? _value.pinID
-          : pinID // ignore: cast_nullable_to_non_nullable
-              as String,
-      pinCode: null == pinCode
-          ? _value.pinCode
-          : pinCode // ignore: cast_nullable_to_non_nullable
-              as int,
-    ) as $Val);
+  $Res call({Object? pinID = null, Object? pinCode = null}) {
+    return _then(
+      _value.copyWith(
+            pinID:
+                null == pinID
+                    ? _value.pinID
+                    : pinID // ignore: cast_nullable_to_non_nullable
+                        as String,
+            pinCode:
+                null == pinCode
+                    ? _value.pinCode
+                    : pinCode // ignore: cast_nullable_to_non_nullable
+                        as int,
+          )
+          as $Val,
+    );
   }
 }
 
@@ -66,8 +70,9 @@ class _$LoginRequestCopyWithImpl<$Res, $Val extends LoginRequest>
 abstract class _$$_LoginRequestCopyWith<$Res>
     implements $LoginRequestCopyWith<$Res> {
   factory _$$_LoginRequestCopyWith(
-          _$_LoginRequest value, $Res Function(_$_LoginRequest) then) =
-      __$$_LoginRequestCopyWithImpl<$Res>;
+    _$_LoginRequest value,
+    $Res Function(_$_LoginRequest) then,
+  ) = __$$_LoginRequestCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String pinID, int pinCode});
@@ -78,25 +83,27 @@ class __$$_LoginRequestCopyWithImpl<$Res>
     extends _$LoginRequestCopyWithImpl<$Res, _$_LoginRequest>
     implements _$$_LoginRequestCopyWith<$Res> {
   __$$_LoginRequestCopyWithImpl(
-      _$_LoginRequest _value, $Res Function(_$_LoginRequest) _then)
-      : super(_value, _then);
+    _$_LoginRequest _value,
+    $Res Function(_$_LoginRequest) _then,
+  ) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? pinID = null,
-    Object? pinCode = null,
-  }) {
-    return _then(_$_LoginRequest(
-      pinID: null == pinID
-          ? _value.pinID
-          : pinID // ignore: cast_nullable_to_non_nullable
-              as String,
-      pinCode: null == pinCode
-          ? _value.pinCode
-          : pinCode // ignore: cast_nullable_to_non_nullable
-              as int,
-    ));
+  $Res call({Object? pinID = null, Object? pinCode = null}) {
+    return _then(
+      _$_LoginRequest(
+        pinID:
+            null == pinID
+                ? _value.pinID
+                : pinID // ignore: cast_nullable_to_non_nullable
+                    as String,
+        pinCode:
+            null == pinCode
+                ? _value.pinCode
+                : pinCode // ignore: cast_nullable_to_non_nullable
+                    as int,
+      ),
+    );
   }
 }
 
@@ -104,7 +111,7 @@ class __$$_LoginRequestCopyWithImpl<$Res>
 
 class _$_LoginRequest extends _LoginRequest {
   const _$_LoginRequest({required this.pinID, required this.pinCode})
-      : super._();
+    : super._();
 
   @override
   final String pinID;
@@ -136,9 +143,10 @@ class _$_LoginRequest extends _LoginRequest {
 }
 
 abstract class _LoginRequest extends LoginRequest {
-  const factory _LoginRequest(
-      {required final String pinID,
-      required final int pinCode}) = _$_LoginRequest;
+  const factory _LoginRequest({
+    required final String pinID,
+    required final int pinCode,
+  }) = _$_LoginRequest;
   const _LoginRequest._() : super._();
 
   @override
@@ -159,16 +167,14 @@ mixin _$LoginResponse {
     required TResult Function() invalidCode,
     required TResult Function() expiredCode,
     required TResult Function(ResultErrorType errorType) otherError,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String token)? success,
     TResult? Function()? invalidCode,
     TResult? Function()? expiredCode,
     TResult? Function(ResultErrorType errorType)? otherError,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String token)? success,
@@ -176,24 +182,21 @@ mixin _$LoginResponse {
     TResult Function()? expiredCode,
     TResult Function(ResultErrorType errorType)? otherError,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_LoginResponseSuccess value) success,
     required TResult Function(_LoginResponseInvalidCode value) invalidCode,
     required TResult Function(_LoginResponseExpiredCode value) expiredCode,
     required TResult Function(_LoginResponseOtherError value) otherError,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_LoginResponseSuccess value)? success,
     TResult? Function(_LoginResponseInvalidCode value)? invalidCode,
     TResult? Function(_LoginResponseExpiredCode value)? expiredCode,
     TResult? Function(_LoginResponseOtherError value)? otherError,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_LoginResponseSuccess value)? success,
@@ -201,15 +204,15 @@ mixin _$LoginResponse {
     TResult Function(_LoginResponseExpiredCode value)? expiredCode,
     TResult Function(_LoginResponseOtherError value)? otherError,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $LoginResponseCopyWith<$Res> {
   factory $LoginResponseCopyWith(
-          LoginResponse value, $Res Function(LoginResponse) then) =
-      _$LoginResponseCopyWithImpl<$Res, LoginResponse>;
+    LoginResponse value,
+    $Res Function(LoginResponse) then,
+  ) = _$LoginResponseCopyWithImpl<$Res, LoginResponse>;
 }
 
 /// @nodoc
@@ -225,9 +228,10 @@ class _$LoginResponseCopyWithImpl<$Res, $Val extends LoginResponse>
 
 /// @nodoc
 abstract class _$$_LoginResponseSuccessCopyWith<$Res> {
-  factory _$$_LoginResponseSuccessCopyWith(_$_LoginResponseSuccess value,
-          $Res Function(_$_LoginResponseSuccess) then) =
-      __$$_LoginResponseSuccessCopyWithImpl<$Res>;
+  factory _$$_LoginResponseSuccessCopyWith(
+    _$_LoginResponseSuccess value,
+    $Res Function(_$_LoginResponseSuccess) then,
+  ) = __$$_LoginResponseSuccessCopyWithImpl<$Res>;
   @useResult
   $Res call({String token});
 }
@@ -236,21 +240,23 @@ abstract class _$$_LoginResponseSuccessCopyWith<$Res> {
 class __$$_LoginResponseSuccessCopyWithImpl<$Res>
     extends _$LoginResponseCopyWithImpl<$Res, _$_LoginResponseSuccess>
     implements _$$_LoginResponseSuccessCopyWith<$Res> {
-  __$$_LoginResponseSuccessCopyWithImpl(_$_LoginResponseSuccess _value,
-      $Res Function(_$_LoginResponseSuccess) _then)
-      : super(_value, _then);
+  __$$_LoginResponseSuccessCopyWithImpl(
+    _$_LoginResponseSuccess _value,
+    $Res Function(_$_LoginResponseSuccess) _then,
+  ) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? token = null,
-  }) {
-    return _then(_$_LoginResponseSuccess(
-      token: null == token
-          ? _value.token
-          : token // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
+  $Res call({Object? token = null}) {
+    return _then(
+      _$_LoginResponseSuccess(
+        token:
+            null == token
+                ? _value.token
+                : token // ignore: cast_nullable_to_non_nullable
+                    as String,
+      ),
+    );
   }
 }
 
@@ -283,7 +289,9 @@ class _$_LoginResponseSuccess extends _LoginResponseSuccess {
   @pragma('vm:prefer-inline')
   _$$_LoginResponseSuccessCopyWith<_$_LoginResponseSuccess> get copyWith =>
       __$$_LoginResponseSuccessCopyWithImpl<_$_LoginResponseSuccess>(
-          this, _$identity);
+        this,
+        _$identity,
+      );
 
   @override
   @optionalTypeArgs
@@ -374,18 +382,19 @@ abstract class _LoginResponseSuccess extends LoginResponse {
 /// @nodoc
 abstract class _$$_LoginResponseInvalidCodeCopyWith<$Res> {
   factory _$$_LoginResponseInvalidCodeCopyWith(
-          _$_LoginResponseInvalidCode value,
-          $Res Function(_$_LoginResponseInvalidCode) then) =
-      __$$_LoginResponseInvalidCodeCopyWithImpl<$Res>;
+    _$_LoginResponseInvalidCode value,
+    $Res Function(_$_LoginResponseInvalidCode) then,
+  ) = __$$_LoginResponseInvalidCodeCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$_LoginResponseInvalidCodeCopyWithImpl<$Res>
     extends _$LoginResponseCopyWithImpl<$Res, _$_LoginResponseInvalidCode>
     implements _$$_LoginResponseInvalidCodeCopyWith<$Res> {
-  __$$_LoginResponseInvalidCodeCopyWithImpl(_$_LoginResponseInvalidCode _value,
-      $Res Function(_$_LoginResponseInvalidCode) _then)
-      : super(_value, _then);
+  __$$_LoginResponseInvalidCodeCopyWithImpl(
+    _$_LoginResponseInvalidCode _value,
+    $Res Function(_$_LoginResponseInvalidCode) _then,
+  ) : super(_value, _then);
 }
 
 /// @nodoc
@@ -491,18 +500,19 @@ abstract class _LoginResponseInvalidCode extends LoginResponse {
 /// @nodoc
 abstract class _$$_LoginResponseExpiredCodeCopyWith<$Res> {
   factory _$$_LoginResponseExpiredCodeCopyWith(
-          _$_LoginResponseExpiredCode value,
-          $Res Function(_$_LoginResponseExpiredCode) then) =
-      __$$_LoginResponseExpiredCodeCopyWithImpl<$Res>;
+    _$_LoginResponseExpiredCode value,
+    $Res Function(_$_LoginResponseExpiredCode) then,
+  ) = __$$_LoginResponseExpiredCodeCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$_LoginResponseExpiredCodeCopyWithImpl<$Res>
     extends _$LoginResponseCopyWithImpl<$Res, _$_LoginResponseExpiredCode>
     implements _$$_LoginResponseExpiredCodeCopyWith<$Res> {
-  __$$_LoginResponseExpiredCodeCopyWithImpl(_$_LoginResponseExpiredCode _value,
-      $Res Function(_$_LoginResponseExpiredCode) _then)
-      : super(_value, _then);
+  __$$_LoginResponseExpiredCodeCopyWithImpl(
+    _$_LoginResponseExpiredCode _value,
+    $Res Function(_$_LoginResponseExpiredCode) _then,
+  ) : super(_value, _then);
 }
 
 /// @nodoc
@@ -607,9 +617,10 @@ abstract class _LoginResponseExpiredCode extends LoginResponse {
 
 /// @nodoc
 abstract class _$$_LoginResponseOtherErrorCopyWith<$Res> {
-  factory _$$_LoginResponseOtherErrorCopyWith(_$_LoginResponseOtherError value,
-          $Res Function(_$_LoginResponseOtherError) then) =
-      __$$_LoginResponseOtherErrorCopyWithImpl<$Res>;
+  factory _$$_LoginResponseOtherErrorCopyWith(
+    _$_LoginResponseOtherError value,
+    $Res Function(_$_LoginResponseOtherError) then,
+  ) = __$$_LoginResponseOtherErrorCopyWithImpl<$Res>;
   @useResult
   $Res call({ResultErrorType errorType});
 }
@@ -618,21 +629,22 @@ abstract class _$$_LoginResponseOtherErrorCopyWith<$Res> {
 class __$$_LoginResponseOtherErrorCopyWithImpl<$Res>
     extends _$LoginResponseCopyWithImpl<$Res, _$_LoginResponseOtherError>
     implements _$$_LoginResponseOtherErrorCopyWith<$Res> {
-  __$$_LoginResponseOtherErrorCopyWithImpl(_$_LoginResponseOtherError _value,
-      $Res Function(_$_LoginResponseOtherError) _then)
-      : super(_value, _then);
+  __$$_LoginResponseOtherErrorCopyWithImpl(
+    _$_LoginResponseOtherError _value,
+    $Res Function(_$_LoginResponseOtherError) _then,
+  ) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? errorType = null,
-  }) {
-    return _then(_$_LoginResponseOtherError(
-      null == errorType
-          ? _value.errorType
-          : errorType // ignore: cast_nullable_to_non_nullable
-              as ResultErrorType,
-    ));
+  $Res call({Object? errorType = null}) {
+    return _then(
+      _$_LoginResponseOtherError(
+        null == errorType
+            ? _value.errorType
+            : errorType // ignore: cast_nullable_to_non_nullable
+                as ResultErrorType,
+      ),
+    );
   }
 }
 
@@ -665,9 +677,11 @@ class _$_LoginResponseOtherError extends _LoginResponseOtherError {
   @override
   @pragma('vm:prefer-inline')
   _$$_LoginResponseOtherErrorCopyWith<_$_LoginResponseOtherError>
-      get copyWith =>
-          __$$_LoginResponseOtherErrorCopyWithImpl<_$_LoginResponseOtherError>(
-              this, _$identity);
+  get copyWith =>
+      __$$_LoginResponseOtherErrorCopyWithImpl<_$_LoginResponseOtherError>(
+        this,
+        _$identity,
+      );
 
   @override
   @optionalTypeArgs
@@ -752,5 +766,5 @@ abstract class _LoginResponseOtherError extends LoginResponse {
   ResultErrorType get errorType;
   @JsonKey(ignore: true)
   _$$_LoginResponseOtherErrorCopyWith<_$_LoginResponseOtherError>
-      get copyWith => throw _privateConstructorUsedError;
+  get copyWith => throw _privateConstructorUsedError;
 }

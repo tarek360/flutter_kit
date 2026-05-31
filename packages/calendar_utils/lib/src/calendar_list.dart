@@ -1,10 +1,6 @@
 import 'dates_linked_list.dart';
 
-enum CalendarPeriod {
-  fourDays,
-  week,
-  month,
-}
+enum CalendarPeriod { fourDays, week, month }
 
 class CalendarList {
   CalendarList({
@@ -13,10 +9,10 @@ class CalendarList {
     this.enableFourDays = false,
     this.enableWeek = true,
     this.enableMonth = false,
-  })  : _period = period,
-        _fourDaysList = enableFourDays ? FourDaysLinkedList(initialDate) : null,
-        _weekList = enableWeek ? WeeksLinkedList(initialDate) : null,
-        _monthList = enableMonth ? MonthsLinkedList(initialDate) : null;
+  }) : _period = period,
+       _fourDaysList = enableFourDays ? FourDaysLinkedList(initialDate) : null,
+       _weekList = enableWeek ? WeeksLinkedList(initialDate) : null,
+       _monthList = enableMonth ? MonthsLinkedList(initialDate) : null;
 
   final bool enableFourDays;
   final bool enableWeek;
@@ -111,15 +107,15 @@ class CalendarList {
     }
   }
 
-// static DatesLinkedList week(DateTime initialDate) {
-//   return WeeksLinkedList(initialDate);
-// }
-//
-// static DatesLinkedList month(DateTime initialDate) {
-//   return MonthsLinkedList(initialDate);
-// }
-//
-// static DatesLinkedList fourDays(DateTime initialDate) {
-//   return FourDaysLinkedList(initialDate);
-// }
+  // static DatesLinkedList week(DateTime initialDate) {
+  //   return WeeksLinkedList(initialDate);
+  // }
+  //
+  // static DatesLinkedList month(DateTime initialDate) {
+  //   return MonthsLinkedList(initialDate);
+  // }
+  //
+  // static DatesLinkedList fourDays(DateTime initialDate) {
+  //   return FourDaysLinkedList(initialDate);
+  // }
 }

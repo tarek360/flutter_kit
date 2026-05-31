@@ -2,10 +2,8 @@ import 'package:flutter/widgets.dart';
 import 'package:ui_kit_interface/src/exception/ui_kit.dart';
 import 'package:ui_kit_interface/ui_kit_interface.dart';
 
-typedef DotsIndicatorBuilder = Widget Function({
-  required int dotsCount,
-  required double position,
-});
+typedef DotsIndicatorBuilder =
+    Widget Function({required int dotsCount, required double position});
 
 class DotsIndicator extends StatelessWidget {
   const DotsIndicator({

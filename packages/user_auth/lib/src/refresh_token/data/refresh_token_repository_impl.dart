@@ -7,10 +7,7 @@ class RefreshTokenRepositoryImpl implements RefreshTokenRepository {
   final NetworkService _network;
   final AppSharedPreferences _appSharedPreferences;
 
-  const RefreshTokenRepositoryImpl(
-    this._network,
-    this._appSharedPreferences,
-  );
+  const RefreshTokenRepositoryImpl(this._network, this._appSharedPreferences);
 
   @override
   String? get userToken => _appSharedPreferences.getUserToken();
@@ -23,12 +20,12 @@ class RefreshTokenRepositoryImpl implements RefreshTokenRepository {
   Future<Result<String, ResultErrorType>> getRefreshedToken() async {
     final NetworkResponse<MessageOut<RefreshTokenResponseEntity>> response =
         await _network.request(
-      request: NetworkRequest.get(
-        endpoint: '/v1/user/auth/refresh-token',
-      ),
-      fromJson: MessageOut(dataFromJson: RefreshTokenResponseEntity.fromJson)
-          .singleFromJson,
-    );
+          request: NetworkRequest.get(endpoint: '/v1/user/auth/refresh-token'),
+          fromJson:
+              MessageOut(
+                dataFromJson: RefreshTokenResponseEntity.fromJson,
+              ).singleFromJson,
+        );
 
     return response.when(
       success: (data) {
@@ -44,7 +41,8 @@ class RefreshTokenRepositoryImpl implements RefreshTokenRepository {
   @override
   Future<void> saveToken(String token) async {
     await _appSharedPreferences.setUserToken(token);
-    _appSharedPreferences
-        .setLastRefreshTokenTime(DateTime.now().millisecondsSinceEpoch);
+    _appSharedPreferences.setLastRefreshTokenTime(
+      DateTime.now().millisecondsSinceEpoch,
+    );
   }
 }

@@ -51,14 +51,19 @@ extension DateUtils on DateTime {
   bool get isPast => isBefore(DateTime.now());
 }
 
-String formatTimeRange(DateTime start, DateTime end,
-    {bool format24Hours = false}) {
-  final startHour = format24Hours
-      ? start.hour.toString().padLeft(2, '0')
-      : (start.hour % 12 == 0 ? '12' : (start.hour % 12).toString());
-  final endHour = format24Hours
-      ? end.hour.toString().padLeft(2, '0')
-      : (end.hour % 12 == 0 ? '12' : (end.hour % 12).toString());
+String formatTimeRange(
+  DateTime start,
+  DateTime end, {
+  bool format24Hours = false,
+}) {
+  final startHour =
+      format24Hours
+          ? start.hour.toString().padLeft(2, '0')
+          : (start.hour % 12 == 0 ? '12' : (start.hour % 12).toString());
+  final endHour =
+      format24Hours
+          ? end.hour.toString().padLeft(2, '0')
+          : (end.hour % 12 == 0 ? '12' : (end.hour % 12).toString());
   final startMinute = start.minute.toString().padLeft(2, '0');
   final endMinute = end.minute.toString().padLeft(2, '0');
   final startPeriod =

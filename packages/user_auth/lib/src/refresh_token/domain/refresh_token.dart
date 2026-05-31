@@ -48,8 +48,9 @@ class RefreshToken {
     final lastRefreshTokenTimeInt =
         _refreshTokenRepository.lastRefreshTokenTime;
     if (lastRefreshTokenTimeInt != null) {
-      final lastRefreshTokenDateTime =
-          DateTime.fromMillisecondsSinceEpoch(lastRefreshTokenTimeInt);
+      final lastRefreshTokenDateTime = DateTime.fromMillisecondsSinceEpoch(
+        lastRefreshTokenTimeInt,
+      );
       final secondsSinceLastCall =
           DateTime.now().difference(lastRefreshTokenDateTime).inSeconds;
       return secondsSinceLastCall > _tokenRefreshPeriodDuration.inSeconds;

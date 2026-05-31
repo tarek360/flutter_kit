@@ -94,23 +94,20 @@ class ImageNetwork extends StatelessWidget {
     Widget image;
 
     if (imageUrl != null) {
-      image = _isSvg(imageUrl)
-          ? SvgPicture.network(
-              imageUrl,
-              width: width,
-              height: height,
-            )
-          : CachedNetworkImage(
-              imageUrl: imageUrl,
-              width: width,
-              height: height,
-              fit: fit,
-              cacheKey: cacheKey,
-              fadeOutDuration: const Duration(milliseconds: 400),
-              fadeInDuration: const Duration(milliseconds: 300),
-              placeholder: (context, url) => placeholder,
-              errorWidget: (context, url, error) => placeholder,
-            );
+      image =
+          _isSvg(imageUrl)
+              ? SvgPicture.network(imageUrl, width: width, height: height)
+              : CachedNetworkImage(
+                imageUrl: imageUrl,
+                width: width,
+                height: height,
+                fit: fit,
+                cacheKey: cacheKey,
+                fadeOutDuration: const Duration(milliseconds: 400),
+                fadeInDuration: const Duration(milliseconds: 300),
+                placeholder: (context, url) => placeholder,
+                errorWidget: (context, url, error) => placeholder,
+              );
     } else {
       image = placeholder;
     }
@@ -182,10 +179,7 @@ class ImageFromFile extends StatelessWidget {
     if (borderRadius == null) {
       return image;
     } else {
-      return ClipRRect(
-        borderRadius: borderRadius,
-        child: image,
-      );
+      return ClipRRect(borderRadius: borderRadius, child: image);
     }
   }
 }
@@ -237,12 +231,7 @@ class ImageNetworkBlur extends StatelessWidget {
 }
 
 class ImagePlaceholder extends StatelessWidget {
-  const ImagePlaceholder({
-    super.key,
-    this.width,
-    this.height,
-    this.color,
-  });
+  const ImagePlaceholder({super.key, this.width, this.height, this.color});
 
   final double? width;
   final double? height;

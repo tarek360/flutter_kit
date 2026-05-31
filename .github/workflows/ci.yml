@@ -62,7 +62,7 @@ jobs:
           write_overrides social_login      core global_lints
           write_overrides ui_kit            design_system ui_kit_interface global_lints
           write_overrides ui_kit_interface  design_system global_lints
-          write_overrides user_auth         ui_kit_interface core global_lints
+          write_overrides user_auth         ui_kit_interface design_system core global_lints
 
       - name: pub get
         working-directory: packages/${{ matrix.package }}

@@ -12,8 +12,6 @@ class LogoutMapper {
       return null;
     }
 
-    return LogoutResponse(
-      success: success,
-    );
+    return LogoutResponse(success: success);
   }
 }

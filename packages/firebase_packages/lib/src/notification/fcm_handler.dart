@@ -8,10 +8,7 @@ class FCMHandler {
   final AppSharedPreferences _appSharedPreferences;
   final UpdateFcm _updateFcm;
 
-  FCMHandler(
-    this._appSharedPreferences,
-    this._updateFcm,
-  );
+  FCMHandler(this._appSharedPreferences, this._updateFcm);
 
   void sync() {
     _onTokenRefresh();

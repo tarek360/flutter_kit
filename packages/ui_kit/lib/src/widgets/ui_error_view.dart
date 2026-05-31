@@ -24,7 +24,8 @@ class ChatUIErrorView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    final imageSize = illustrationSize ??
+    final imageSize =
+        illustrationSize ??
         min(size.width, size.height) * (isMobile(context) ? 0.5 : 0.3);
 
     final colors = FrogTheme.of(context).colors;
@@ -36,7 +37,8 @@ class ChatUIErrorView extends StatelessWidget {
           SizedBox(
             width: imageSize,
             height: imageSize,
-            child: UIKit.of(context).errorImageBuilder?.call() ??
+            child:
+                UIKit.of(context).errorImageBuilder?.call() ??
                 Icon(Icons.error, size: imageSize),
           ),
           const SizedBox(height: 56),

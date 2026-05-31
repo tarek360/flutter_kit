@@ -26,11 +26,8 @@ class LogoutRepositoryImpl implements LogoutRepository {
       request.addHeader('Authorization', 'Bearer $userToken');
     }
 
-    final NetworkResponse<LogoutResponseEntity> response =
-        await _network.request(
-      request: request,
-      fromJson: LogoutResponseEntity.fromJson,
-    );
+    final NetworkResponse<LogoutResponseEntity> response = await _network
+        .request(request: request, fromJson: LogoutResponseEntity.fromJson);
 
     return response.when(
       success: (data) {

@@ -12,7 +12,8 @@ part of 'model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods',
+);
 
 /// @nodoc
 mixin _$LogoutResponse {
@@ -26,8 +27,9 @@ mixin _$LogoutResponse {
 /// @nodoc
 abstract class $LogoutResponseCopyWith<$Res> {
   factory $LogoutResponseCopyWith(
-          LogoutResponse value, $Res Function(LogoutResponse) then) =
-      _$LogoutResponseCopyWithImpl<$Res, LogoutResponse>;
+    LogoutResponse value,
+    $Res Function(LogoutResponse) then,
+  ) = _$LogoutResponseCopyWithImpl<$Res, LogoutResponse>;
   @useResult
   $Res call({bool success});
 }
@@ -44,15 +46,17 @@ class _$LogoutResponseCopyWithImpl<$Res, $Val extends LogoutResponse>
 
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? success = null,
-  }) {
-    return _then(_value.copyWith(
-      success: null == success
-          ? _value.success
-          : success // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ) as $Val);
+  $Res call({Object? success = null}) {
+    return _then(
+      _value.copyWith(
+            success:
+                null == success
+                    ? _value.success
+                    : success // ignore: cast_nullable_to_non_nullable
+                        as bool,
+          )
+          as $Val,
+    );
   }
 }
 
@@ -60,8 +64,9 @@ class _$LogoutResponseCopyWithImpl<$Res, $Val extends LogoutResponse>
 abstract class _$$_LogoutResponseCopyWith<$Res>
     implements $LogoutResponseCopyWith<$Res> {
   factory _$$_LogoutResponseCopyWith(
-          _$_LogoutResponse value, $Res Function(_$_LogoutResponse) then) =
-      __$$_LogoutResponseCopyWithImpl<$Res>;
+    _$_LogoutResponse value,
+    $Res Function(_$_LogoutResponse) then,
+  ) = __$$_LogoutResponseCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({bool success});
@@ -72,20 +77,22 @@ class __$$_LogoutResponseCopyWithImpl<$Res>
     extends _$LogoutResponseCopyWithImpl<$Res, _$_LogoutResponse>
     implements _$$_LogoutResponseCopyWith<$Res> {
   __$$_LogoutResponseCopyWithImpl(
-      _$_LogoutResponse _value, $Res Function(_$_LogoutResponse) _then)
-      : super(_value, _then);
+    _$_LogoutResponse _value,
+    $Res Function(_$_LogoutResponse) _then,
+  ) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? success = null,
-  }) {
-    return _then(_$_LogoutResponse(
-      success: null == success
-          ? _value.success
-          : success // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ));
+  $Res call({Object? success = null}) {
+    return _then(
+      _$_LogoutResponse(
+        success:
+            null == success
+                ? _value.success
+                : success // ignore: cast_nullable_to_non_nullable
+                    as bool,
+      ),
+    );
   }
 }
 

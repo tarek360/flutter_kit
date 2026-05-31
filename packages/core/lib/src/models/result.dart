@@ -97,10 +97,7 @@ class Result<T, R> with _$Result<T, R> {
   bool get hasError => maybeWhen(failure: (_) => true, orElse: () => false);
 
   D? ifHasData<D>(D Function(T data) dataFunction) {
-    final data = maybeWhen(
-      success: (data) => data,
-      orElse: () => null,
-    );
+    final data = maybeWhen(success: (data) => data, orElse: () => null);
     if (data != null) {
       return dataFunction(data);
     }

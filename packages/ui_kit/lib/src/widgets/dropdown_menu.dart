@@ -35,21 +35,23 @@ class ChatUIDropdownMenu<T> extends StatelessWidget {
     return ContextPopup(
       controller: contextPopupController,
       popupShape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(menuSize.width / 16)),
-      popupSize: menuSize,
-      popupBuilder: (BuildContext context) => SizedBox(
-        width: menuSize.width,
-        height: menuSize.height,
-        child: SelectableList<T>(
-          onValueChanged: (value) {
-            Navigator.of(context).pop();
-            onValueChanged(value);
-          },
-          initialValue: initialValue,
-          values: values,
-          labelBuilder: labelBuilder,
-        ),
+        borderRadius: BorderRadius.circular(menuSize.width / 16),
       ),
+      popupSize: menuSize,
+      popupBuilder:
+          (BuildContext context) => SizedBox(
+            width: menuSize.width,
+            height: menuSize.height,
+            child: SelectableList<T>(
+              onValueChanged: (value) {
+                Navigator.of(context).pop();
+                onValueChanged(value);
+              },
+              initialValue: initialValue,
+              values: values,
+              labelBuilder: labelBuilder,
+            ),
+          ),
       child: DropdownInput(
         onInfoIconTapped: onInfoIconTapped,
         text: initialValue != null ? labelBuilder(initialValue as T) : '',
@@ -82,23 +84,27 @@ class SelectableList<T> extends StatelessWidget {
     final initial = initialValue;
     return SingleChildScrollView(
       controller: ScrollController(
-          initialScrollOffset:
-              initial != null ? (values.indexOf(initial) - 1) * 48 : 0),
+        initialScrollOffset:
+            initial != null ? (values.indexOf(initial) - 1) * 48 : 0,
+      ),
       child: Column(
-        children: values
-            .map(
-              (t) => ListTile(
-                hoverColor: colors.primary100.withOpacity(0.05),
-                selected: initialValue == t,
-                selectedTileColor: colors.primary100.withOpacity(0.1),
-                onTap: () => onValueChanged(t),
-                title: FrogText.labelLarge(labelBuilder(t)),
-                selectedColor: colors.primary100,
-                trailing:
-                    initialValue == t ? const Icon(Icons.check_rounded) : null,
-              ),
-            )
-            .toList(),
+        children:
+            values
+                .map(
+                  (t) => ListTile(
+                    hoverColor: colors.primary100.withOpacity(0.05),
+                    selected: initialValue == t,
+                    selectedTileColor: colors.primary100.withOpacity(0.1),
+                    onTap: () => onValueChanged(t),
+                    title: FrogText.labelLarge(labelBuilder(t)),
+                    selectedColor: colors.primary100,
+                    trailing:
+                        initialValue == t
+                            ? const Icon(Icons.check_rounded)
+                            : null,
+                  ),
+                )
+                .toList(),
       ),
     );
   }

@@ -22,10 +22,7 @@ class ChatUICircularIndicator extends StatelessWidget {
     return SizedBox(
       width: width,
       height: height,
-      child: CircularProgressIndicator(
-        color: color,
-        strokeWidth: strokeWidth,
-      ),
+      child: CircularProgressIndicator(color: color, strokeWidth: strokeWidth),
     );
   }
 }
@@ -98,19 +95,19 @@ class ArcIndicator extends StatelessWidget {
   Widget build(BuildContext context) {
     return progress < 1
         ? CustomPaint(
-            size: Size(size, size),
-            painter: _ArcIndicatorPainter(
-              progress: progress,
-              strokeWidth: strokeWidth,
-              color: color ?? FrogTheme.of(context).colors.brand,
-            ),
-          )
-        : ChatUICircularIndicator(
+          size: Size(size, size),
+          painter: _ArcIndicatorPainter(
+            progress: progress,
             strokeWidth: strokeWidth,
-            width: size,
-            height: size,
-            color: color,
-          );
+            color: color ?? FrogTheme.of(context).colors.brand,
+          ),
+        )
+        : ChatUICircularIndicator(
+          strokeWidth: strokeWidth,
+          width: size,
+          height: size,
+          color: color,
+        );
   }
 }
 
@@ -130,10 +127,11 @@ class _ArcIndicatorPainter extends CustomPainter {
     final rect = Offset.zero & size;
     const startAngle = -math.pi / 2;
     final sweepAngle = math.pi * 2 * progress;
-    final paint = Paint()
-      ..color = color
-      ..isAntiAlias = true
-      ..style = PaintingStyle.fill;
+    final paint =
+        Paint()
+          ..color = color
+          ..isAntiAlias = true
+          ..style = PaintingStyle.fill;
 
     canvas.drawArc(rect, startAngle, sweepAngle, true, paint);
 

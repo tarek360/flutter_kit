@@ -4,7 +4,8 @@ import 'model.dart';
 
 abstract class GetOneTimePinCodeRepository {
   Future<Result<GetOneTimePinCodeResponse, ResultErrorType>> getOneTimePinCode(
-      GetOneTimePinCodeRequest user);
+    GetOneTimePinCodeRequest user,
+  );
 
   Future<Result<bool, ResultErrorType>> isUserExists(String email);
 

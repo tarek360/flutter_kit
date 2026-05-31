@@ -4,18 +4,16 @@ import 'package:ui_kit_interface/ui_kit_interface.dart';
 
 typedef ErrorImageBuilder = Widget Function();
 
-typedef ErrorViewBuilder = Widget Function({
-  required String error,
-  required ErrorViewType errorType,
-  String? media,
-  required VoidCallback onTryAgainButtonPressed,
-  required String tryAgainButtonLabel,
-});
+typedef ErrorViewBuilder =
+    Widget Function({
+      required String error,
+      required ErrorViewType errorType,
+      String? media,
+      required VoidCallback onTryAgainButtonPressed,
+      required String tryAgainButtonLabel,
+    });
 
-enum ErrorViewType {
-  noInternet,
-  other,
-}
+enum ErrorViewType { noInternet, other }
 
 class ErrorView extends StatelessWidget {
   const ErrorView({

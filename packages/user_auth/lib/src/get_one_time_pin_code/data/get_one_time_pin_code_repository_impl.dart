@@ -9,32 +9,33 @@ class GetOneTimePinCodeRepositoryImpl implements GetOneTimePinCodeRepository {
   final NetworkService _network;
   final GetOneTimePinCodeMapper _mapper;
 
-  const GetOneTimePinCodeRepositoryImpl(
-    this._network,
-    this._mapper,
-  );
+  const GetOneTimePinCodeRepositoryImpl(this._network, this._mapper);
 
   @override
   Future<Result<GetOneTimePinCodeResponse, ResultErrorType>> getOneTimePinCode(
     GetOneTimePinCodeRequest requestInfo,
   ) async {
     final NetworkResponse<MessageOut<GetOneTimePinCodeResponseEntity>>
-        response = await _network.request(
+    response = await _network.request(
       request: NetworkRequest.post(
         endpoint: '/v1/user/pin',
-        body: _mapper
-            .transformToGetOneTimePinCodeRequestEntity(requestInfo)
-            .toJson(),
+        body:
+            _mapper
+                .transformToGetOneTimePinCodeRequestEntity(requestInfo)
+                .toJson(),
       ),
       fromJson:
-          MessageOut(dataFromJson: GetOneTimePinCodeResponseEntity.fromJson)
-              .singleFromJson,
+          MessageOut(
+            dataFromJson: GetOneTimePinCodeResponseEntity.fromJson,
+          ).singleFromJson,
     );
 
     return response.when(
       success: (data) {
         final mappedData = _mapper.transformToGetOneTimePinCodeResponseModel(
-            data.item, requestInfo);
+          data.item,
+          requestInfo,
+        );
         if (mappedData != null) {
           return Result.success(mappedData);
         } else {
@@ -48,9 +49,8 @@ class GetOneTimePinCodeRepositoryImpl implements GetOneTimePinCodeRepository {
   @override
   Future<Result<bool, ResultErrorType>> isUserExists(String email) async {
     final NetworkResponse<bool> response = await _network.request(
-      request: NetworkRequest.get(
-        endpoint: '/v1/user/exists',
-      )..addQueryParameter('email', email),
+      request: NetworkRequest.get(endpoint: '/v1/user/exists')
+        ..addQueryParameter('email', email),
       fromJson: (json) => json['Data'] as bool,
     );
 

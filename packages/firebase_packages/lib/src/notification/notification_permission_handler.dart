@@ -29,7 +29,8 @@ class NotificationPermissionHandler {
         Logger.d('Show permission request pop-up and user denied first time');
       } else if (before && !after) {
         Logger.d(
-            'Show permission request pop-up and user denied a second time');
+          'Show permission request pop-up and user denied a second time',
+        );
       } else if (!before && !after) {
         Logger.d('No more permission pop-ups displayed');
       }

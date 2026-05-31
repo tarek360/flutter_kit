@@ -37,14 +37,8 @@ void updateEnvironment(Environment value) {
   _environment = value;
 }
 
-enum Environment {
-  local,
-  test,
-  staging,
-  prod,
-}
+enum Environment { local, test, staging, prod }
 
 extension EnvironmentExtension on Environment {
   bool get isProd => this == Environment.prod;
 }
-// '2VgE0V178XvdGq9M4rDUPpMies1', '2S3KT6BhXZlTh4ZmbfrO2h2IX6T', '2SID89BYDt7QzI9IuPUkdyUziAS', '2Vg6xRSO1mQFPRfsgMGIqQOzR5u'

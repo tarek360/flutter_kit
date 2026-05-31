@@ -12,10 +12,12 @@ part of 'model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
+);
 
 MessageOutPaginationMetadata _$MessageOutPaginationMetadataFromJson(
-    Map<String, dynamic> json) {
+  Map<String, dynamic> json,
+) {
   return _MessageOutPaginationMetadata.fromJson(json);
 }
 
@@ -31,23 +33,28 @@ mixin _$MessageOutPaginationMetadata {
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   $MessageOutPaginationMetadataCopyWith<MessageOutPaginationMetadata>
-      get copyWith => throw _privateConstructorUsedError;
+  get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $MessageOutPaginationMetadataCopyWith<$Res> {
   factory $MessageOutPaginationMetadataCopyWith(
-          MessageOutPaginationMetadata value,
-          $Res Function(MessageOutPaginationMetadata) then) =
-      _$MessageOutPaginationMetadataCopyWithImpl<$Res,
-          MessageOutPaginationMetadata>;
+    MessageOutPaginationMetadata value,
+    $Res Function(MessageOutPaginationMetadata) then,
+  ) =
+      _$MessageOutPaginationMetadataCopyWithImpl<
+        $Res,
+        MessageOutPaginationMetadata
+      >;
   @useResult
   $Res call({@JsonKey(name: 'TotalPages') int totalPages});
 }
 
 /// @nodoc
-class _$MessageOutPaginationMetadataCopyWithImpl<$Res,
-        $Val extends MessageOutPaginationMetadata>
+class _$MessageOutPaginationMetadataCopyWithImpl<
+  $Res,
+  $Val extends MessageOutPaginationMetadata
+>
     implements $MessageOutPaginationMetadataCopyWith<$Res> {
   _$MessageOutPaginationMetadataCopyWithImpl(this._value, this._then);
 
@@ -60,15 +67,17 @@ class _$MessageOutPaginationMetadataCopyWithImpl<$Res,
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? totalPages = null,
-  }) {
-    return _then(_value.copyWith(
-      totalPages: null == totalPages
-          ? _value.totalPages
-          : totalPages // ignore: cast_nullable_to_non_nullable
-              as int,
-    ) as $Val);
+  $Res call({Object? totalPages = null}) {
+    return _then(
+      _value.copyWith(
+            totalPages:
+                null == totalPages
+                    ? _value.totalPages
+                    : totalPages // ignore: cast_nullable_to_non_nullable
+                        as int,
+          )
+          as $Val,
+    );
   }
 }
 
@@ -76,9 +85,9 @@ class _$MessageOutPaginationMetadataCopyWithImpl<$Res,
 abstract class _$$MessageOutPaginationMetadataImplCopyWith<$Res>
     implements $MessageOutPaginationMetadataCopyWith<$Res> {
   factory _$$MessageOutPaginationMetadataImplCopyWith(
-          _$MessageOutPaginationMetadataImpl value,
-          $Res Function(_$MessageOutPaginationMetadataImpl) then) =
-      __$$MessageOutPaginationMetadataImplCopyWithImpl<$Res>;
+    _$MessageOutPaginationMetadataImpl value,
+    $Res Function(_$MessageOutPaginationMetadataImpl) then,
+  ) = __$$MessageOutPaginationMetadataImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({@JsonKey(name: 'TotalPages') int totalPages});
@@ -86,27 +95,31 @@ abstract class _$$MessageOutPaginationMetadataImplCopyWith<$Res>
 
 /// @nodoc
 class __$$MessageOutPaginationMetadataImplCopyWithImpl<$Res>
-    extends _$MessageOutPaginationMetadataCopyWithImpl<$Res,
-        _$MessageOutPaginationMetadataImpl>
+    extends
+        _$MessageOutPaginationMetadataCopyWithImpl<
+          $Res,
+          _$MessageOutPaginationMetadataImpl
+        >
     implements _$$MessageOutPaginationMetadataImplCopyWith<$Res> {
   __$$MessageOutPaginationMetadataImplCopyWithImpl(
-      _$MessageOutPaginationMetadataImpl _value,
-      $Res Function(_$MessageOutPaginationMetadataImpl) _then)
-      : super(_value, _then);
+    _$MessageOutPaginationMetadataImpl _value,
+    $Res Function(_$MessageOutPaginationMetadataImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of MessageOutPaginationMetadata
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? totalPages = null,
-  }) {
-    return _then(_$MessageOutPaginationMetadataImpl(
-      totalPages: null == totalPages
-          ? _value.totalPages
-          : totalPages // ignore: cast_nullable_to_non_nullable
-              as int,
-    ));
+  $Res call({Object? totalPages = null}) {
+    return _then(
+      _$MessageOutPaginationMetadataImpl(
+        totalPages:
+            null == totalPages
+                ? _value.totalPages
+                : totalPages // ignore: cast_nullable_to_non_nullable
+                    as int,
+      ),
+    );
   }
 }
 
@@ -114,12 +127,13 @@ class __$$MessageOutPaginationMetadataImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$MessageOutPaginationMetadataImpl
     implements _MessageOutPaginationMetadata {
-  _$MessageOutPaginationMetadataImpl(
-      {@JsonKey(name: 'TotalPages') this.totalPages = 1});
+  _$MessageOutPaginationMetadataImpl({
+    @JsonKey(name: 'TotalPages') this.totalPages = 1,
+  });
 
   factory _$MessageOutPaginationMetadataImpl.fromJson(
-          Map<String, dynamic> json) =>
-      _$$MessageOutPaginationMetadataImplFromJson(json);
+    Map<String, dynamic> json,
+  ) => _$$MessageOutPaginationMetadataImplFromJson(json);
 
   @override
   @JsonKey(name: 'TotalPages')
@@ -149,23 +163,23 @@ class _$MessageOutPaginationMetadataImpl
   @override
   @pragma('vm:prefer-inline')
   _$$MessageOutPaginationMetadataImplCopyWith<
-          _$MessageOutPaginationMetadataImpl>
-      get copyWith => __$$MessageOutPaginationMetadataImplCopyWithImpl<
-          _$MessageOutPaginationMetadataImpl>(this, _$identity);
+    _$MessageOutPaginationMetadataImpl
+  >
+  get copyWith => __$$MessageOutPaginationMetadataImplCopyWithImpl<
+    _$MessageOutPaginationMetadataImpl
+  >(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$MessageOutPaginationMetadataImplToJson(
-      this,
-    );
+    return _$$MessageOutPaginationMetadataImplToJson(this);
   }
 }
 
 abstract class _MessageOutPaginationMetadata
     implements MessageOutPaginationMetadata {
-  factory _MessageOutPaginationMetadata(
-          {@JsonKey(name: 'TotalPages') final int totalPages}) =
-      _$MessageOutPaginationMetadataImpl;
+  factory _MessageOutPaginationMetadata({
+    @JsonKey(name: 'TotalPages') final int totalPages,
+  }) = _$MessageOutPaginationMetadataImpl;
 
   factory _MessageOutPaginationMetadata.fromJson(Map<String, dynamic> json) =
       _$MessageOutPaginationMetadataImpl.fromJson;
@@ -179,8 +193,9 @@ abstract class _MessageOutPaginationMetadata
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$MessageOutPaginationMetadataImplCopyWith<
-          _$MessageOutPaginationMetadataImpl>
-      get copyWith => throw _privateConstructorUsedError;
+    _$MessageOutPaginationMetadataImpl
+  >
+  get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -202,16 +217,18 @@ mixin _$PaginationAndFilter {
 /// @nodoc
 abstract class $PaginationAndFilterCopyWith<$Res> {
   factory $PaginationAndFilterCopyWith(
-          PaginationAndFilter value, $Res Function(PaginationAndFilter) then) =
-      _$PaginationAndFilterCopyWithImpl<$Res, PaginationAndFilter>;
+    PaginationAndFilter value,
+    $Res Function(PaginationAndFilter) then,
+  ) = _$PaginationAndFilterCopyWithImpl<$Res, PaginationAndFilter>;
   @useResult
-  $Res call(
-      {int limit,
-      int page,
-      String? sort,
-      String? searchByName,
-      String? searchBy,
-      String? parentId});
+  $Res call({
+    int limit,
+    int page,
+    String? sort,
+    String? searchByName,
+    String? searchBy,
+    String? parentId,
+  });
 }
 
 /// @nodoc
@@ -236,59 +253,71 @@ class _$PaginationAndFilterCopyWithImpl<$Res, $Val extends PaginationAndFilter>
     Object? searchBy = freezed,
     Object? parentId = freezed,
   }) {
-    return _then(_value.copyWith(
-      limit: null == limit
-          ? _value.limit
-          : limit // ignore: cast_nullable_to_non_nullable
-              as int,
-      page: null == page
-          ? _value.page
-          : page // ignore: cast_nullable_to_non_nullable
-              as int,
-      sort: freezed == sort
-          ? _value.sort
-          : sort // ignore: cast_nullable_to_non_nullable
-              as String?,
-      searchByName: freezed == searchByName
-          ? _value.searchByName
-          : searchByName // ignore: cast_nullable_to_non_nullable
-              as String?,
-      searchBy: freezed == searchBy
-          ? _value.searchBy
-          : searchBy // ignore: cast_nullable_to_non_nullable
-              as String?,
-      parentId: freezed == parentId
-          ? _value.parentId
-          : parentId // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
+    return _then(
+      _value.copyWith(
+            limit:
+                null == limit
+                    ? _value.limit
+                    : limit // ignore: cast_nullable_to_non_nullable
+                        as int,
+            page:
+                null == page
+                    ? _value.page
+                    : page // ignore: cast_nullable_to_non_nullable
+                        as int,
+            sort:
+                freezed == sort
+                    ? _value.sort
+                    : sort // ignore: cast_nullable_to_non_nullable
+                        as String?,
+            searchByName:
+                freezed == searchByName
+                    ? _value.searchByName
+                    : searchByName // ignore: cast_nullable_to_non_nullable
+                        as String?,
+            searchBy:
+                freezed == searchBy
+                    ? _value.searchBy
+                    : searchBy // ignore: cast_nullable_to_non_nullable
+                        as String?,
+            parentId:
+                freezed == parentId
+                    ? _value.parentId
+                    : parentId // ignore: cast_nullable_to_non_nullable
+                        as String?,
+          )
+          as $Val,
+    );
   }
 }
 
 /// @nodoc
 abstract class _$$PaginationAndFilterImplCopyWith<$Res>
     implements $PaginationAndFilterCopyWith<$Res> {
-  factory _$$PaginationAndFilterImplCopyWith(_$PaginationAndFilterImpl value,
-          $Res Function(_$PaginationAndFilterImpl) then) =
-      __$$PaginationAndFilterImplCopyWithImpl<$Res>;
+  factory _$$PaginationAndFilterImplCopyWith(
+    _$PaginationAndFilterImpl value,
+    $Res Function(_$PaginationAndFilterImpl) then,
+  ) = __$$PaginationAndFilterImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {int limit,
-      int page,
-      String? sort,
-      String? searchByName,
-      String? searchBy,
-      String? parentId});
+  $Res call({
+    int limit,
+    int page,
+    String? sort,
+    String? searchByName,
+    String? searchBy,
+    String? parentId,
+  });
 }
 
 /// @nodoc
 class __$$PaginationAndFilterImplCopyWithImpl<$Res>
     extends _$PaginationAndFilterCopyWithImpl<$Res, _$PaginationAndFilterImpl>
     implements _$$PaginationAndFilterImplCopyWith<$Res> {
-  __$$PaginationAndFilterImplCopyWithImpl(_$PaginationAndFilterImpl _value,
-      $Res Function(_$PaginationAndFilterImpl) _then)
-      : super(_value, _then);
+  __$$PaginationAndFilterImplCopyWithImpl(
+    _$PaginationAndFilterImpl _value,
+    $Res Function(_$PaginationAndFilterImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of PaginationAndFilter
   /// with the given fields replaced by the non-null parameter values.
@@ -302,46 +331,54 @@ class __$$PaginationAndFilterImplCopyWithImpl<$Res>
     Object? searchBy = freezed,
     Object? parentId = freezed,
   }) {
-    return _then(_$PaginationAndFilterImpl(
-      limit: null == limit
-          ? _value.limit
-          : limit // ignore: cast_nullable_to_non_nullable
-              as int,
-      page: null == page
-          ? _value.page
-          : page // ignore: cast_nullable_to_non_nullable
-              as int,
-      sort: freezed == sort
-          ? _value.sort
-          : sort // ignore: cast_nullable_to_non_nullable
-              as String?,
-      searchByName: freezed == searchByName
-          ? _value.searchByName
-          : searchByName // ignore: cast_nullable_to_non_nullable
-              as String?,
-      searchBy: freezed == searchBy
-          ? _value.searchBy
-          : searchBy // ignore: cast_nullable_to_non_nullable
-              as String?,
-      parentId: freezed == parentId
-          ? _value.parentId
-          : parentId // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
+    return _then(
+      _$PaginationAndFilterImpl(
+        limit:
+            null == limit
+                ? _value.limit
+                : limit // ignore: cast_nullable_to_non_nullable
+                    as int,
+        page:
+            null == page
+                ? _value.page
+                : page // ignore: cast_nullable_to_non_nullable
+                    as int,
+        sort:
+            freezed == sort
+                ? _value.sort
+                : sort // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        searchByName:
+            freezed == searchByName
+                ? _value.searchByName
+                : searchByName // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        searchBy:
+            freezed == searchBy
+                ? _value.searchBy
+                : searchBy // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        parentId:
+            freezed == parentId
+                ? _value.parentId
+                : parentId // ignore: cast_nullable_to_non_nullable
+                    as String?,
+      ),
+    );
   }
 }
 
 /// @nodoc
 
 class _$PaginationAndFilterImpl extends _PaginationAndFilter {
-  _$PaginationAndFilterImpl(
-      {required this.limit,
-      required this.page,
-      this.sort,
-      this.searchByName,
-      this.searchBy,
-      this.parentId})
-      : super._();
+  _$PaginationAndFilterImpl({
+    required this.limit,
+    required this.page,
+    this.sort,
+    this.searchByName,
+    this.searchBy,
+    this.parentId,
+  }) : super._();
 
   @override
   final int limit;
@@ -379,7 +416,14 @@ class _$PaginationAndFilterImpl extends _PaginationAndFilter {
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, limit, page, sort, searchByName, searchBy, parentId);
+    runtimeType,
+    limit,
+    page,
+    sort,
+    searchByName,
+    searchBy,
+    parentId,
+  );
 
   /// Create a copy of PaginationAndFilter
   /// with the given fields replaced by the non-null parameter values.
@@ -388,17 +432,20 @@ class _$PaginationAndFilterImpl extends _PaginationAndFilter {
   @pragma('vm:prefer-inline')
   _$$PaginationAndFilterImplCopyWith<_$PaginationAndFilterImpl> get copyWith =>
       __$$PaginationAndFilterImplCopyWithImpl<_$PaginationAndFilterImpl>(
-          this, _$identity);
+        this,
+        _$identity,
+      );
 }
 
 abstract class _PaginationAndFilter extends PaginationAndFilter {
-  factory _PaginationAndFilter(
-      {required final int limit,
-      required final int page,
-      final String? sort,
-      final String? searchByName,
-      final String? searchBy,
-      final String? parentId}) = _$PaginationAndFilterImpl;
+  factory _PaginationAndFilter({
+    required final int limit,
+    required final int page,
+    final String? sort,
+    final String? searchByName,
+    final String? searchBy,
+    final String? parentId,
+  }) = _$PaginationAndFilterImpl;
   _PaginationAndFilter._() : super._();
 
   @override

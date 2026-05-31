@@ -2,11 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:ui_kit_interface/ui_kit_interface.dart';
 
 const double _kItemExtent = 32.0;
-const List<String> _fruitNames = <String>[
-  '1 AM',
-  '2 AM',
-  '3 AM',
-];
+const List<String> _fruitNames = <String>['1 AM', '2 AM', '3 AM'];
 
 class WheelPicker extends StatefulWidget {
   const WheelPicker({super.key});

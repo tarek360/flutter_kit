@@ -5,9 +5,7 @@ import 'package:core/core.dart';
 class RequestHeadersInterceptor extends HeaderInterceptor {
   final RequestHeaders _requestHeaders;
 
-  RequestHeadersInterceptor(
-    this._requestHeaders,
-  );
+  RequestHeadersInterceptor(this._requestHeaders);
 
   @override
   void onHeaderRequest(RequestOptions options) {

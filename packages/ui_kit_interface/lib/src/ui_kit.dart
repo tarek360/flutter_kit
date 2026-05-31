@@ -53,19 +53,13 @@ class UIKit extends StatelessWidget {
   Widget build(BuildContext context) {
     return FrogTheme(
       data: frogThemeData,
-      child: _InheritedUIKit(
-        uiKit: kitBuilder(frogThemeData),
-        child: child,
-      ),
+      child: _InheritedUIKit(uiKit: kitBuilder(frogThemeData), child: child),
     );
   }
 }
 
 class _InheritedUIKit extends InheritedWidget {
-  const _InheritedUIKit({
-    required this.uiKit,
-    required super.child,
-  });
+  const _InheritedUIKit({required this.uiKit, required super.child});
 
   final UIKitComponents uiKit;
 

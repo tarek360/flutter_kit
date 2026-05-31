@@ -5,10 +5,7 @@ part 'entity.g.dart';
 
 @JsonSerializable(createFactory: false)
 class LoginRequestEntity {
-  LoginRequestEntity({
-    required this.pinID,
-    required this.pinCode,
-  });
+  LoginRequestEntity({required this.pinID, required this.pinCode});
 
   @JsonKey(name: 'PinID')
   final String pinID;
@@ -36,9 +33,7 @@ class OnboardingInfoEntity {
 
 @JsonSerializable(createToJson: false)
 class LoginResponseEntity {
-  LoginResponseEntity({
-    this.token,
-  });
+  LoginResponseEntity({this.token});
 
   @JsonKey(name: 'Token')
   final String? token;
@@ -56,7 +51,8 @@ enum LoginResponseErrorCode {
   final int code;
 
   static LoginResponseErrorCode? valueOf(int value) {
-    return LoginResponseErrorCode.values
-        .firstWhereOrNull((element) => element.code == value);
+    return LoginResponseErrorCode.values.firstWhereOrNull(
+      (element) => element.code == value,
+    );
   }
 }

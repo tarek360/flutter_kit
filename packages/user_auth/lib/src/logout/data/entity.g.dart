@@ -7,13 +7,9 @@ part of 'entity.dart';
 // **************************************************************************
 
 LogoutResponseEntity _$LogoutResponseEntityFromJson(
-        Map<String, dynamic> json) =>
-    LogoutResponseEntity(
-      success: json['success'] as bool?,
-    );
+  Map<String, dynamic> json,
+) => LogoutResponseEntity(success: json['success'] as bool?);
 
 Map<String, dynamic> _$LogoutResponseEntityToJson(
-        LogoutResponseEntity instance) =>
-    <String, dynamic>{
-      'success': instance.success,
-    };
+  LogoutResponseEntity instance,
+) => <String, dynamic>{'success': instance.success};

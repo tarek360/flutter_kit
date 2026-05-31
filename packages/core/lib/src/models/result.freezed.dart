@@ -12,7 +12,8 @@ part of 'result.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
+);
 
 /// @nodoc
 mixin _$Result<T, R> {
@@ -20,47 +21,42 @@ mixin _$Result<T, R> {
   TResult when<TResult extends Object?>({
     required TResult Function(T data) success,
     required TResult Function(R error) failure,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(T data)? success,
     TResult? Function(R error)? failure,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T data)? success,
     TResult Function(R error)? failure,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_success<T, R> value) success,
     required TResult Function(_failure<T, R> value) failure,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_success<T, R> value)? success,
     TResult? Function(_failure<T, R> value)? failure,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_success<T, R> value)? success,
     TResult Function(_failure<T, R> value)? failure,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ResultCopyWith<T, R, $Res> {
   factory $ResultCopyWith(
-          Result<T, R> value, $Res Function(Result<T, R>) then) =
-      _$ResultCopyWithImpl<T, R, $Res, Result<T, R>>;
+    Result<T, R> value,
+    $Res Function(Result<T, R>) then,
+  ) = _$ResultCopyWithImpl<T, R, $Res, Result<T, R>>;
 }
 
 /// @nodoc
@@ -80,8 +76,9 @@ class _$ResultCopyWithImpl<T, R, $Res, $Val extends Result<T, R>>
 /// @nodoc
 abstract class _$$successImplCopyWith<T, R, $Res> {
   factory _$$successImplCopyWith(
-          _$successImpl<T, R> value, $Res Function(_$successImpl<T, R>) then) =
-      __$$successImplCopyWithImpl<T, R, $Res>;
+    _$successImpl<T, R> value,
+    $Res Function(_$successImpl<T, R>) then,
+  ) = __$$successImplCopyWithImpl<T, R, $Res>;
   @useResult
   $Res call({T data});
 }
@@ -91,22 +88,23 @@ class __$$successImplCopyWithImpl<T, R, $Res>
     extends _$ResultCopyWithImpl<T, R, $Res, _$successImpl<T, R>>
     implements _$$successImplCopyWith<T, R, $Res> {
   __$$successImplCopyWithImpl(
-      _$successImpl<T, R> _value, $Res Function(_$successImpl<T, R>) _then)
-      : super(_value, _then);
+    _$successImpl<T, R> _value,
+    $Res Function(_$successImpl<T, R>) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of Result
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? data = freezed,
-  }) {
-    return _then(_$successImpl<T, R>(
-      freezed == data
-          ? _value.data
-          : data // ignore: cast_nullable_to_non_nullable
-              as T,
-    ));
+  $Res call({Object? data = freezed}) {
+    return _then(
+      _$successImpl<T, R>(
+        freezed == data
+            ? _value.data
+            : data // ignore: cast_nullable_to_non_nullable
+                as T,
+      ),
+    );
   }
 }
 
@@ -222,8 +220,9 @@ abstract class _success<T, R> extends Result<T, R> {
 /// @nodoc
 abstract class _$$failureImplCopyWith<T, R, $Res> {
   factory _$$failureImplCopyWith(
-          _$failureImpl<T, R> value, $Res Function(_$failureImpl<T, R>) then) =
-      __$$failureImplCopyWithImpl<T, R, $Res>;
+    _$failureImpl<T, R> value,
+    $Res Function(_$failureImpl<T, R>) then,
+  ) = __$$failureImplCopyWithImpl<T, R, $Res>;
   @useResult
   $Res call({R error});
 }
@@ -233,22 +232,23 @@ class __$$failureImplCopyWithImpl<T, R, $Res>
     extends _$ResultCopyWithImpl<T, R, $Res, _$failureImpl<T, R>>
     implements _$$failureImplCopyWith<T, R, $Res> {
   __$$failureImplCopyWithImpl(
-      _$failureImpl<T, R> _value, $Res Function(_$failureImpl<T, R>) _then)
-      : super(_value, _then);
+    _$failureImpl<T, R> _value,
+    $Res Function(_$failureImpl<T, R>) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of Result
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? error = freezed,
-  }) {
-    return _then(_$failureImpl<T, R>(
-      freezed == error
-          ? _value.error
-          : error // ignore: cast_nullable_to_non_nullable
-              as R,
-    ));
+  $Res call({Object? error = freezed}) {
+    return _then(
+      _$failureImpl<T, R>(
+        freezed == error
+            ? _value.error
+            : error // ignore: cast_nullable_to_non_nullable
+                as R,
+      ),
+    );
   }
 }
 

@@ -31,18 +31,18 @@ class MessageOut<T> {
 
   T Function(Map<String, dynamic>) dataFromJson;
 
-  MessageOut({
-    required this.dataFromJson,
-  });
+  MessageOut({required this.dataFromJson});
 
   MessageOut<T> listFromJson(Map<String, dynamic> json) {
-    _items = (json['Data'] as List<dynamic>)
-        .map((e) => dataFromJson.call(e as Map<String, dynamic>))
-        .toList();
+    _items =
+        (json['Data'] as List<dynamic>)
+            .map((e) => dataFromJson.call(e as Map<String, dynamic>))
+            .toList();
     final metadata = json['Metadata'];
     if (metadata != null) {
       _paginationMetadata = MessageOutPaginationMetadata.fromJson(
-          metadata as Map<String, dynamic>);
+        metadata as Map<String, dynamic>,
+      );
     }
     return this;
   }
@@ -53,7 +53,8 @@ class MessageOut<T> {
     final metadata = json['Metadata'];
     if (metadata != null) {
       _paginationMetadata = MessageOutPaginationMetadata.fromJson(
-          metadata as Map<String, dynamic>);
+        metadata as Map<String, dynamic>,
+      );
     }
     return this;
   }

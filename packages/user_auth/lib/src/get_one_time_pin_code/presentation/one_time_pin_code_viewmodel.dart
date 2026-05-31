@@ -48,12 +48,16 @@ class GetOneTimePinCodeViewmodel
 
     final getOneTimePinCodeRequest = GetOneTimePinCodeRequest(email: email);
 
-    final result =
-        await _getOneTimePinCodesInteractor(getOneTimePinCodeRequest);
+    final result = await _getOneTimePinCodesInteractor(
+      getOneTimePinCodeRequest,
+    );
     result.when(
       success: (data) => state = XFormState.submitted(data),
-      failure: (error) =>
-          state = XFormState.error(_networkErrorMessageMapper.transform(error)),
+      failure:
+          (error) =>
+              state = XFormState.error(
+                _networkErrorMessageMapper.transform(error),
+              ),
     );
   }
 

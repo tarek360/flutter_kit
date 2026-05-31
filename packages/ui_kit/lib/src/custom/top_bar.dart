@@ -29,31 +29,31 @@ class TopBar extends StatelessWidget implements PreferredSizeWidget {
       automaticallyImplyLeading: !exitButton,
       backgroundColor: colors.neutral00,
       centerTitle: true,
-      leading: parentRoute?.canPop == true
-          ? exitButton
-              ? ExitButton(onPressed: onExitButtonPressed)
-              : GestureDetector(
-                  behavior: HitTestBehavior.translucent,
-                  onTap: Navigator.of(context).maybePop,
-                  child: SizedBox(
-                    width: 40,
-                    child: Icon(
-                      switch (Directionality.of(context)) {
-                        TextDirection.ltr => ChatUIIcons.arrow_line_left,
-                        TextDirection.rtl => ChatUIIcons.arrow_line_right,
-                      },
-                      size: 24,
-                      textDirection: TextDirection.rtl,
+      leading:
+          parentRoute?.canPop == true
+              ? exitButton
+                  ? ExitButton(onPressed: onExitButtonPressed)
+                  : GestureDetector(
+                    behavior: HitTestBehavior.translucent,
+                    onTap: Navigator.of(context).maybePop,
+                    child: SizedBox(
+                      width: 40,
+                      child: Icon(
+                        switch (Directionality.of(context)) {
+                          TextDirection.ltr => ChatUIIcons.arrow_line_left,
+                          TextDirection.rtl => ChatUIIcons.arrow_line_right,
+                        },
+                        size: 24,
+                        textDirection: TextDirection.rtl,
+                      ),
                     ),
-                  ),
-                )
-          : leading,
-      title: title != null
-          ? FrogText.headlineSmall(title!, color: colors.neutral80)
-          : null,
-      actions: [
-        if (trailing != null) trailing!,
-      ],
+                  )
+              : leading,
+      title:
+          title != null
+              ? FrogText.headlineSmall(title!, color: colors.neutral80)
+              : null,
+      actions: [if (trailing != null) trailing!],
     );
   }
 }
@@ -69,11 +69,7 @@ class ExitButton extends StatelessWidget {
     return ButtonIcon(
       size: 40,
       onPressed: onPressed ?? Navigator.of(context).maybePop,
-      icon: Icon(
-        ChatUIIcons.close_default,
-        color: colors.neutral100,
-        size: 24,
-      ),
+      icon: Icon(ChatUIIcons.close_default, color: colors.neutral100, size: 24),
     );
   }
 }

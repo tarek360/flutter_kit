@@ -27,16 +27,17 @@ Future<T?> showFrogDialog<T>(
   return showDialog<T>(
     context: context,
     barrierDismissible: isDismissible,
-    builder: (context) => FrogDialog(
-      body: body,
-      primaryButtonLabel: primaryButtonLabel,
-      onPrimaryButtonPressed: onPrimaryButtonPressed,
-      secondaryButtonLabel: secondaryButtonLabel,
-      onSecondaryButtonPressed: onSecondaryButtonPressed,
-      buttonsVerticalAlign: buttonsVerticalAlign,
-      width: width,
-      padding: padding,
-    ),
+    builder:
+        (context) => FrogDialog(
+          body: body,
+          primaryButtonLabel: primaryButtonLabel,
+          onPrimaryButtonPressed: onPrimaryButtonPressed,
+          secondaryButtonLabel: secondaryButtonLabel,
+          onSecondaryButtonPressed: onSecondaryButtonPressed,
+          buttonsVerticalAlign: buttonsVerticalAlign,
+          width: width,
+          padding: padding,
+        ),
   );
 }
 
@@ -53,11 +54,11 @@ Future<bool?> showFrogConfirmationPopup(
   bool? buttonsVerticalAlign,
   Color? positiveButtonColor,
   Color? negativeButtonColor,
-}) =>
-    _showDialog<bool>(
-      context: context,
-      isDismissible: isDismissible,
-      builder: (context) => FrogConfirmationDialog(
+}) => _showDialog<bool>(
+  context: context,
+  isDismissible: isDismissible,
+  builder:
+      (context) => FrogConfirmationDialog(
         title: title,
         message: message,
         body: body,
@@ -69,7 +70,7 @@ Future<bool?> showFrogConfirmationPopup(
         positiveButtonColor: positiveButtonColor,
         negativeButtonColor: negativeButtonColor,
       ),
-    );
+);
 
 Future<bool?> showFrogInputPopup(
   BuildContext context, {
@@ -88,16 +89,17 @@ Future<bool?> showFrogInputPopup(
   return _showDialog<bool>(
     context: context,
     isDismissible: isDismissible,
-    builder: (context) => FrogInputDialog(
-      textEditingController: textEditingController,
-      title: title,
-      message: message,
-      positiveButtonLabel: positiveButtonLabel,
-      negativeButtonLabel: negativeButtonLabel,
-      onPositiveButtonPressed: onPositiveButtonPressed,
-      onNegativeButtonPressed: onNegativeButtonPressed,
-      buttonsVerticalAlign: buttonsVerticalAlign ?? true,
-    ),
+    builder:
+        (context) => FrogInputDialog(
+          textEditingController: textEditingController,
+          title: title,
+          message: message,
+          positiveButtonLabel: positiveButtonLabel,
+          negativeButtonLabel: negativeButtonLabel,
+          onPositiveButtonPressed: onPositiveButtonPressed,
+          onNegativeButtonPressed: onNegativeButtonPressed,
+          buttonsVerticalAlign: buttonsVerticalAlign ?? true,
+        ),
   );
 }
 
@@ -110,11 +112,11 @@ void showFrogInfoPopup(
   required VoidCallback onPositiveButtonPressed,
   bool barrierDismissible = true,
   Color? backgroundColor,
-}) =>
-    _showDialog(
-      context: context,
-      isDismissible: barrierDismissible,
-      builder: (context) => FrogInfoDialog(
+}) => _showDialog(
+  context: context,
+  isDismissible: barrierDismissible,
+  builder:
+      (context) => FrogInfoDialog(
         title: title,
         message: message,
         body: body,
@@ -122,7 +124,7 @@ void showFrogInfoPopup(
         onPositiveButtonPressed: onPositiveButtonPressed,
         backgroundColor: backgroundColor,
       ),
-    );
+);
 
 Future<T?> _showDialog<T>({
   required BuildContext context,
@@ -133,10 +135,11 @@ Future<T?> _showDialog<T>({
   return showDialog<T>(
     context: context,
     barrierDismissible: isDismissible,
-    builder: (context) => WillPopScope(
-      onWillPop: () => Future.value(isDismissible),
-      child: builder(context),
-    ),
+    builder:
+        (context) => WillPopScope(
+          onWillPop: () => Future.value(isDismissible),
+          child: builder(context),
+        ),
   );
 }
 
@@ -180,8 +183,10 @@ class FrogConfirmationDialog extends StatelessWidget {
             style: frogTheme.textStyles.titleLarge.copyWith(
               color: frogTheme.colors.neutral130,
             ),
-            textScaler:
-                textScaler.clamp(minScaleFactor: 1.0, maxScaleFactor: 1.4),
+            textScaler: textScaler.clamp(
+              minScaleFactor: 1.0,
+              maxScaleFactor: 1.4,
+            ),
           ),
           if (message != null || body != null) ...[
             const SizedBox(height: 16),
@@ -189,10 +194,13 @@ class FrogConfirmationDialog extends StatelessWidget {
               Text(
                 message!,
                 textAlign: TextAlign.center,
-                style: frogTheme.textStyles.bodyLarge
-                    .copyWith(color: frogTheme.colors.neutral70),
-                textScaler:
-                    textScaler.clamp(minScaleFactor: 1.0, maxScaleFactor: 1.6),
+                style: frogTheme.textStyles.bodyLarge.copyWith(
+                  color: frogTheme.colors.neutral70,
+                ),
+                textScaler: textScaler.clamp(
+                  minScaleFactor: 1.0,
+                  maxScaleFactor: 1.6,
+                ),
               ),
             if (body != null) body!,
           ],
@@ -247,8 +255,8 @@ class FrogInputDialog extends StatelessWidget {
       ),
       positiveButtonLabel: positiveButtonLabel,
       negativeButtonLabel: negativeButtonLabel,
-      onPositiveButtonPressed: () =>
-          onPositiveButtonPressed(textEditingController.text),
+      onPositiveButtonPressed:
+          () => onPositiveButtonPressed(textEditingController.text),
       onNegativeButtonPressed: onNegativeButtonPressed,
       buttonsVerticalAlign: buttonsVerticalAlign,
     );
@@ -284,8 +292,9 @@ class FrogInfoDialog extends StatelessWidget {
           Text(
             title,
             textAlign: TextAlign.center,
-            style: frogTheme.textStyles.titleLarge
-                .copyWith(color: frogTheme.colors.neutral130),
+            style: frogTheme.textStyles.titleLarge.copyWith(
+              color: frogTheme.colors.neutral130,
+            ),
           ),
           if (message != null || body != null) ...[
             const SizedBox(height: 16),
@@ -293,8 +302,9 @@ class FrogInfoDialog extends StatelessWidget {
               Text(
                 message!,
                 textAlign: TextAlign.center,
-                style: frogTheme.textStyles.bodyLarge
-                    .copyWith(color: frogTheme.colors.neutral70),
+                style: frogTheme.textStyles.bodyLarge.copyWith(
+                  color: frogTheme.colors.neutral70,
+                ),
               ),
             if (body != null) body!,
           ],
@@ -415,12 +425,10 @@ class FrogDialogScaffold extends StatelessWidget {
     return Dialog(
       backgroundColor: backgroundColor,
       child: Padding(
-        padding: padding ??
+        padding:
+            padding ??
             const EdgeInsets.only(right: 16.0, left: 16.0, top: 24, bottom: 16),
-        child: SizedBox(
-          width: width,
-          child: child,
-        ),
+        child: SizedBox(width: width, child: child),
       ),
     );
   }
@@ -441,32 +449,33 @@ Future<T?> showFrogBottomSheetOverlay<T>({
     isDismissible: isDismissible,
     isScrollControlled: true,
     backgroundColor: FrogTheme.of(context).colors.neutral00,
-    builder: (context) => SafeArea(
-      child: FractionallySizedBox(
-        child: DecoratedBox(
-          decoration: BoxDecoration(
-            color: FrogTheme.of(context).colors.neutral00,
-            borderRadius: _sheetBorderRadius,
-          ),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              if (dragBar)
-                Container(
-                  margin: const EdgeInsets.fromLTRB(0, 8, 0, 4),
-                  width: 28,
-                  height: 3,
-                  decoration: BoxDecoration(
-                    color: FrogTheme.of(context).colors.neutral30,
-                    borderRadius: BorderRadius.circular(2),
-                  ),
-                ),
-              builder(context),
-            ],
+    builder:
+        (context) => SafeArea(
+          child: FractionallySizedBox(
+            child: DecoratedBox(
+              decoration: BoxDecoration(
+                color: FrogTheme.of(context).colors.neutral00,
+                borderRadius: _sheetBorderRadius,
+              ),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  if (dragBar)
+                    Container(
+                      margin: const EdgeInsets.fromLTRB(0, 8, 0, 4),
+                      width: 28,
+                      height: 3,
+                      decoration: BoxDecoration(
+                        color: FrogTheme.of(context).colors.neutral30,
+                        borderRadius: BorderRadius.circular(2),
+                      ),
+                    ),
+                  builder(context),
+                ],
+              ),
+            ),
           ),
         ),
-      ),
-    ),
   );
 }
 
@@ -501,52 +510,49 @@ Future<T?> showFrogSlidingBottomSheet<T>({
     context: context,
     isDismissible: isDismissible,
     enableDrag: false,
-    shape: const RoundedRectangleBorder(
-      borderRadius: _sheetBorderRadius,
-    ),
+    shape: const RoundedRectangleBorder(borderRadius: _sheetBorderRadius),
     isScrollControlled: true,
     backgroundColor: FrogTheme.of(context).colors.neutral00,
-    builder: (context) => DraggableScrollableSheet(
-      expand: false,
-      initialChildSize: initialChildSize,
-      minChildSize: minChildSize,
-      maxChildSize: maxChildSize,
-      builder: (context, scrollController) => Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          if (dragBar)
-            Container(
-              margin: const EdgeInsets.fromLTRB(0, 8, 0, 4),
-              width: 28,
-              height: 3,
-              decoration: BoxDecoration(
-                color: FrogTheme.of(context).colors.neutral30,
-                borderRadius: BorderRadius.circular(2),
+    builder:
+        (context) => DraggableScrollableSheet(
+          expand: false,
+          initialChildSize: initialChildSize,
+          minChildSize: minChildSize,
+          maxChildSize: maxChildSize,
+          builder:
+              (context, scrollController) => Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  if (dragBar)
+                    Container(
+                      margin: const EdgeInsets.fromLTRB(0, 8, 0, 4),
+                      width: 28,
+                      height: 3,
+                      decoration: BoxDecoration(
+                        color: FrogTheme.of(context).colors.neutral30,
+                        borderRadius: BorderRadius.circular(2),
+                      ),
+                    ),
+                  if (appBar != null)
+                    Theme(
+                      data: theme.copyWith(
+                        appBarTheme: theme.appBarTheme.copyWith(
+                          centerTitle: true,
+                          toolbarHeight: 48,
+                        ),
+                      ),
+                      child: appBar,
+                    ),
+                  Expanded(
+                    child: ClipRRect(
+                      borderRadius: _sheetBorderRadius,
+                      child: builder(context, scrollController),
+                    ),
+                  ),
+                  if (footer != null) footer,
+                ],
               ),
-            ),
-          if (appBar != null)
-            Theme(
-              data: theme.copyWith(
-                appBarTheme: theme.appBarTheme.copyWith(
-                  centerTitle: true,
-                  toolbarHeight: 48,
-                ),
-              ),
-              child: appBar,
-            ),
-          Expanded(
-            child: ClipRRect(
-              borderRadius: _sheetBorderRadius,
-              child: builder(
-                context,
-                scrollController,
-              ),
-            ),
-          ),
-          if (footer != null) footer,
-        ],
-      ),
-    ),
+        ),
   );
 }
 
@@ -565,16 +571,18 @@ Future<T?> showFrogBottomSheetListOptions<T>({
     return showFrogBottomSheetOverlay<T>(
       context: context,
       dragBar: dragBar,
-      builder: (context) => SafeArea(
-        minimum: const EdgeInsets.only(bottom: 16),
-        child: Column(
-          children: ListTile.divideTiles(
-            context: context,
-            color: divideColor,
-            tiles: builder(context),
-          ).toList(),
-        ),
-      ),
+      builder:
+          (context) => SafeArea(
+            minimum: const EdgeInsets.only(bottom: 16),
+            child: Column(
+              children:
+                  ListTile.divideTiles(
+                    context: context,
+                    color: divideColor,
+                    tiles: builder(context),
+                  ).toList(),
+            ),
+          ),
     );
   }
 
@@ -587,14 +595,16 @@ Future<T?> showFrogBottomSheetListOptions<T>({
           height: childSize,
           child: SingleChildScrollView(
             padding: const EdgeInsets.only(top: 8, bottom: 16),
-            controller:
-                ScrollController(initialScrollOffset: initialScrollOffset ?? 0),
+            controller: ScrollController(
+              initialScrollOffset: initialScrollOffset ?? 0,
+            ),
             child: Column(
-              children: ListTile.divideTiles(
-                context: context,
-                color: divideColor,
-                tiles: builder(context),
-              ).toList(),
+              children:
+                  ListTile.divideTiles(
+                    context: context,
+                    color: divideColor,
+                    tiles: builder(context),
+                  ).toList(),
             ),
           ),
         ),
@@ -604,10 +614,7 @@ Future<T?> showFrogBottomSheetListOptions<T>({
         return child;
       }
 
-      return ClipRRect(
-        borderRadius: _sheetBorderRadius,
-        child: child,
-      );
+      return ClipRRect(borderRadius: _sheetBorderRadius, child: child);
     },
   );
 }

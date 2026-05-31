@@ -23,20 +23,23 @@ class Grid extends StatelessWidget {
         for (int i = 0; i < children.length; i += crossAxisCount)
           Row(
             children: [
-              for (int j = i;
-                  j <
-                      ((i + crossAxisCount) < children.length
-                          ? i + crossAxisCount
-                          : (i + crossAxisCount) - remaining);
-                  ++j)
+              for (
+                int j = i;
+                j <
+                    ((i + crossAxisCount) < children.length
+                        ? i + crossAxisCount
+                        : (i + crossAxisCount) - remaining);
+                ++j
+              )
                 Expanded(
                   child: Padding(
                     padding: EdgeInsets.symmetric(
-                        vertical: mainAxisSpacing / 2,
-                        horizontal: crossAxisSpacing / 2),
+                      vertical: mainAxisSpacing / 2,
+                      horizontal: crossAxisSpacing / 2,
+                    ),
                     child: children[j],
                   ),
-                )
+                ),
             ],
           ),
       ],

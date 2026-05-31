@@ -44,9 +44,10 @@ class XState<T> with _$XState<T> {
 
   void ifHasError(void Function(ErrorModel error) function) {
     final error = maybeWhen(
-        error: (error) => error,
-        dataAndError: (data, error) => error,
-        orElse: () => null);
+      error: (error) => error,
+      dataAndError: (data, error) => error,
+      orElse: () => null,
+    );
     if (error != null) function(error);
   }
 
@@ -81,10 +82,7 @@ class XFormState<T> with _$XFormState<T> {
   }
 
   R? ifSubmitted<R>(R Function(T data) dataFunction) {
-    final data = maybeWhen(
-      submitted: (data) => data,
-      orElse: () => null,
-    );
+    final data = maybeWhen(submitted: (data) => data, orElse: () => null);
     if (data != null) {
       return dataFunction(data);
     }
@@ -114,10 +112,7 @@ class RemoteObjectState<T> with _$RemoteObjectState<T> {
   }
 
   R? ifHasData<R>(R Function(T data) dataFunction) {
-    final data = maybeWhen(
-      data: (data) => data,
-      orElse: () => null,
-    );
+    final data = maybeWhen(data: (data) => data, orElse: () => null);
     if (data != null) {
       return dataFunction(data);
     }
@@ -166,9 +161,9 @@ class NetworkErrorMessageMapperBase {
   String get noInternetErrorMessage => 'No internet connection';
 
   ErrorModel get genericErrorModel => ErrorModel(
-        message: genericErrorMessage,
-        resultErrorType: ResultErrorType.other,
-      );
+    message: genericErrorMessage,
+    resultErrorType: ResultErrorType.other,
+  );
 }
 
 sealed class Status<D, E> {}

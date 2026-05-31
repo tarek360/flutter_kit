@@ -17,11 +17,7 @@ class SvgImageData {
   const SvgImageData(this.name, {this.lightAndDark = false});
 }
 
-enum _SvgImageType {
-  asset,
-  file,
-  network,
-}
+enum _SvgImageType { asset, file, network }
 
 class SvgImage extends StatelessWidget {
   final SvgImageData? image;
@@ -42,9 +38,9 @@ class SvgImage extends StatelessWidget {
     this.semanticsLabel,
     this.placeholderBuilder,
     this.fit = BoxFit.contain,
-  })  : _type = _SvgImageType.asset,
-        filePath = null,
-        headers = null;
+  }) : _type = _SvgImageType.asset,
+       filePath = null,
+       headers = null;
 
   const SvgImage.network(
     String url, {
@@ -55,9 +51,9 @@ class SvgImage extends StatelessWidget {
     this.headers,
     this.placeholderBuilder,
     this.fit = BoxFit.contain,
-  })  : _type = _SvgImageType.network,
-        filePath = url,
-        image = null;
+  }) : _type = _SvgImageType.network,
+       filePath = url,
+       image = null;
 
   const SvgImage.file(
     String path, {
@@ -67,21 +63,22 @@ class SvgImage extends StatelessWidget {
     this.semanticsLabel,
     this.placeholderBuilder,
     this.fit = BoxFit.contain,
-  })  : _type = _SvgImageType.file,
-        filePath = path,
-        image = null,
-        headers = null;
+  }) : _type = _SvgImageType.file,
+       filePath = path,
+       image = null,
+       headers = null;
 
   @override
   Widget build(BuildContext context) {
     switch (_type) {
       case _SvgImageType.asset:
-        final String fileName = image!.lightAndDark
-            ? switch (FrogTheme.of(context).brightness) {
-                Brightness.dark => '${image!.name}_dark',
-                Brightness.light => '${image!.name}_light',
-              }
-            : image!.name;
+        final String fileName =
+            image!.lightAndDark
+                ? switch (FrogTheme.of(context).brightness) {
+                  Brightness.dark => '${image!.name}_dark',
+                  Brightness.light => '${image!.name}_light',
+                }
+                : image!.name;
 
         return SvgPicture.asset(
           'assets/svg/$fileName.svg',
@@ -169,10 +166,7 @@ class _SvgImageNetworkState extends State<_SvgImageNetwork> {
             fit: widget.fit,
           );
         } else {
-          return ImagePlaceholder(
-            width: widget.width,
-            height: widget.height,
-          );
+          return ImagePlaceholder(width: widget.width, height: widget.height);
         }
       },
     );

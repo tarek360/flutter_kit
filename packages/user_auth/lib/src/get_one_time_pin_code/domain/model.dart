@@ -6,9 +6,8 @@ part 'model.g.dart';
 
 @freezed
 class GetOneTimePinCodeRequest with _$GetOneTimePinCodeRequest {
-  const factory GetOneTimePinCodeRequest({
-    required String email,
-  }) = _GetOneTimePinCodeRequest;
+  const factory GetOneTimePinCodeRequest({required String email}) =
+      _GetOneTimePinCodeRequest;
 
   const GetOneTimePinCodeRequest._();
 }
@@ -21,13 +20,11 @@ class GetOneTimePinCodeResponse with _$GetOneTimePinCodeResponse, Cacheable {
     required String userEmail,
   }) = GetOneTimePinCodeResponseOk;
 
-  const factory GetOneTimePinCodeResponse.blocked({
-    required String userEmail,
-  }) = GetOneTimePinCodeResponseBlocked;
+  const factory GetOneTimePinCodeResponse.blocked({required String userEmail}) =
+      GetOneTimePinCodeResponseBlocked;
 
-  const factory GetOneTimePinCodeResponse.noUser({
-    required String userEmail,
-  }) = GetOneTimePinCodeResponseNoUser;
+  const factory GetOneTimePinCodeResponse.noUser({required String userEmail}) =
+      GetOneTimePinCodeResponseNoUser;
 
   const GetOneTimePinCodeResponse._();
 

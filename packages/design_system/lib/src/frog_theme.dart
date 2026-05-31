@@ -52,11 +52,13 @@ class FrogThemeData {
     this.typography = DefaultFrogTheme.typography,
     FrogColorScheme? colorScheme,
     this.resourcesPackage,
-  })  : textStyles = _getTextStyles(scriptCategory, typography),
-        colorScheme = colorScheme ?? _getFrogColorScheme(brightness);
+  }) : textStyles = _getTextStyles(scriptCategory, typography),
+       colorScheme = colorScheme ?? _getFrogColorScheme(brightness);
 
   static FrogTextTheme _getTextStyles(
-      ScriptCategory scriptCategory, FrogTypography typography) {
+    ScriptCategory scriptCategory,
+    FrogTypography typography,
+  ) {
     switch (scriptCategory) {
       case ScriptCategory.englishLike:
         return typography.englishLike;
