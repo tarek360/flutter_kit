@@ -1,6 +1,6 @@
 import 'package:core/core.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-
+import 'package:flutter_riverpod/legacy.dart';
 import '../domain/get_one_time_pin_code.dart';
 import '../domain/model.dart';
 

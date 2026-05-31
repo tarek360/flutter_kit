@@ -4,7 +4,7 @@ import 'package:ui_kit_interface/ui_kit_interface.dart';
 
 typedef DotsIndicatorBuilder = Widget Function({
   required int dotsCount,
-  required int position,
+  required double position,
 });
 
 class DotsIndicator extends StatelessWidget {
@@ -15,7 +15,7 @@ class DotsIndicator extends StatelessWidget {
   });
 
   final int dotsCount;
-  final int position;
+  final double position;
 
   @override
   Widget build(BuildContext context) {

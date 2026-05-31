@@ -10,7 +10,7 @@ class ChatUIDotsIndicator extends StatelessWidget {
   });
 
   final int dotsCount;
-  final int position;
+  final double position;
 
   @override
   Widget build(BuildContext context) => dotsCount > 0

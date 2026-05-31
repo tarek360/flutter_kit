@@ -92,11 +92,9 @@ packages:
   core:
     dependency: "direct main"
     description:
-      path: "flutter_kit/core"
-      ref: "0.0.10"
-      resolved-ref: a57406d8c8dcb24eea7e2b175f982a8ef5b05262
-      url: "git@github.com:tarek360/flutter_kit.git"
-    source: git
+      path: "../core"
+      relative: true
+    source: path
     version: "0.0.10"
   coverage:
     dependency: transitive
@@ -348,11 +346,9 @@ packages:
   global_lints:
     dependency: "direct dev"
     description:
-      path: "flutter_kit/global_lints"
-      ref: "0.0.10"
-      resolved-ref: a57406d8c8dcb24eea7e2b175f982a8ef5b05262
-      url: "git@github.com:tarek360/flutter_kit.git"
-    source: git
+      path: "../global_lints"
+      relative: true
+    source: path
     version: "0.0.10"
   google_identity_services_web:
     dependency: transitive

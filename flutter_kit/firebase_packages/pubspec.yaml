@@ -11,6 +11,7 @@ dependencies:
   flutter:
     sdk: flutter
 
+  freezed_annotation: ^3.1.0
   firebase_messaging: ^16.1.1
 
   flutter_local_notifications: ^19.5.0
@@ -34,8 +35,9 @@ dev_dependencies:
       ref: 0.0.10
       path: flutter_kit/global_lints
 
-  build_runner: ^2.10.5
-  freezed: ^3.2.4
+  build_runner: ^2.15.0
+  freezed: ^3.2.5
+
   json_serializable: ^6.11.4
 
 flutter:

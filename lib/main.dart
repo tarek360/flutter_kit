@@ -46,7 +46,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
-  int _dotsPosition = 0;
+  double _dotsPosition = 0;
   double _progress = 0.3;
   bool _toggleValue = false;
   String _textInputValue = '';

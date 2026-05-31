@@ -23,7 +23,7 @@ class SocialLoginInfo {
 class SocialLoginService {
   SocialLoginService();
 
-  final _googleSignIn = GoogleSignIn();
+  final _googleSignIn = GoogleSignIn.instance;
 
   Future<SocialLoginInfo?> signInWithSocial(SocialLoginType type) async {
     try {
@@ -49,24 +49,19 @@ class SocialLoginService {
 
   Future<SocialLoginInfo?> _signInWithGoogle() async {
     try {
-      final isSignedIn = await _googleSignIn.isSignedIn();
+      GoogleSignInAccount? account =
+          await (_googleSignIn.attemptLightweightAuthentication() ?? Future.value());
 
-      final googleSignInAccount = await (isSignedIn ? _googleSignIn.signInSilently() : _googleSignIn.signIn());
+      account ??= await _googleSignIn.authenticate();
 
-      if (googleSignInAccount == null) {
-        return null; // User canceled Google Sign-In
-      }
-
-      final googleSignInAuthentication = await googleSignInAccount.authentication;
-
-      final accessToken = googleSignInAuthentication.accessToken;
-      if (accessToken == null) {
+      final idToken = account.authentication.idToken;
+      if (idToken == null) {
         return null;
       }
 
       return SocialLoginInfo(
-        email: googleSignInAccount.email,
-        token: accessToken,
+        email: account.email,
+        token: idToken,
         type: SocialLoginType.google,
       );
     } catch (e) {
@@ -107,8 +102,8 @@ class SocialLoginService {
     final email = parts['email'];
     if (email is! String) {
       Logger.er('Invalid email in Apple ID token: $email');
+      return '';
     }
-
     return email;
   }
 }

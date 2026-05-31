@@ -174,8 +174,8 @@ packages:
     description:
       path: "flutter_kit/core"
       ref: "0.0.10"
-      resolved-ref: a57406d8c8dcb24eea7e2b175f982a8ef5b05262
-      url: "git@github.com:tarek360/flutter_kit.git"
+      resolved-ref: "7796c02eed89578a10a9ec5db055f47c34b087c7"
+      url: "https://github.com/tarek360/flutter_kit.git"
     source: git
     version: "0.0.10"
   coverage:
@@ -207,8 +207,8 @@ packages:
     description:
       path: "flutter_kit/design_system"
       ref: "0.0.10"
-      resolved-ref: a57406d8c8dcb24eea7e2b175f982a8ef5b05262
-      url: "git@github.com:tarek360/flutter_kit.git"
+      resolved-ref: "7796c02eed89578a10a9ec5db055f47c34b087c7"
+      url: "https://github.com/tarek360/flutter_kit.git"
     source: git
     version: "0.0.10"
   device_info_plus:
@@ -463,8 +463,8 @@ packages:
     description:
       path: "flutter_kit/global_lints"
       ref: "0.0.10"
-      resolved-ref: a57406d8c8dcb24eea7e2b175f982a8ef5b05262
-      url: "git@github.com:tarek360/flutter_kit.git"
+      resolved-ref: "7796c02eed89578a10a9ec5db055f47c34b087c7"
+      url: "https://github.com/tarek360/flutter_kit.git"
     source: git
     version: "0.0.10"
   graphs:
@@ -1126,8 +1126,8 @@ packages:
     description:
       path: "flutter_kit/ui_kit_interface"
       ref: "0.0.10"
-      resolved-ref: a57406d8c8dcb24eea7e2b175f982a8ef5b05262
-      url: "git@github.com:tarek360/flutter_kit.git"
+      resolved-ref: "7796c02eed89578a10a9ec5db055f47c34b087c7"
+      url: "https://github.com/tarek360/flutter_kit.git"
     source: git
     version: "0.0.10"
   url_launcher:
