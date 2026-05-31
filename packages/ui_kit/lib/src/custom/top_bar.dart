@@ -48,7 +48,9 @@ class TopBar extends StatelessWidget implements PreferredSizeWidget {
                   ),
                 )
           : leading,
-      title: title != null ? FrogText.headlineSmall(title!, color: colors.neutral80) : null,
+      title: title != null
+          ? FrogText.headlineSmall(title!, color: colors.neutral80)
+          : null,
       actions: [
         if (trailing != null) trailing!,
       ],

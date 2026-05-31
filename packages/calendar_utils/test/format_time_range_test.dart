@@ -23,14 +23,16 @@ void main() {
       expect(result, '13:15 - 14:30');
     });
 
-    test('should format time range at noon and midnight with 12-hour format', () {
+    test('should format time range at noon and midnight with 12-hour format',
+        () {
       final start = DateTime(2022, 3, 17, 11, 0);
       final end = DateTime(2022, 3, 17, 12, 0);
       final result = formatTimeRange(start, end, format24Hours: false);
       expect(result, '11:00am - 12:00pm');
     });
 
-    test('should format time range at noon and midnight with 24-hour format', () {
+    test('should format time range at noon and midnight with 24-hour format',
+        () {
       final start = DateTime(2022, 3, 17, 11, 0);
       final end = DateTime(2022, 3, 17, 12, 0);
       final result = formatTimeRange(start, end, format24Hours: true);

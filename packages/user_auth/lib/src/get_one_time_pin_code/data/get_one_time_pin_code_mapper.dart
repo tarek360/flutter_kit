@@ -4,11 +4,12 @@ import '../domain/model.dart';
 import 'entity.dart';
 
 final getOneTimePinCodeMapperProvider = Provider(
-      (ref) => GetOneTimePinCodeMapper(),
+  (ref) => GetOneTimePinCodeMapper(),
 );
 
 class GetOneTimePinCodeMapper {
-  GetOneTimePinCodeRequestEntity transformToGetOneTimePinCodeRequestEntity(GetOneTimePinCodeRequest input) {
+  GetOneTimePinCodeRequestEntity transformToGetOneTimePinCodeRequestEntity(
+      GetOneTimePinCodeRequest input) {
     return GetOneTimePinCodeRequestEntity(
       email: input.email,
     );

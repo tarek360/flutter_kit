@@ -39,7 +39,7 @@ class LoginViewmodel extends StateNotifier<XFormState<LoginSubmissionState>> {
     // final pinCodeResponse = ref.watch(_getCachedOneTimePinCodeProvider)();
     // if (pinCodeResponse != null) {
     //   return List.generate(pinCodeResponse.numberOfDigits, (index) => '');
-      return List.generate(4, (index) => '');
+    return List.generate(4, (index) => '');
     // } else {
     // return [];
     // }
@@ -88,10 +88,14 @@ class LoginViewmodel extends StateNotifier<XFormState<LoginSubmissionState>> {
     final result = await _login(pinCode);
 
     state = result.when(
-      success: (token) => const XFormState.submitted(LoginSubmissionState.success),
-      invalidCode: () => const XFormState.submitted(LoginSubmissionState.invalidCode),
-      expiredCode: () => const XFormState.submitted(LoginSubmissionState.expiredCode),
-      otherError: (error) => XFormState.error(_networkErrorMessageMapper.transform(error)),
+      success: (token) =>
+          const XFormState.submitted(LoginSubmissionState.success),
+      invalidCode: () =>
+          const XFormState.submitted(LoginSubmissionState.invalidCode),
+      expiredCode: () =>
+          const XFormState.submitted(LoginSubmissionState.expiredCode),
+      otherError: (error) =>
+          XFormState.error(_networkErrorMessageMapper.transform(error)),
     );
   }
 

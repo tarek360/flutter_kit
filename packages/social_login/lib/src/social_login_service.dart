@@ -50,7 +50,8 @@ class SocialLoginService {
   Future<SocialLoginInfo?> _signInWithGoogle() async {
     try {
       GoogleSignInAccount? account =
-          await (_googleSignIn.attemptLightweightAuthentication() ?? Future.value());
+          await (_googleSignIn.attemptLightweightAuthentication() ??
+              Future.value());
 
       account ??= await _googleSignIn.authenticate();
 

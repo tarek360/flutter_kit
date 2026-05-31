@@ -12,7 +12,8 @@ abstract class DatesGenerator {
       _getMonthDates(DateTime(current.year, current.month - 1, 1));
 
   static List<DateTime> _getMonthDates(DateTime firstDayOfMonth) {
-    final int monthDays = DateTime(firstDayOfMonth.year, firstDayOfMonth.month + 1, 0).day;
+    final int monthDays =
+        DateTime(firstDayOfMonth.year, firstDayOfMonth.month + 1, 0).day;
     final List<DateTime> dates = List.generate(monthDays, (index) {
       return DateTime(firstDayOfMonth.year, firstDayOfMonth.month, index + 1);
     });
@@ -22,7 +23,8 @@ abstract class DatesGenerator {
   /// ********************* Week *********************
   static DateTime getFirstDayOfWeek(DateTime someDay) {
     final dayOfWeek = someDay.weekday;
-    return DateTime(someDay.year, someDay.month, someDay.day).subtract(Duration(days: dayOfWeek - 1));
+    return DateTime(someDay.year, someDay.month, someDay.day)
+        .subtract(Duration(days: dayOfWeek - 1));
   }
 
   static List<DateTime> getWeekDates(DateTime initialDate) {
@@ -39,7 +41,8 @@ abstract class DatesGenerator {
     return _getNextWeekDates(lastDayOfTheWeek);
   }
 
-  static List<DateTime> _getNextWeekDates(DateTime startDate) => _getNextDayDates(startDate, 7);
+  static List<DateTime> _getNextWeekDates(DateTime startDate) =>
+      _getNextDayDates(startDate, 7);
 
   /// ********************* Four Days *********************
   static List<DateTime> getFourDayDatesOf(DateTime initialDate) {
@@ -47,16 +50,19 @@ abstract class DatesGenerator {
   }
 
   static List<DateTime> getNextFourDayDates(DateTime lastDayOfTheFourDay) {
-    final firstDayOfNextFourDay = lastDayOfTheFourDay.add(const Duration(days: 1));
+    final firstDayOfNextFourDay =
+        lastDayOfTheFourDay.add(const Duration(days: 1));
     return _getFourDayDates(firstDayOfNextFourDay);
   }
 
   static List<DateTime> getPrevFourDayDates(DateTime firstDayOfFourDay) {
-    final lastDayOfPrevFourDay = firstDayOfFourDay.subtract(const Duration(days: 4));
+    final lastDayOfPrevFourDay =
+        firstDayOfFourDay.subtract(const Duration(days: 4));
     return _getFourDayDates(lastDayOfPrevFourDay);
   }
 
-  static List<DateTime> _getFourDayDates(DateTime startDate) => _getNextDayDates(startDate, 4);
+  static List<DateTime> _getFourDayDates(DateTime startDate) =>
+      _getNextDayDates(startDate, 4);
 
   static List<DateTime> _getNextDayDates(DateTime firstDay, int count) {
     final List<DateTime> dates = [];

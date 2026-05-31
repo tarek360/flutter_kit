@@ -6,8 +6,8 @@ T guard<T>(T Function() func, {required T fallback}) {
   }
 }
 
-
-Future<T> guardAsync<T>(Future<T> Function() func, {required T fallback}) async {
+Future<T> guardAsync<T>(Future<T> Function() func,
+    {required T fallback}) async {
   try {
     return await func();
   } catch (err) {

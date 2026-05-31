@@ -8,14 +8,15 @@ class FrogTheme extends InheritedWidget {
     // required UIKitBuilder uiKitBuilder,
     required super.child,
   })
-      // : _uiKit = uiKitBuilder(data)
+  // : _uiKit = uiKitBuilder(data)
   ;
 
   final FrogThemeData data;
   // final UIKitBuilders _uiKit;
 
   static FrogTheme of(BuildContext context) {
-    final FrogTheme? result = context.dependOnInheritedWidgetOfExactType<FrogTheme>();
+    final FrogTheme? result =
+        context.dependOnInheritedWidgetOfExactType<FrogTheme>();
     assert(result != null, 'No FrogTheme found in context');
     return result!;
   }
@@ -33,7 +34,8 @@ class FrogTheme extends InheritedWidget {
   String? get resourcesPackage => data.resourcesPackage;
 
   @override
-  bool updateShouldNotify(FrogTheme old) => data.brightness != old.data.brightness;
+  bool updateShouldNotify(FrogTheme old) =>
+      data.brightness != old.data.brightness;
 }
 
 class FrogThemeData {
@@ -53,7 +55,8 @@ class FrogThemeData {
   })  : textStyles = _getTextStyles(scriptCategory, typography),
         colorScheme = colorScheme ?? _getFrogColorScheme(brightness);
 
-  static FrogTextTheme _getTextStyles(ScriptCategory scriptCategory, FrogTypography typography) {
+  static FrogTextTheme _getTextStyles(
+      ScriptCategory scriptCategory, FrogTypography typography) {
     switch (scriptCategory) {
       case ScriptCategory.englishLike:
         return typography.englishLike;

@@ -18,17 +18,23 @@ class GetOneTimePinCodeRepositoryImpl implements GetOneTimePinCodeRepository {
   Future<Result<GetOneTimePinCodeResponse, ResultErrorType>> getOneTimePinCode(
     GetOneTimePinCodeRequest requestInfo,
   ) async {
-    final NetworkResponse<MessageOut<GetOneTimePinCodeResponseEntity>> response = await _network.request(
+    final NetworkResponse<MessageOut<GetOneTimePinCodeResponseEntity>>
+        response = await _network.request(
       request: NetworkRequest.post(
         endpoint: '/v1/user/pin',
-        body: _mapper.transformToGetOneTimePinCodeRequestEntity(requestInfo).toJson(),
+        body: _mapper
+            .transformToGetOneTimePinCodeRequestEntity(requestInfo)
+            .toJson(),
       ),
-      fromJson: MessageOut(dataFromJson: GetOneTimePinCodeResponseEntity.fromJson).singleFromJson,
+      fromJson:
+          MessageOut(dataFromJson: GetOneTimePinCodeResponseEntity.fromJson)
+              .singleFromJson,
     );
 
     return response.when(
       success: (data) {
-        final mappedData = _mapper.transformToGetOneTimePinCodeResponseModel(data.item, requestInfo);
+        final mappedData = _mapper.transformToGetOneTimePinCodeResponseModel(
+            data.item, requestInfo);
         if (mappedData != null) {
           return Result.success(mappedData);
         } else {
@@ -64,8 +70,10 @@ class GetOneTimePinCodeRepositoryImpl implements GetOneTimePinCodeRepository {
   }
 
   @override
-  void cacheGetOneTimePinCodeResponse(GetOneTimePinCodeResponse value) => value.cache();
+  void cacheGetOneTimePinCodeResponse(GetOneTimePinCodeResponse value) =>
+      value.cache();
 
   @override
-  void clearOneTimePinCodeResponseCache() => GetOneTimePinCodeResponse.clearCache();
+  void clearOneTimePinCodeResponseCache() =>
+      GetOneTimePinCodeResponse.clearCache();
 }

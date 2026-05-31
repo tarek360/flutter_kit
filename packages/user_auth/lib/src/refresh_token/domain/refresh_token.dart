@@ -45,10 +45,13 @@ class RefreshToken {
   }
 
   bool _isItTimeToRefreshToken() {
-    final lastRefreshTokenTimeInt = _refreshTokenRepository.lastRefreshTokenTime;
+    final lastRefreshTokenTimeInt =
+        _refreshTokenRepository.lastRefreshTokenTime;
     if (lastRefreshTokenTimeInt != null) {
-      final lastRefreshTokenDateTime = DateTime.fromMillisecondsSinceEpoch(lastRefreshTokenTimeInt);
-      final secondsSinceLastCall = DateTime.now().difference(lastRefreshTokenDateTime).inSeconds;
+      final lastRefreshTokenDateTime =
+          DateTime.fromMillisecondsSinceEpoch(lastRefreshTokenTimeInt);
+      final secondsSinceLastCall =
+          DateTime.now().difference(lastRefreshTokenDateTime).inSeconds;
       return secondsSinceLastCall > _tokenRefreshPeriodDuration.inSeconds;
     }
     return true;

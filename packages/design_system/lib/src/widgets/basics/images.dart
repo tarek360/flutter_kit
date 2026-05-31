@@ -87,7 +87,8 @@ class ImageNetwork extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final placeholder = placeHolder ?? ImagePlaceholder(width: width, height: height);
+    final placeholder =
+        placeHolder ?? ImagePlaceholder(width: width, height: height);
 
     final imageUrl = this.imageUrl;
     Widget image;

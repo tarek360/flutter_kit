@@ -11,7 +11,8 @@ class LogoutResponseEntity {
   @JsonKey(name: 'success')
   final bool? success;
 
-  factory LogoutResponseEntity.fromJson(Map<String, dynamic> json) => _$LogoutResponseEntityFromJson(json);
+  factory LogoutResponseEntity.fromJson(Map<String, dynamic> json) =>
+      _$LogoutResponseEntityFromJson(json);
 
   Map<String, dynamic> toJson() => _$LogoutResponseEntityToJson(this);
 }

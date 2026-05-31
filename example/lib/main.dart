@@ -20,7 +20,11 @@ class MyApp extends StatelessWidget {
       kitBuilder: (theme) => ChatUIKit(frogThemeData: theme),
       child: MaterialApp(
         title: 'Flutter Kit Examples',
-        theme: ChatUIKit.getThemeData(Brightness.light, themeData.colorScheme, themeData.typography),
+        theme: ChatUIKit.getThemeData(
+          Brightness.light,
+          themeData.colorScheme,
+          themeData.typography,
+        ),
         home: const ExamplesPage(),
       ),
     );
@@ -75,7 +79,12 @@ class _SectionCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(title, style: Theme.of(context).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold)),
+            Text(
+              title,
+              style: Theme.of(
+                context,
+              ).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
+            ),
             const Divider(height: 20),
             child,
           ],
@@ -111,12 +120,17 @@ class _CalendarUtilsSectionState extends State<_CalendarUtilsSection> {
         children: [
           Text('getFullMonthName: ${getFullMonthName(now)}'),
           Text('formatTimeRange: ${formatTimeRange(start, end)}'),
-          Text('isToday: ${now.isToday}  isTomorrow: ${now.add(const Duration(days: 1)).isTomorrow}'),
+          Text(
+            'isToday: ${now.isToday}  isTomorrow: ${now.add(const Duration(days: 1)).isTomorrow}',
+          ),
           Text(
             'isPast: ${now.subtract(const Duration(days: 1)).isPast}  isFuture: ${now.add(const Duration(days: 1)).isFuture}',
           ),
           const SizedBox(height: 12),
-          Text('getWeekdaysStartingOnMonday:', style: Theme.of(context).textTheme.labelMedium),
+          Text(
+            'getWeekdaysStartingOnMonday:',
+            style: Theme.of(context).textTheme.labelMedium,
+          ),
           const SizedBox(height: 6),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -124,14 +138,19 @@ class _CalendarUtilsSectionState extends State<_CalendarUtilsSection> {
               for (int i = 0; i < weekdays.length; i++)
                 Column(
                   children: [
-                    Text(getDayOfWeekName(weekdays[i]), style: const TextStyle(fontSize: 11)),
+                    Text(
+                      getDayOfWeekName(weekdays[i]),
+                      style: const TextStyle(fontSize: 11),
+                    ),
                     const SizedBox(height: 2),
                     Container(
                       width: 28,
                       height: 28,
                       alignment: Alignment.center,
                       decoration: BoxDecoration(
-                        color: i == todayIndex ? Theme.of(context).colorScheme.primary : Colors.transparent,
+                        color: i == todayIndex
+                            ? Theme.of(context).colorScheme.primary
+                            : Colors.transparent,
                         shape: BoxShape.circle,
                       ),
                       child: Text(
@@ -148,20 +167,34 @@ class _CalendarUtilsSectionState extends State<_CalendarUtilsSection> {
             ],
           ),
           const SizedBox(height: 12),
-          Text('CalendarList (navigate weeks):', style: Theme.of(context).textTheme.labelMedium),
+          Text(
+            'CalendarList (navigate weeks):',
+            style: Theme.of(context).textTheme.labelMedium,
+          ),
           Row(
             children: [
-              IconButton(icon: const Icon(Icons.chevron_left), onPressed: () => setState(() => _calendar.prev())),
+              IconButton(
+                icon: const Icon(Icons.chevron_left),
+                onPressed: () => setState(() => _calendar.prev()),
+              ),
               Expanded(
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: _calendar.currentDays.map((d) => Text(getDayOfMonth(d))).toList(),
+                  children: _calendar.currentDays
+                      .map((d) => Text(getDayOfMonth(d)))
+                      .toList(),
                 ),
               ),
-              IconButton(icon: const Icon(Icons.chevron_right), onPressed: () => setState(() => _calendar.next())),
+              IconButton(
+                icon: const Icon(Icons.chevron_right),
+                onPressed: () => setState(() => _calendar.next()),
+              ),
             ],
           ),
-          Text(getFullMonthName(_calendar.currentDays.first), style: Theme.of(context).textTheme.bodySmall),
+          Text(
+            getFullMonthName(_calendar.currentDays.first),
+            style: Theme.of(context).textTheme.bodySmall,
+          ),
         ],
       ),
     );
@@ -196,21 +229,27 @@ class _CoreSectionState extends State<_CoreSection> {
               ElevatedButton(
                 onPressed: () {
                   Logger.d('debug message from example');
-                  setState(() => _logStatus = 'Logger.d() called — check console');
+                  setState(
+                    () => _logStatus = 'Logger.d() called — check console',
+                  );
                 },
                 child: const Text('d()'),
               ),
               ElevatedButton(
                 onPressed: () {
                   Logger.i('info message from example');
-                  setState(() => _logStatus = 'Logger.i() called — check console');
+                  setState(
+                    () => _logStatus = 'Logger.i() called — check console',
+                  );
                 },
                 child: const Text('i()'),
               ),
               ElevatedButton(
                 onPressed: () {
                   Logger.w('warning from example');
-                  setState(() => _logStatus = 'Logger.w() called — check console');
+                  setState(
+                    () => _logStatus = 'Logger.w() called — check console',
+                  );
                 },
                 child: const Text('w()'),
               ),
@@ -230,8 +269,10 @@ class _CoreSectionState extends State<_CoreSection> {
                 onPressed: () {
                   const result = Result<String, String>.success('All good!');
                   result.when(
-                    success: (data) => setState(() => _resultStatus = 'success: $data'),
-                    failure: (err) => setState(() => _resultStatus = 'failure: $err'),
+                    success: (data) =>
+                        setState(() => _resultStatus = 'success: $data'),
+                    failure: (err) =>
+                        setState(() => _resultStatus = 'failure: $err'),
                   );
                 },
                 child: const Text('Result.success'),
@@ -240,8 +281,10 @@ class _CoreSectionState extends State<_CoreSection> {
                 onPressed: () {
                   const result = Result<String, String>.failure('Not found');
                   result.when(
-                    success: (data) => setState(() => _resultStatus = 'success: $data'),
-                    failure: (err) => setState(() => _resultStatus = 'failure: $err'),
+                    success: (data) =>
+                        setState(() => _resultStatus = 'success: $data'),
+                    failure: (err) =>
+                        setState(() => _resultStatus = 'failure: $err'),
                   );
                 },
                 child: const Text('Result.failure'),
@@ -290,7 +333,8 @@ class _DesignSystemSectionState extends State<_DesignSystemSection> {
                   ButtonSegment(value: Brightness.dark, label: Text('Dark')),
                 ],
                 selected: {_brightness},
-                onSelectionChanged: (s) => setState(() => _brightness = s.first),
+                onSelectionChanged: (s) =>
+                    setState(() => _brightness = s.first),
               ),
             ],
           ),
@@ -378,21 +422,44 @@ class _FirebasePackagesSection extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text('Firebase integration helpers:', style: Theme.of(context).textTheme.labelMedium),
+          Text(
+            'Firebase integration helpers:',
+            style: Theme.of(context).textTheme.labelMedium,
+          ),
           const SizedBox(height: 6),
-          const Text('• FcmHandler — routes foreground/background FCM messages'),
-          const Text('• NotificationService — schedules and displays local notifications'),
-          const Text('• NotificationPermissionHandler — requests/checks notification permissions'),
+          const Text(
+            '• FcmHandler — routes foreground/background FCM messages',
+          ),
+          const Text(
+            '• NotificationService — schedules and displays local notifications',
+          ),
+          const Text(
+            '• NotificationPermissionHandler — requests/checks notification permissions',
+          ),
           const SizedBox(height: 12),
-          Text('LougaRemoteNotification model:', style: Theme.of(context).textTheme.labelMedium),
+          Text(
+            'LougaRemoteNotification model:',
+            style: Theme.of(context).textTheme.labelMedium,
+          ),
           const SizedBox(height: 4),
-          Text('  triggerID: String?', style: Theme.of(context).textTheme.bodySmall),
-          Text('  navigation: String?', style: Theme.of(context).textTheme.bodySmall),
-          Text('  isBackground: bool', style: Theme.of(context).textTheme.bodySmall),
+          Text(
+            '  triggerID: String?',
+            style: Theme.of(context).textTheme.bodySmall,
+          ),
+          Text(
+            '  navigation: String?',
+            style: Theme.of(context).textTheme.bodySmall,
+          ),
+          Text(
+            '  isBackground: bool',
+            style: Theme.of(context).textTheme.bodySmall,
+          ),
           const SizedBox(height: 4),
           Text(
             'Requires Firebase.initializeApp() before use.',
-            style: Theme.of(context).textTheme.bodySmall?.copyWith(fontStyle: FontStyle.italic),
+            style: Theme.of(
+              context,
+            ).textTheme.bodySmall?.copyWith(fontStyle: FontStyle.italic),
           ),
         ],
       ),
@@ -412,7 +479,10 @@ class _SocialLoginSection extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text('SocialLoginService supports:', style: Theme.of(context).textTheme.labelMedium),
+          Text(
+            'SocialLoginService supports:',
+            style: Theme.of(context).textTheme.labelMedium,
+          ),
           const SizedBox(height: 4),
           ...SocialLoginType.values.map((t) => Text('  • ${t.name}')),
           const SizedBox(height: 12),
@@ -476,7 +546,10 @@ class _UiKitSectionState extends State<_UiKitSection> {
           const SizedBox(height: 8),
           ChatUIButton(onPressed: null, label: 'Disabled Button'),
           const SizedBox(height: 16),
-          Text('ChatUICircularIndicator', style: Theme.of(context).textTheme.labelMedium),
+          Text(
+            'ChatUICircularIndicator',
+            style: Theme.of(context).textTheme.labelMedium,
+          ),
           const SizedBox(height: 8),
           const ChatUICircularIndicator(width: 32, height: 32),
           const SizedBox(height: 16),
@@ -486,13 +559,19 @@ class _UiKitSectionState extends State<_UiKitSection> {
           ),
           const SizedBox(height: 8),
           ChatUIProgressIndicator(progress: _progress),
-          Slider(value: _progress, onChanged: (v) => setState(() => _progress = v)),
+          Slider(
+            value: _progress,
+            onChanged: (v) => setState(() => _progress = v),
+          ),
           const SizedBox(height: 8),
           Text('ChatUISwitch', style: Theme.of(context).textTheme.labelMedium),
           const SizedBox(height: 8),
           Row(
             children: [
-              ChatUISwitch(value: _switchOn, onChanged: (v) => setState(() => _switchOn = v)),
+              ChatUISwitch(
+                value: _switchOn,
+                onChanged: (v) => setState(() => _switchOn = v),
+              ),
               const SizedBox(width: 8),
               Text(_switchOn ? 'On' : 'Off'),
             ],
@@ -522,7 +601,10 @@ class _UiKitInterfaceSectionState extends State<_UiKitInterfaceSection> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text('Button (abstract, resolved via UIKit.of)', style: Theme.of(context).textTheme.labelMedium),
+          Text(
+            'Button (abstract, resolved via UIKit.of)',
+            style: Theme.of(context).textTheme.labelMedium,
+          ),
           const SizedBox(height: 8),
           Button(onPressed: () {}, label: 'Primary'),
           const SizedBox(height: 8),
@@ -540,7 +622,11 @@ class _UiKitInterfaceSectionState extends State<_UiKitInterfaceSection> {
           const SizedBox(height: 16),
           Text('Loading state', style: Theme.of(context).textTheme.labelMedium),
           const SizedBox(height: 8),
-          Button(onPressed: () => setState(() => _loading = !_loading), label: 'Toggle Loading', loading: _loading),
+          Button(
+            onPressed: () => setState(() => _loading = !_loading),
+            label: 'Toggle Loading',
+            loading: _loading,
+          ),
         ],
       ),
     );
@@ -557,9 +643,13 @@ class _UserAuthSection extends StatelessWidget {
     const request = LoginRequest(pinID: 'pin_abc123', pinCode: 4567);
     const otpRequest = GetOneTimePinCodeRequest(email: 'user@example.com');
 
-    final successOutput = const LoginResponse.success(
-      token: 'jwt_token_xyz',
-    ).when(success: (token) => token, invalidCode: () => '', expiredCode: () => '', otherError: (_) => '');
+    final successOutput = const LoginResponse.success(token: 'jwt_token_xyz')
+        .when(
+          success: (token) => token,
+          invalidCode: () => '',
+          expiredCode: () => '',
+          otherError: (_) => '',
+        );
 
     return _SectionCard(
       title: 'user_auth',
@@ -568,23 +658,56 @@ class _UserAuthSection extends StatelessWidget {
         children: [
           Text('LoginRequest', style: Theme.of(context).textTheme.labelMedium),
           const SizedBox(height: 4),
-          Text('  pinID: ${request.pinID}  pinCode: ${request.pinCode}', style: Theme.of(context).textTheme.bodySmall),
+          Text(
+            '  pinID: ${request.pinID}  pinCode: ${request.pinCode}',
+            style: Theme.of(context).textTheme.bodySmall,
+          ),
           const SizedBox(height: 12),
-          Text('LoginResponse variants', style: Theme.of(context).textTheme.labelMedium),
+          Text(
+            'LoginResponse variants',
+            style: Theme.of(context).textTheme.labelMedium,
+          ),
           const SizedBox(height: 4),
-          Text('  success → token: $successOutput', style: Theme.of(context).textTheme.bodySmall),
-          Text('  invalidCode, expiredCode, otherError(ResultErrorType)', style: Theme.of(context).textTheme.bodySmall),
+          Text(
+            '  success → token: $successOutput',
+            style: Theme.of(context).textTheme.bodySmall,
+          ),
+          Text(
+            '  invalidCode, expiredCode, otherError(ResultErrorType)',
+            style: Theme.of(context).textTheme.bodySmall,
+          ),
           const SizedBox(height: 12),
-          Text('GetOneTimePinCodeRequest', style: Theme.of(context).textTheme.labelMedium),
+          Text(
+            'GetOneTimePinCodeRequest',
+            style: Theme.of(context).textTheme.labelMedium,
+          ),
           const SizedBox(height: 4),
-          Text('  email: ${otpRequest.email}', style: Theme.of(context).textTheme.bodySmall),
+          Text(
+            '  email: ${otpRequest.email}',
+            style: Theme.of(context).textTheme.bodySmall,
+          ),
           const SizedBox(height: 12),
-          Text('Also provides:', style: Theme.of(context).textTheme.labelMedium),
+          Text(
+            'Also provides:',
+            style: Theme.of(context).textTheme.labelMedium,
+          ),
           const SizedBox(height: 4),
-          Text('  • GetOneTimePinCodeResponse (ok / blocked / noUser)', style: Theme.of(context).textTheme.bodySmall),
-          Text('  • LogoutRepository + use case', style: Theme.of(context).textTheme.bodySmall),
-          Text('  • RefreshTokenRepository + domain model', style: Theme.of(context).textTheme.bodySmall),
-          Text('  • LoginViewModel / OneTimePinCodeViewModel (Riverpod)', style: Theme.of(context).textTheme.bodySmall),
+          Text(
+            '  • GetOneTimePinCodeResponse (ok / blocked / noUser)',
+            style: Theme.of(context).textTheme.bodySmall,
+          ),
+          Text(
+            '  • LogoutRepository + use case',
+            style: Theme.of(context).textTheme.bodySmall,
+          ),
+          Text(
+            '  • RefreshTokenRepository + domain model',
+            style: Theme.of(context).textTheme.bodySmall,
+          ),
+          Text(
+            '  • LoginViewModel / OneTimePinCodeViewModel (Riverpod)',
+            style: Theme.of(context).textTheme.bodySmall,
+          ),
         ],
       ),
     );
@@ -603,7 +726,9 @@ class _GlobalLintsSection extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text('Shared analysis_options.yaml applied as a dev_dependency across all packages.'),
+          const Text(
+            'Shared analysis_options.yaml applied as a dev_dependency across all packages.',
+          ),
           const SizedBox(height: 4),
           Text(
             'No runtime API — purely static analysis tooling for consistent lint rules.',

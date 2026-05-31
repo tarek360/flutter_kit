@@ -34,7 +34,8 @@ class ChatUIDropdownMenu<T> extends StatelessWidget {
     final contextPopupController = ContextPopupController();
     return ContextPopup(
       controller: contextPopupController,
-      popupShape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(menuSize.width / 16)),
+      popupShape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(menuSize.width / 16)),
       popupSize: menuSize,
       popupBuilder: (BuildContext context) => SizedBox(
         width: menuSize.width,
@@ -80,7 +81,9 @@ class SelectableList<T> extends StatelessWidget {
     final colors = FrogTheme.of(context).colors;
     final initial = initialValue;
     return SingleChildScrollView(
-      controller: ScrollController(initialScrollOffset: initial != null ? (values.indexOf(initial) - 1) * 48 : 0),
+      controller: ScrollController(
+          initialScrollOffset:
+              initial != null ? (values.indexOf(initial) - 1) * 48 : 0),
       child: Column(
         children: values
             .map(
@@ -91,7 +94,8 @@ class SelectableList<T> extends StatelessWidget {
                 onTap: () => onValueChanged(t),
                 title: FrogText.labelLarge(labelBuilder(t)),
                 selectedColor: colors.primary100,
-                trailing: initialValue == t ? const Icon(Icons.check_rounded) : null,
+                trailing:
+                    initialValue == t ? const Icon(Icons.check_rounded) : null,
               ),
             )
             .toList(),

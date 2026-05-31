@@ -105,13 +105,16 @@ class ChatUIButton extends StatelessWidget {
 
     switch (_buttonType) {
       case ButtonType.primary:
-        foregroundColor = labelColor ?? (onPressed != null ? colors.neutral00 : colors.neutral50);
+        foregroundColor = labelColor ??
+            (onPressed != null ? colors.neutral00 : colors.neutral50);
         break;
       case ButtonType.outline:
-        foregroundColor = labelColor ?? (onPressed != null ? colors.neutral100 : colors.neutral60);
+        foregroundColor = labelColor ??
+            (onPressed != null ? colors.neutral100 : colors.neutral60);
         break;
       case ButtonType.text:
-        foregroundColor = labelColor ?? (onPressed != null ? colors.brand : colors.neutral30);
+        foregroundColor =
+            labelColor ?? (onPressed != null ? colors.brand : colors.neutral30);
         break;
     }
 
@@ -260,7 +263,8 @@ class ChatUIButton extends StatelessWidget {
                   height: height,
                   cornerRadius: cornerRadius,
                   isOutline: false,
-                  color: labelColor?.withOpacity(0.05) ?? colors.brand.withOpacity(0.05),
+                  color: labelColor?.withOpacity(0.05) ??
+                      colors.brand.withOpacity(0.05),
                   child: content,
                 );
               case PressingState.disabled:
@@ -520,7 +524,9 @@ class _PressableBackground extends StatelessWidget {
           decoration: ShapeDecoration(
             color: color,
             shape: SmoothRectangleBorder(
-              side: isOutline == true ? BorderSide(color: color, width: 2.0) : BorderSide.none,
+              side: isOutline == true
+                  ? BorderSide(color: color, width: 2.0)
+                  : BorderSide.none,
               borderRadius: SmoothBorderRadius(
                 cornerRadius: cornerRadius,
                 cornerSmoothing: 0.6,

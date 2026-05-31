@@ -1,16 +1,20 @@
 import 'package:flutter/widgets.dart';
 
-bool isSmallMobile(BuildContext context) => MediaQuery.of(context).size.width < 375;
+bool isSmallMobile(BuildContext context) =>
+    MediaQuery.of(context).size.width < 375;
 
 bool isMobile(BuildContext context) => MediaQuery.of(context).size.width < 850;
 
 bool isTablet(BuildContext context) =>
-    MediaQuery.of(context).size.width < 1100 && MediaQuery.of(context).size.width >= 850;
+    MediaQuery.of(context).size.width < 1100 &&
+    MediaQuery.of(context).size.width >= 850;
 
-bool isDesktop(BuildContext context) => MediaQuery.of(context).size.width >= 1100;
+bool isDesktop(BuildContext context) =>
+    MediaQuery.of(context).size.width >= 1100;
 
 /// Limit the width of the screen to 600 on tablet and desktop
-double maxScreenWidth(BuildContext context) => MediaQuery.of(context).size.width > 700 ? 700 : double.infinity;
+double maxScreenWidth(BuildContext context) =>
+    MediaQuery.of(context).size.width > 700 ? 700 : double.infinity;
 
 class ResponsiveWidget extends StatelessWidget {
   final Widget mobile;

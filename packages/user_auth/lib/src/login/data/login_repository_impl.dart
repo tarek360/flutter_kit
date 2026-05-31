@@ -21,20 +21,25 @@ class LoginRepositoryImpl implements LoginRepository {
   );
 
   @override
-  Future<Result<String, ErrorMessage<LoginResponseErrorCode>>> login(LoginRequest loginRequest) async {
-    final NetworkResponse<MessageOut<LoginResponseEntity>> response = await _network.request(
+  Future<Result<String, ErrorMessage<LoginResponseErrorCode>>> login(
+      LoginRequest loginRequest) async {
+    final NetworkResponse<MessageOut<LoginResponseEntity>> response =
+        await _network.request(
       request: NetworkRequest.post(
         endpoint: '/v1/user/login',
-        body: MessageIn.of(_mapper.transformToLoginRequestEntity(loginRequest).toJson()),
+        body: MessageIn.of(
+            _mapper.transformToLoginRequestEntity(loginRequest).toJson()),
       ),
-      fromJson: MessageOut(dataFromJson: LoginResponseEntity.fromJson).singleFromJson,
+      fromJson:
+          MessageOut(dataFromJson: LoginResponseEntity.fromJson).singleFromJson,
     );
 
     return response.when(
       success: (data) {
         final token = data.item.token;
         if (token == null) {
-          return const Result.failure(ErrorMessage(resultErrorType: ResultErrorType.parsing));
+          return const Result.failure(
+              ErrorMessage(resultErrorType: ResultErrorType.parsing));
         }
         return Result.success(token);
       },
@@ -42,11 +47,14 @@ class LoginRepositoryImpl implements LoginRepository {
         final errorMessage = MessageOutError.fromJson(response.rawData);
 
         if (errorMessage != null) {
-          final errorCode = LoginResponseErrorCode.valueOf(errorMessage.code) ?? LoginResponseErrorCode.invalidCode;
-          return Result.failure(ErrorMessage(extra: errorCode, resultErrorType: ResultErrorType.other));
+          final errorCode = LoginResponseErrorCode.valueOf(errorMessage.code) ??
+              LoginResponseErrorCode.invalidCode;
+          return Result.failure(ErrorMessage(
+              extra: errorCode, resultErrorType: ResultErrorType.other));
         }
 
-        return Result.failure(ErrorMessage(resultErrorType: error.toResultErrorType()));
+        return Result.failure(
+            ErrorMessage(resultErrorType: error.toResultErrorType()));
       },
     );
   }

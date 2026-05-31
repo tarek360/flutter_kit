@@ -11,6 +11,6 @@ class RefreshTokenResponseEntity {
   @JsonKey(name: 'Token')
   final String? token;
 
-  factory RefreshTokenResponseEntity.fromJson(Map<String, dynamic> json) => _$RefreshTokenResponseEntityFromJson(json);
-
+  factory RefreshTokenResponseEntity.fromJson(Map<String, dynamic> json) =>
+      _$RefreshTokenResponseEntityFromJson(json);
 }

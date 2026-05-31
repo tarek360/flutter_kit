@@ -16,15 +16,18 @@ class RefreshTokenRepositoryImpl implements RefreshTokenRepository {
   String? get userToken => _appSharedPreferences.getUserToken();
 
   @override
-  int? get lastRefreshTokenTime => _appSharedPreferences.getLastRefreshTokenTime();
+  int? get lastRefreshTokenTime =>
+      _appSharedPreferences.getLastRefreshTokenTime();
 
   @override
   Future<Result<String, ResultErrorType>> getRefreshedToken() async {
-    final NetworkResponse<MessageOut<RefreshTokenResponseEntity>> response = await _network.request(
+    final NetworkResponse<MessageOut<RefreshTokenResponseEntity>> response =
+        await _network.request(
       request: NetworkRequest.get(
         endpoint: '/v1/user/auth/refresh-token',
       ),
-      fromJson: MessageOut(dataFromJson: RefreshTokenResponseEntity.fromJson).singleFromJson,
+      fromJson: MessageOut(dataFromJson: RefreshTokenResponseEntity.fromJson)
+          .singleFromJson,
     );
 
     return response.when(
@@ -41,6 +44,7 @@ class RefreshTokenRepositoryImpl implements RefreshTokenRepository {
   @override
   Future<void> saveToken(String token) async {
     await _appSharedPreferences.setUserToken(token);
-    _appSharedPreferences.setLastRefreshTokenTime(DateTime.now().millisecondsSinceEpoch);
+    _appSharedPreferences
+        .setLastRefreshTokenTime(DateTime.now().millisecondsSinceEpoch);
   }
 }

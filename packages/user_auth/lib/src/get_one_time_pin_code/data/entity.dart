@@ -41,7 +41,8 @@ class GetOneTimePinCodeResponseEntity {
   factory GetOneTimePinCodeResponseEntity.fromJson(Map<String, dynamic> json) =>
       _$GetOneTimePinCodeResponseEntityFromJson(json);
 
-  Map<String, dynamic> toJson() => _$GetOneTimePinCodeResponseEntityToJson(this);
+  Map<String, dynamic> toJson() =>
+      _$GetOneTimePinCodeResponseEntityToJson(this);
 }
 
 enum GetOneTimePinCodeResponseErrorEntity {

@@ -23,7 +23,8 @@ class LoginResponse with _$LoginResponse {
 
   const factory LoginResponse.expiredCode() = _LoginResponseExpiredCode;
 
-  const factory LoginResponse.otherError(ResultErrorType errorType) = _LoginResponseOtherError;
+  const factory LoginResponse.otherError(ResultErrorType errorType) =
+      _LoginResponseOtherError;
 
   const LoginResponse._();
 }

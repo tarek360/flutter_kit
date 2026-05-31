@@ -3,7 +3,8 @@ import 'package:flutter/widgets.dart';
 class AppLifecycleManager with WidgetsBindingObserver {
   final List<LifecycleAware> _lifecycleAwareComponents = <LifecycleAware>[];
 
-  void addListener(LifecycleAware lifecycleAwareComponent) => _lifecycleAwareComponents.add(lifecycleAwareComponent);
+  void addListener(LifecycleAware lifecycleAwareComponent) =>
+      _lifecycleAwareComponents.add(lifecycleAwareComponent);
 
   bool removeListener(LifecycleAware lifecycleAwareComponent) =>
       _lifecycleAwareComponents.remove(lifecycleAwareComponent);

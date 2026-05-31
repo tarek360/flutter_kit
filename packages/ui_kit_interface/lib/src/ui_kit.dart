@@ -43,7 +43,8 @@ class UIKit extends StatelessWidget {
   final UIKitComponents Function(FrogThemeData frogTheme) kitBuilder;
 
   static UIKitComponents of(BuildContext context) {
-    final _InheritedUIKit? result = context.dependOnInheritedWidgetOfExactType<_InheritedUIKit>();
+    final _InheritedUIKit? result =
+        context.dependOnInheritedWidgetOfExactType<_InheritedUIKit>();
     assert(result != null, 'No UIKit found in context');
     return result!.uiKit;
   }

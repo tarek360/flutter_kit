@@ -29,7 +29,8 @@ class ChatUIKit extends UIKitComponents {
   ChatUIKit({
     required FrogThemeData frogThemeData,
     super.errorImageBuilder,
-  })  : textInputStyle = TextInputStyle(frogThemeData.colorScheme, frogThemeData.textStyles),
+  })  : textInputStyle =
+            TextInputStyle(frogThemeData.colorScheme, frogThemeData.textStyles),
         super(
           primaryButtonBuilder: ChatUIButton.new,
           secondaryButtonBuilder: ChatUIButton.secondary,
@@ -46,17 +47,21 @@ class ChatUIKit extends UIKitComponents {
 
   static ChatUIKit of(BuildContext context) => UIKit.of(context) as ChatUIKit;
 
-  static SystemUiOverlayStyle _getSystemUiOverlayStyle(Brightness brightness, FrogColorScheme colors) =>
+  static SystemUiOverlayStyle _getSystemUiOverlayStyle(
+          Brightness brightness, FrogColorScheme colors) =>
       SystemUiOverlayStyle(
         statusBarColor: colors.transparent,
-        statusBarIconBrightness: brightness == Brightness.light ? Brightness.dark : Brightness.light,
+        statusBarIconBrightness:
+            brightness == Brightness.light ? Brightness.dark : Brightness.light,
         systemNavigationBarColor: colors.neutral00,
         systemNavigationBarDividerColor: colors.neutral00,
         systemNavigationBarContrastEnforced: true,
         statusBarBrightness: brightness,
       );
 
-  static ThemeData getThemeData(Brightness brightness, FrogColorScheme colors, FrogTypography typography) => ThemeData(
+  static ThemeData getThemeData(Brightness brightness, FrogColorScheme colors,
+          FrogTypography typography) =>
+      ThemeData(
         useMaterial3: true,
         brightness: brightness,
         dialogTheme: DialogThemeData(

@@ -24,18 +24,23 @@ class FrogListTile extends StatelessWidget {
     final frogTheme = FrogTheme.of(context);
     final colors = FrogTheme.of(context).colors;
     return ListTile(
-      contentPadding: contentPadding?? const EdgeInsets.symmetric(horizontal: 16),
+      contentPadding:
+          contentPadding ?? const EdgeInsets.symmetric(horizontal: 16),
       splashColor: colors.transparent,
       dense: dense,
       onTap: onTap,
       title: FrogText.bodyLarge(
         title,
-        color: onTap != null ? frogTheme.colors.neutral120 : frogTheme.colors.neutral50,
+        color: onTap != null
+            ? frogTheme.colors.neutral120
+            : frogTheme.colors.neutral50,
       ),
       subtitle: subtitle != null
           ? FrogText.labelLarge(
               subtitle!,
-              color: onTap != null ? frogTheme.colors.neutral70 : frogTheme.colors.neutral50,
+              color: onTap != null
+                  ? frogTheme.colors.neutral70
+                  : frogTheme.colors.neutral50,
             )
           : null,
       trailing: trailing,

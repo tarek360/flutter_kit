@@ -40,14 +40,16 @@ class ContextPopup<T> extends StatelessWidget {
     String? barrierLabel,
     bool useRootNavigator = true,
   }) async {
-    final result = await Navigator.of(context, rootNavigator: useRootNavigator).push<T>(
+    final result =
+        await Navigator.of(context, rootNavigator: useRootNavigator).push<T>(
       _ContextPopupRoute<T>(
         popupSize: popupSize,
         popupShape: popupShape,
         childContext: context,
         builder: builder,
         dismissible: barrierDismissible,
-        barrierLabel: barrierLabel ?? MaterialLocalizations.of(context).modalBarrierDismissLabel,
+        barrierLabel: barrierLabel ??
+            MaterialLocalizations.of(context).modalBarrierDismissLabel,
       ),
     );
 
@@ -97,7 +99,8 @@ class _ContextPopupRoute<T> extends PopupRoute<T> {
   final String barrierLabel;
 
   @override
-  Widget buildPage(BuildContext context, Animation<double> animation, Animation<double> secondaryAnimation) {
+  Widget buildPage(BuildContext context, Animation<double> animation,
+      Animation<double> secondaryAnimation) {
     final position = _getOffset(childContext);
     return Stack(
       children: [

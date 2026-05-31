@@ -43,7 +43,8 @@ class LoginResponseEntity {
   @JsonKey(name: 'Token')
   final String? token;
 
-  factory LoginResponseEntity.fromJson(Map<String, dynamic> json) => _$LoginResponseEntityFromJson(json);
+  factory LoginResponseEntity.fromJson(Map<String, dynamic> json) =>
+      _$LoginResponseEntityFromJson(json);
 }
 
 enum LoginResponseErrorCode {
@@ -55,6 +56,7 @@ enum LoginResponseErrorCode {
   final int code;
 
   static LoginResponseErrorCode? valueOf(int value) {
-    return LoginResponseErrorCode.values.firstWhereOrNull((element) => element.code == value);
+    return LoginResponseErrorCode.values
+        .firstWhereOrNull((element) => element.code == value);
   }
 }

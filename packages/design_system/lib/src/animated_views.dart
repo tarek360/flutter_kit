@@ -28,39 +28,39 @@ class SimpleAnimationView extends StatefulWidget {
   final String? artboard;
 
   SimpleAnimationView.asset(
-      AnimationData asset, {
-        this.width,
-        this.height,
-        this.onAnimationStarted,
-        this.animation,
-        this.artboard,
-        this.fit,
-      })  : type = SimpleAnimationViewType.asset,
+    AnimationData asset, {
+    this.width,
+    this.height,
+    this.onAnimationStarted,
+    this.animation,
+    this.artboard,
+    this.fit,
+  })  : type = SimpleAnimationViewType.asset,
         path = 'assets/animations/${asset.value}.riv',
         supportDarkMode = asset.lightAndDark;
 
   SimpleAnimationView.network(
-      String url, {
-        this.width,
-        this.height,
-        this.onAnimationStarted,
-        this.animation,
-        this.artboard,
-        this.fit,
-      })  : type = SimpleAnimationViewType.network,
+    String url, {
+    this.width,
+    this.height,
+    this.onAnimationStarted,
+    this.animation,
+    this.artboard,
+    this.fit,
+  })  : type = SimpleAnimationViewType.network,
         path = url,
         supportDarkMode = _hasDark(url);
 
   const SimpleAnimationView.file(
-      String filePath, {
-        this.width,
-        this.height,
-        this.onAnimationStarted,
-        this.animation,
-        this.fit,
-        this.artboard,
-        this.supportDarkMode = false,
-      })  : type = SimpleAnimationViewType.file,
+    String filePath, {
+    this.width,
+    this.height,
+    this.onAnimationStarted,
+    this.animation,
+    this.fit,
+    this.artboard,
+    this.supportDarkMode = false,
+  })  : type = SimpleAnimationViewType.file,
         path = filePath;
 
   static bool _hasDark(String url) {
@@ -131,19 +131,20 @@ class _SimpleAnimationViewState extends State<SimpleAnimationView> {
     final riveFile = this.riveFile;
 
     final artboardName = getArtboardName(FrogTheme.of(context).brightness);
-    final artboard = riveFile?.defaultArtboard() ?? (artboardName != null ? riveFile?.artboard(artboardName) : null);
+    final artboard = riveFile?.defaultArtboard() ??
+        (artboardName != null ? riveFile?.artboard(artboardName) : null);
 
     return SizedBox(
       width: widget.width,
       height: widget.height,
       child: riveFile != null
           ? RiveFileWidget(
-        file: riveFile,
-        painter: artboard?.stateMachineCount() == 1
-            ? StateMachinePainter()
-            : SingleAnimationPainter(widget.animation ?? 'animation'),
-        artboardName: artboardName,
-      )
+              file: riveFile,
+              painter: artboard?.stateMachineCount() == 1
+                  ? StateMachinePainter()
+                  : SingleAnimationPainter(widget.animation ?? 'animation'),
+              artboardName: artboardName,
+            )
           : const SizedBox.shrink(),
     );
   }

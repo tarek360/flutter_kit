@@ -85,7 +85,8 @@ class AppSharedPreferences {
   }
 
   void markFcmTokenAsSent() {
-    _sharedPreferences.setInt(_fcmTokenSentKey, DateTime.now().millisecondsSinceEpoch);
+    _sharedPreferences.setInt(
+        _fcmTokenSentKey, DateTime.now().millisecondsSinceEpoch);
   }
 
   DateTime? getLastFcmTokenSentDate() {
@@ -116,33 +117,42 @@ class AppSharedPreferences {
 
   bool isUserLoggedIn() => getUserToken() != null;
 
-  Future<void> setUserToken(String token) => _sharedPreferences.setString(_userTokenKey, token);
+  Future<void> setUserToken(String token) =>
+      _sharedPreferences.setString(_userTokenKey, token);
 
   Future<void> cleanUserToken() => _sharedPreferences.remove(_userTokenKey);
 
-  bool hasPinCodeSent() => _sharedPreferences.getBool(_userPinCodeSentKey) ?? false;
+  bool hasPinCodeSent() =>
+      _sharedPreferences.getBool(_userPinCodeSentKey) ?? false;
 
-  void markPinCodeAsSent() => _sharedPreferences.setBool(_userPinCodeSentKey, true);
+  void markPinCodeAsSent() =>
+      _sharedPreferences.setBool(_userPinCodeSentKey, true);
 
-  void resetPinCodeAsSent() => _sharedPreferences.setBool(_userPinCodeSentKey, false);
+  void resetPinCodeAsSent() =>
+      _sharedPreferences.setBool(_userPinCodeSentKey, false);
 
-  bool isAnonymousUser() => _sharedPreferences.getBool(_isAnonymousUser) ?? false;
+  bool isAnonymousUser() =>
+      _sharedPreferences.getBool(_isAnonymousUser) ?? false;
 
   // ignore: avoid_positional_boolean_parameters
-  Future<void> setAnonymousUser(bool value) => _sharedPreferences.setBool(_isAnonymousUser, value);
+  Future<void> setAnonymousUser(bool value) =>
+      _sharedPreferences.setBool(_isAnonymousUser, value);
 
   Environment? getEnvironment() {
     final name = _sharedPreferences.getString(_environmentKey);
     return name == null ? null : Environment.values.byName(name);
   }
 
-  void setEnvironment(Environment environment) => _sharedPreferences.setString(_environmentKey, environment.name);
+  void setEnvironment(Environment environment) =>
+      _sharedPreferences.setString(_environmentKey, environment.name);
 
   Future<void> _setFirstInstallationDate() async {
     try {
       final data = await _secureStorage.read(key: _appFirstInstallationDateKey);
       if (data == null) {
-        await _secureStorage.write(key: _appFirstInstallationDateKey, value: DateTime.now().toIso8601String());
+        await _secureStorage.write(
+            key: _appFirstInstallationDateKey,
+            value: DateTime.now().toIso8601String());
       }
     } on PlatformException catch (e, s) {
       Logger.er('Failed to set first installation date: $e', stackTrace: s);
@@ -173,13 +183,15 @@ class AppSharedPreferences {
   }
 
   /// Returns true if the key is expired and marks it as renewed if [markAsRenewed] is true.
-  bool isExpired(String key, {required Duration duration, bool markAsRenewed = false}) {
+  bool isExpired(String key,
+      {required Duration duration, bool markAsRenewed = false}) {
     final now = DateTime.now();
 
     final bool isExpired;
     final lastDisplayDate = getInt(key);
     if (lastDisplayDate != null) {
-      final expiryDate = DateTime.fromMillisecondsSinceEpoch(lastDisplayDate).add(duration);
+      final expiryDate =
+          DateTime.fromMillisecondsSinceEpoch(lastDisplayDate).add(duration);
       isExpired = expiryDate.isBefore(now);
     } else {
       isExpired = true;

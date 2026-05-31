@@ -36,10 +36,13 @@ class MessageOut<T> {
   });
 
   MessageOut<T> listFromJson(Map<String, dynamic> json) {
-    _items = (json['Data'] as List<dynamic>).map((e) => dataFromJson.call(e as Map<String, dynamic>)).toList();
+    _items = (json['Data'] as List<dynamic>)
+        .map((e) => dataFromJson.call(e as Map<String, dynamic>))
+        .toList();
     final metadata = json['Metadata'];
     if (metadata != null) {
-      _paginationMetadata = MessageOutPaginationMetadata.fromJson(metadata as Map<String, dynamic>);
+      _paginationMetadata = MessageOutPaginationMetadata.fromJson(
+          metadata as Map<String, dynamic>);
     }
     return this;
   }
@@ -49,7 +52,8 @@ class MessageOut<T> {
     _item = dataFromJson.call(item);
     final metadata = json['Metadata'];
     if (metadata != null) {
-      _paginationMetadata = MessageOutPaginationMetadata.fromJson(metadata as Map<String, dynamic>);
+      _paginationMetadata = MessageOutPaginationMetadata.fromJson(
+          metadata as Map<String, dynamic>);
     }
     return this;
   }

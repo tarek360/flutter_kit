@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 class ChatUITextInput extends StatelessWidget {
-
   final FocusNode? focusNode;
   final ValueChanged<String>? onFieldSubmitted;
   final TextInputAction? textInputAction;
@@ -116,25 +115,35 @@ class ChatUITextInput extends StatelessWidget {
         prefixIcon: prefixIcon != null
             ? GestureDetector(
                 onTap: onPrefixIconTapped,
-                child: Padding(padding: const EdgeInsetsDirectional.only(start: 12.0, end: 8), child: prefixIcon),
+                child: Padding(
+                    padding:
+                        const EdgeInsetsDirectional.only(start: 12.0, end: 8),
+                    child: prefixIcon),
               )
             : null,
         isDense: true,
         suffixText: suffixText,
-        suffixStyle: frogTheme.textStyles.bodyMedium.copyWith(color: frogTheme.colors.neutral70),
+        suffixStyle: frogTheme.textStyles.bodyMedium
+            .copyWith(color: frogTheme.colors.neutral70),
         suffix: suffix,
-        suffixIcon: suffixIcon != null ? Padding(padding: const EdgeInsets.all(8.0), child: suffixIcon) : null,
+        suffixIcon: suffixIcon != null
+            ? Padding(padding: const EdgeInsets.all(8.0), child: suffixIcon)
+            : null,
         suffixIconConstraints: const BoxConstraints(minHeight: 5, minWidth: 5),
-        contentPadding: const EdgeInsetsDirectional.only(start: 12.0, end: 8, top: 14, bottom: 14),
-        hintStyle: frogTheme.textStyles.bodyMedium.copyWith(color: frogTheme.colors.neutral50),
+        contentPadding: const EdgeInsetsDirectional.only(
+            start: 12.0, end: 8, top: 14, bottom: 14),
+        hintStyle: frogTheme.textStyles.bodyMedium
+            .copyWith(color: frogTheme.colors.neutral50),
         hintText: hint,
         enabledBorder: error != null ? textInputStyle.errorInputBorder : null,
-        focusedBorder: error != null ? textInputStyle.focusedErrorInputBorder : null,
+        focusedBorder:
+            error != null ? textInputStyle.focusedErrorInputBorder : null,
       ),
     );
 
     return Theme(
-      data: Theme.of(context).copyWith(inputDecorationTheme: textInputStyle.inputDecorationTheme),
+      data: Theme.of(context)
+          .copyWith(inputDecorationTheme: textInputStyle.inputDecorationTheme),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -154,7 +163,10 @@ class ChatUITextInput extends StatelessWidget {
                     behavior: HitTestBehavior.translucent,
                     onTap: onInfoIconTapped,
                     child: Row(
-                      children: [const _InfoIcon.information(), if (requiredIcon) const _InfoIcon.required()],
+                      children: [
+                        const _InfoIcon.information(),
+                        if (requiredIcon) const _InfoIcon.required()
+                      ],
                     ),
                   )
                 else if (requiredIcon)
@@ -168,10 +180,13 @@ class ChatUITextInput extends StatelessWidget {
           if (error != null)
             Text(
               error!,
-              style: frogTheme.textStyles.labelMedium.copyWith(color: frogTheme.colors.negative100),
+              style: frogTheme.textStyles.labelMedium
+                  .copyWith(color: frogTheme.colors.negative100),
             )
           else if (message != null)
-            Text(message!, style: frogTheme.textStyles.labelMedium.copyWith(color: frogTheme.colors.neutral70))
+            Text(message!,
+                style: frogTheme.textStyles.labelMedium
+                    .copyWith(color: frogTheme.colors.neutral70))
         ],
       ),
     );

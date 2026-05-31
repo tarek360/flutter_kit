@@ -39,11 +39,14 @@ class _WebViewState extends State<WebView> {
     if (_isWebViewWidgetSupported) {
       return WebViewWidget(controller: controller);
     } else {
-      return const Center(child: FrogText.labelMedium('WebView is not supported on this platform.'));
+      return const Center(
+          child: FrogText.labelMedium(
+              'WebView is not supported on this platform.'));
     }
   }
 
   bool get _isWebViewWidgetSupported {
-    return defaultTargetPlatform == TargetPlatform.iOS || defaultTargetPlatform == TargetPlatform.android;
+    return defaultTargetPlatform == TargetPlatform.iOS ||
+        defaultTargetPlatform == TargetPlatform.android;
   }
 }

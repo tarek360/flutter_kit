@@ -7,7 +7,8 @@ import 'package:core/core.dart';
 Environment? _environment;
 
 Environment get environment {
-  return _environment ?? _fromString(const String.fromEnvironment('ENVIRONMENT'));
+  return _environment ??
+      _fromString(const String.fromEnvironment('ENVIRONMENT'));
 }
 
 Environment _fromString(String value) {

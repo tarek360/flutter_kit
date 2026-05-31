@@ -6,5 +6,6 @@ class GetCachedOneTimePinCodeInfo {
 
   const GetCachedOneTimePinCodeInfo(this._repository);
 
-  GetOneTimePinCodeResponseOk? call() => _repository.getCachedOneTimePinCode()?.mapOrNull(ok: (data) => data);
+  GetOneTimePinCodeResponseOk? call() =>
+      _repository.getCachedOneTimePinCode()?.mapOrNull(ok: (data) => data);
 }

@@ -34,12 +34,16 @@ extension DateUtils on DateTime {
 
   bool get isTomorrow {
     final tomorrow = DateTime.now().add(const Duration(days: 1));
-    return tomorrow.day == day && tomorrow.month == month && tomorrow.year == year;
+    return tomorrow.day == day &&
+        tomorrow.month == month &&
+        tomorrow.year == year;
   }
 
   bool get isYesterday {
     final yesterday = DateTime.now().subtract(const Duration(days: 1));
-    return yesterday.day == day && yesterday.month == month && yesterday.year == year;
+    return yesterday.day == day &&
+        yesterday.month == month &&
+        yesterday.year == year;
   }
 
   bool get isFuture => isAfter(DateTime.now());
@@ -47,16 +51,20 @@ extension DateUtils on DateTime {
   bool get isPast => isBefore(DateTime.now());
 }
 
-String formatTimeRange(DateTime start, DateTime end, {bool format24Hours = false}) {
+String formatTimeRange(DateTime start, DateTime end,
+    {bool format24Hours = false}) {
   final startHour = format24Hours
       ? start.hour.toString().padLeft(2, '0')
       : (start.hour % 12 == 0 ? '12' : (start.hour % 12).toString());
-  final endHour =
-      format24Hours ? end.hour.toString().padLeft(2, '0') : (end.hour % 12 == 0 ? '12' : (end.hour % 12).toString());
+  final endHour = format24Hours
+      ? end.hour.toString().padLeft(2, '0')
+      : (end.hour % 12 == 0 ? '12' : (end.hour % 12).toString());
   final startMinute = start.minute.toString().padLeft(2, '0');
   final endMinute = end.minute.toString().padLeft(2, '0');
-  final startPeriod = format24Hours ? '' : DateFormat('a').format(start).toLowerCase();
-  final endPeriod = format24Hours ? '' : DateFormat('a').format(end).toLowerCase();
+  final startPeriod =
+      format24Hours ? '' : DateFormat('a').format(start).toLowerCase();
+  final endPeriod =
+      format24Hours ? '' : DateFormat('a').format(end).toLowerCase();
   return '$startHour:$startMinute$startPeriod - $endHour:$endMinute$endPeriod';
 }
 
@@ -64,7 +72,8 @@ String formatTimeRange(DateTime start, DateTime end, {bool format24Hours = false
 (List<DateTime>, int) getWeekdaysStartingOnSunday(DateTime now) {
   const weekStartDay = 1;
 
-  final currentWeekday = now.weekday == DateTime.sunday ? weekStartDay : now.weekday + 1;
+  final currentWeekday =
+      now.weekday == DateTime.sunday ? weekStartDay : now.weekday + 1;
   final currentWeekdayIndex = currentWeekday - 1;
 
   final startDay = now.subtract(Duration(days: currentWeekday - weekStartDay));

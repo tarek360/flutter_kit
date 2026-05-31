@@ -16,7 +16,8 @@ class Logger {
   );
   static final errors = Queue<String>();
 
-  @Deprecated("[Level.verbose] is being deprecated in favor of [Level.trace], use [t] instead.")
+  @Deprecated(
+      "[Level.verbose] is being deprecated in favor of [Level.trace], use [t] instead.")
   static void v(String message, [StackTrace? stackTrace]) {
     _logger.t(message, stackTrace: stackTrace);
   }
@@ -52,7 +53,8 @@ class Logger {
     Iterable<Object> information = const [],
   }) {
     if (!kDebugMode) {
-      FirebaseCrashlytics.instance.recordError(message, stackTrace, information: information);
+      FirebaseCrashlytics.instance
+          .recordError(message, stackTrace, information: information);
     }
     e(message, stackTrace: stackTrace);
   }

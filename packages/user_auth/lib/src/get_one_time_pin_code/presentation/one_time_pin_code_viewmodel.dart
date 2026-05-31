@@ -14,7 +14,8 @@ final errorMessageProvider = StateProvider<String?>((ref) {
 
 typedef GetString = String Function();
 
-class GetOneTimePinCodeViewmodel extends StateNotifier<XFormState<GetOneTimePinCodeResponse>> {
+class GetOneTimePinCodeViewmodel
+    extends StateNotifier<XFormState<GetOneTimePinCodeResponse>> {
   final Ref _ref;
   final GetOneTimePinCode _getOneTimePinCodesInteractor;
   final NetworkErrorMessageMapperBase _networkErrorMessageMapper;
@@ -47,10 +48,12 @@ class GetOneTimePinCodeViewmodel extends StateNotifier<XFormState<GetOneTimePinC
 
     final getOneTimePinCodeRequest = GetOneTimePinCodeRequest(email: email);
 
-    final result = await _getOneTimePinCodesInteractor(getOneTimePinCodeRequest);
+    final result =
+        await _getOneTimePinCodesInteractor(getOneTimePinCodeRequest);
     result.when(
       success: (data) => state = XFormState.submitted(data),
-      failure: (error) => state = XFormState.error(_networkErrorMessageMapper.transform(error)),
+      failure: (error) =>
+          state = XFormState.error(_networkErrorMessageMapper.transform(error)),
     );
   }
 

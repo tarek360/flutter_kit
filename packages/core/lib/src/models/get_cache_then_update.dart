@@ -37,7 +37,8 @@ class GetCacheThenUpdate<T, U extends Result<T, ResultErrorType>> {
 
     if (cache is! Cacheable || cache.shouldGetNewUpdate) {
       if (cache is Cacheable) {
-        Logger.d('CacheKey: "${cache.cacheKey}" – Expired! (Getting a new update..)');
+        Logger.d(
+            'CacheKey: "${cache.cacheKey}" – Expired! (Getting a new update..)');
       }
       (await getUpdate()).when(
         success: (t) {
@@ -52,7 +53,8 @@ class GetCacheThenUpdate<T, U extends Result<T, ResultErrorType>> {
         },
       );
     } else {
-      Logger.d('CacheKey: "${cache.cacheKey}" – Still fresh (won\'t get a new update)');
+      Logger.d(
+          'CacheKey: "${cache.cacheKey}" – Still fresh (won\'t get a new update)');
     }
   }
 }
@@ -82,7 +84,9 @@ mixin class Cacheable {
     final cacheDate = getCacheDate();
     if (cacheDate != null) {
       final wasAfterMidnightAndBeforeTheSunRise = cacheDate.hour < 5;
-      final duration = wasAfterMidnightAndBeforeTheSunRise ? getMinLifetime() : getMaxLifetime();
+      final duration = wasAfterMidnightAndBeforeTheSunRise
+          ? getMinLifetime()
+          : getMaxLifetime();
       if (cacheDate.add(duration).isBefore(DateTime.now())) {
         return true;
       }
@@ -95,7 +99,8 @@ mixin class Cacheable {
     _cache.setObject(cacheKey, this);
   }
 
-  static T? fromCache<T>(String key, T Function(Map<String, dynamic>) fromJson) {
+  static T? fromCache<T>(
+      String key, T Function(Map<String, dynamic>) fromJson) {
     try {
       return _cache.getObject(key, fromJson);
     } catch (e, s) {

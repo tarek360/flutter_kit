@@ -31,15 +31,18 @@ class GetOneTimePinCodeResponse with _$GetOneTimePinCodeResponse, Cacheable {
 
   const GetOneTimePinCodeResponse._();
 
-  factory GetOneTimePinCodeResponse.fromJson(Map<String, dynamic> json) => _$GetOneTimePinCodeResponseFromJson(json);
+  factory GetOneTimePinCodeResponse.fromJson(Map<String, dynamic> json) =>
+      _$GetOneTimePinCodeResponseFromJson(json);
 
   static const _key = 'GetOneTimePinCodeResponseOk';
 
-  static GetOneTimePinCodeResponse? fromCache() => Cacheable.fromCache(_key, GetOneTimePinCodeResponse.fromJson);
+  static GetOneTimePinCodeResponse? fromCache() =>
+      Cacheable.fromCache(_key, GetOneTimePinCodeResponse.fromJson);
 
   static void clearCache() => Cacheable.clear(_key);
 
-  static bool isPinCodeSent() => fromCache()?.maybeMap(ok: (_) => true, orElse: () => false) ?? false;
+  static bool isPinCodeSent() =>
+      fromCache()?.maybeMap(ok: (_) => true, orElse: () => false) ?? false;
 
   @override
   String get cacheKey => _key;
