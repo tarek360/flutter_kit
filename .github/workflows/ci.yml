@@ -212,6 +212,10 @@ jobs:
         working-directory: example
         run: flutter pub get
 
+      - name: setup rive_native
+        working-directory: example
+        run: dart run rive_native:setup
+
       - name: build ios
         working-directory: example
         run: flutter build ios --no-codesign --debug
