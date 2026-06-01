@@ -19,6 +19,36 @@ jobs:
         with:
           flutter-version: ${{ env.FLUTTER_VERSION }}
           cache: true
+      - name: Create local dependency overrides
+        run: |
+          root="${{ github.workspace }}/packages"
+          write_overrides() {
+            local pkg=$1; shift
+            { echo "dependency_overrides:"
+              for dep in "$@"; do printf "  %s:\n    path: ../%s\n" "$dep" "$dep"; done
+            } > "$root/$pkg/pubspec_overrides.yaml"
+          }
+          write_overrides core              global_lints
+          write_overrides design_system     global_lints
+          write_overrides firebase_packages core global_lints
+          write_overrides social_login      core global_lints
+          write_overrides ui_kit            design_system ui_kit_interface global_lints
+          write_overrides ui_kit_interface  design_system global_lints
+          write_overrides user_auth         ui_kit_interface design_system core global_lints
+
+          root="${{ github.workspace }}"
+          { echo "dependency_overrides:"
+            for pkg in calendar_utils core design_system firebase_packages \
+                       social_login ui_kit ui_kit_interface user_auth global_lints; do
+              printf "  %s:\n    path: ../packages/%s\n" "$pkg" "$pkg"
+            done
+          } > "$root/example/pubspec_overrides.yaml"
+      - name: pub get
+        run: |
+          for pkg in packages/*/; do
+            flutter pub get --no-precompile -C "$pkg"
+          done
+          flutter pub get --no-precompile -C example
       - name: Check formatting
         run: dart format --output=none --set-exit-if-changed packages/ example/
 
