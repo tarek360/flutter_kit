@@ -79,7 +79,7 @@ packages:
       path: "../packages/calendar_utils"
       relative: true
     source: path
-    version: "1.0.1"
+    version: "0.0.11"
   characters:
     dependency: transitive
     description:
@@ -134,7 +134,7 @@ packages:
       path: "../packages/core"
       relative: true
     source: path
-    version: "0.0.10"
+    version: "0.0.11"
   coverage:
     dependency: transitive
     description:
@@ -173,15 +173,15 @@ packages:
       path: "../packages/design_system"
       relative: true
     source: path
-    version: "0.0.10"
+    version: "0.0.11"
   device_info_plus:
     dependency: transitive
     description:
       name: device_info_plus
-      sha256: b4fed1b2835da9d670d7bed7db79ae2a94b0f5ad6312268158a9b5479abbacdd
+      sha256: "4df8babf73058181227e18b08e6ea3520cf5fc5d796888d33b7cb0f33f984b7c"
       url: "https://pub.dev"
     source: hosted
-    version: "12.4.0"
+    version: "12.3.0"
   device_info_plus_platform_interface:
     dependency: transitive
     description:
@@ -324,7 +324,7 @@ packages:
       path: "../packages/firebase_packages"
       relative: true
     source: path
-    version: "0.0.10"
+    version: "0.0.11"
   fixnum:
     dependency: transitive
     description:
@@ -514,7 +514,7 @@ packages:
       path: "../packages/global_lints"
       relative: true
     source: path
-    version: "0.0.10"
+    version: "0.0.11"
   google_identity_services_web:
     dependency: transitive
     description:
@@ -1159,7 +1159,7 @@ packages:
       path: "../packages/social_login"
       relative: true
     source: path
-    version: "0.0.10"
+    version: "0.0.11"
   source_map_stack_trace:
     dependency: transitive
     description:
@@ -1326,14 +1326,14 @@ packages:
       path: "../packages/ui_kit"
       relative: true
     source: path
-    version: "0.0.10"
+    version: "0.0.11"
   ui_kit_interface:
     dependency: "direct main"
     description:
       path: "../packages/ui_kit_interface"
       relative: true
     source: path
-    version: "0.0.10"
+    version: "0.0.11"
   url_launcher:
     dependency: transitive
     description:
@@ -1404,7 +1404,7 @@ packages:
       path: "../packages/user_auth"
       relative: true
     source: path
-    version: "0.0.10"
+    version: "0.0.11"
   uuid:
     dependency: transitive
     description:
