@@ -214,7 +214,7 @@ jobs:
 
       - name: setup rive_native
         working-directory: example
-        run: dart run rive_native:setup
+        run: dart run rive_native:setup --platform ios
 
       - name: build ios
         working-directory: example
